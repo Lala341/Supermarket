@@ -15,8 +15,8 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let location = CLLocationCoordinate2D(latitude: 4.355657,
-            longitude: -0.1246402)
+        let location = CLLocationCoordinate2D(latitude: 4.627153,
+            longitude:  -74.106616)
         
         // 2
         let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
