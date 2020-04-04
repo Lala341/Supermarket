@@ -11,6 +11,8 @@
 		D37B89B0240B52EB00281998 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37B89AF240B52EB00281998 /* MapViewController.swift */; };
 		D37B89B2240B619C00281998 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37B89B1240B619C00281998 /* CameraViewController.swift */; };
 		D37B89B7240B683B00281998 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D37B89B6240B683B00281998 /* MapKit.framework */; };
+		D38EA9422438EA68003E0EF3 /* Supermarket.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D38EA9402438EA68003E0EF3 /* Supermarket.xcdatamodeld */; };
+		D38EA9442438FDB3003E0EF3 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38EA9432438FDB3003E0EF3 /* CoreDataManager.swift */; };
 		D3DBE3F7240B4DA800E5A29E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBE3F6240B4DA800E5A29E /* AppDelegate.swift */; };
 		D3DBE3F9240B4DA800E5A29E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBE3F8240B4DA800E5A29E /* SceneDelegate.swift */; };
 		D3DBE3FB240B4DA800E5A29E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBE3FA240B4DA800E5A29E /* ViewController.swift */; };
@@ -43,6 +45,8 @@
 		D37B89AF240B52EB00281998 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = ../MapViewController.swift; sourceTree = "<group>"; };
 		D37B89B1240B619C00281998 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		D37B89B6240B683B00281998 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D38EA9412438EA68003E0EF3 /* Supermarket.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Supermarket.xcdatamodel; sourceTree = "<group>"; };
+		D38EA9432438FDB3003E0EF3 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		D3DBE3F3240B4DA800E5A29E /* Supermarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Supermarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3DBE3F6240B4DA800E5A29E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3DBE3F8240B4DA800E5A29E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 				D3DBE3FF240B4DAD00E5A29E /* Assets.xcassets */,
 				D3DBE401240B4DAD00E5A29E /* LaunchScreen.storyboard */,
 				D3DBE404240B4DAD00E5A29E /* Info.plist */,
+				D38EA9402438EA68003E0EF3 /* Supermarket.xcdatamodeld */,
+				D38EA9432438FDB3003E0EF3 /* CoreDataManager.swift */,
 			);
 			path = Supermarket;
 			sourceTree = "<group>";
@@ -280,11 +286,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D38EA9422438EA68003E0EF3 /* Supermarket.xcdatamodeld in Sources */,
 				D3DBE3FB240B4DA800E5A29E /* ViewController.swift in Sources */,
 				D37B89B2240B619C00281998 /* CameraViewController.swift in Sources */,
 				D3DBE3F7240B4DA800E5A29E /* AppDelegate.swift in Sources */,
 				D3DBE3F9240B4DA800E5A29E /* SceneDelegate.swift in Sources */,
 				D37B89B0240B52EB00281998 /* MapViewController.swift in Sources */,
+				D38EA9442438FDB3003E0EF3 /* CoreDataManager.swift in Sources */,
 				D30AE2B1241D777600469EC7 /* ProductListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -612,6 +620,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D38EA9402438EA68003E0EF3 /* Supermarket.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D38EA9412438EA68003E0EF3 /* Supermarket.xcdatamodel */,
+			);
+			currentVersion = D38EA9412438EA68003E0EF3 /* Supermarket.xcdatamodel */;
+			path = Supermarket.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D3DBE3EB240B4DA800E5A29E /* Project object */;
 }

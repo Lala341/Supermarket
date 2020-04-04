@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    private let manager = CoreDataManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
