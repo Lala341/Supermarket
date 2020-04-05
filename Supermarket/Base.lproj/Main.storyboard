@@ -47,13 +47,6 @@
                                     <segue destination="xUd-Rz-P35" kind="presentation" modalPresentationStyle="fullScreen" id="hHf-3X-cib"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibF-lq-sdG">
-                                <rect key="frame" x="27" y="173" width="332" height="210"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30H-8f-ShK">
                                 <rect key="frame" x="172" y="414" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -83,9 +76,6 @@
                         <viewLayoutGuide key="safeArea" id="sha-1V-LUC"/>
                     </view>
                     <navigationItem key="navigationItem" id="0t2-Ep-W9E"/>
-                    <connections>
-                        <outlet property="summaryLabel" destination="ibF-lq-sdG" id="yCa-Vy-JOa"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tsX-2Y-emC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -333,7 +323,7 @@ products of many types.</string>
                                     <barButtonItem image="cart.badge.plus" catalog="system" style="plain" id="taP-JU-323">
                                         <color key="tintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </barButtonItem>
-                                    <barButtonItem tag="4" title="$135.000" width="311.33334350585938" style="done" id="XUW-bF-mvj"/>
+                                    <barButtonItem tag="4" title="$3.204" width="311.33334350585938" style="done" id="XUW-bF-mvj"/>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -1369,17 +1359,6 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="UyN-eq-6PY">
-                                <rect key="frame" x="0.0" y="605" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem image="cart.badge.plus" catalog="system" style="plain" id="WXv-RN-2TI">
-                                        <color key="tintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </barButtonItem>
-                                    <barButtonItem tag="4" title="$135.000" width="311.33334350585938" style="done" id="DUk-Kv-ykI"/>
-                                    <barButtonItem tag="4" image="creditcard" catalog="system" width="311.33334350585938" style="done" id="zFy-pT-6ll"/>
-                                </items>
-                            </toolbar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bHV-tg-3fe">
                                 <rect key="frame" x="0.0" y="95" width="375" height="510"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1395,6 +1374,19 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                                 <viewLayoutGuide key="contentLayoutGuide" id="uqn-JB-7uT"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="yuj-y9-f1q"/>
                             </scrollView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="UyN-eq-6PY">
+                                <rect key="frame" x="0.0" y="605" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem image="creditcard" catalog="system" style="plain" id="WXv-RN-2TI">
+                                        <color key="tintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <segue destination="PBD-FH-u8G" kind="presentation" id="LCN-kO-pep"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem tag="4" title="$3.204" width="311.33334350585938" style="done" id="DUk-Kv-ykI"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="HJB-yq-94C"/>
@@ -1422,8 +1414,11 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                             <items>
                                 <barButtonItem image="cart.badge.plus" catalog="system" style="plain" id="1Uz-2C-MCd">
                                     <color key="tintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <segue destination="eMu-RZ-Hvk" kind="presentation" modalPresentationStyle="fullScreen" id="GdP-Tz-1la"/>
+                                    </connections>
                                 </barButtonItem>
-                                <barButtonItem tag="4" title="$135.000" width="311.33334350585938" style="done" id="k2u-Fp-Vve"/>
+                                <barButtonItem tag="4" title="$ 3.204" width="311.33334350585938" style="done" id="k2u-Fp-Vve"/>
                             </items>
                         </toolbar>
                         <prototypes>
@@ -1482,6 +1477,83 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
             </objects>
             <point key="canvasLocation" x="352.80000000000001" y="1728.4857571214395"/>
         </scene>
+        <!--Products Cart Table View Controller-->
+        <scene sceneID="MZV-nu-gfO">
+            <objects>
+                <tableViewController id="eMu-RZ-Hvk" customClass="ProductsCartTableViewController" customModule="Supermarket" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="93" sectionHeaderHeight="93" sectionFooterHeight="28" id="uDl-lg-Vuh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="q6C-pD-ZpX">
+                            <rect key="frame" x="0.0" y="206" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <items>
+                                <barButtonItem image="creditcard" catalog="system" style="plain" id="NOd-Z8-G0V">
+                                    <color key="tintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <connections>
+                                        <segue destination="PBD-FH-u8G" kind="presentation" id="zU4-Qk-aLM"/>
+                                    </connections>
+                                </barButtonItem>
+                                <barButtonItem tag="4" title="$3.204" width="311.33334350585938" style="done" id="mA0-4f-BgA"/>
+                            </items>
+                        </toolbar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ProductCartTableViewCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProductCartTableViewCell" rowHeight="150" id="Uck-1v-vc9" customClass="ProductCartTableViewCell" customModule="Supermarket" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="150"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Uck-1v-vc9" id="yME-jx-4yI">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2mr-Fj-GoX">
+                                            <rect key="frame" x="158" y="11" width="206" height="29"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yPS-Oy-Dd8">
+                                            <rect key="frame" x="158" y="48" width="206" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="daZ-bT-Op1">
+                                            <rect key="frame" x="16" y="2" width="121" height="88"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIk-iw-fMC">
+                                            <rect key="frame" x="301" y="-125" width="227" height="93"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Button" image="cart"/>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2h7-zr-evJ">
+                                            <rect key="frame" x="339" y="53" width="36" height="45"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                            <state key="normal" title="Button" image="trash" catalog="system"/>
+                                            <connections>
+                                                <action selector="removeCart:" destination="Uck-1v-vc9" eventType="touchUpInside" id="7p6-01-Ccb"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="photo" destination="daZ-bT-Op1" id="Mb5-mS-tOg"/>
+                                    <outlet property="price" destination="yPS-Oy-Dd8" id="KEI-Sp-HKR"/>
+                                    <outlet property="product" destination="2mr-Fj-GoX" id="EOa-8z-RG4"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kfo-6s-H54" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="441" y="2516"/>
+        </scene>
     </scenes>
     <resources>
         <image name="500px-Codigo_QR" width="179" height="179"/>
@@ -1505,10 +1577,12 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
         <image name="producto" width="1045" height="837"/>
         <image name="qrcode.viewfinder" catalog="system" width="64" height="56"/>
         <image name="route" width="231" height="157"/>
+        <image name="trash" catalog="system" width="60" height="64"/>
         <image name="x.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="IKQ-BE-YoK"/>
+        <segue reference="zU4-Qk-aLM"/>
         <segue reference="QU6-gQ-YyL"/>
         <segue reference="o2v-sv-7fO"/>
         <segue reference="I5B-m4-yKE"/>

@@ -11,6 +11,8 @@
 		D34FED6D24395487005E9BBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D34FED6C24395487005E9BBE /* Assets.xcassets */; };
 		D34FED6F24395F9B005E9BBE /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34FED6E24395F9B005E9BBE /* ProductTableViewCell.swift */; };
 		D34FED712439677C005E9BBE /* ProductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34FED702439677C005E9BBE /* ProductsTableViewController.swift */; };
+		D34FED732439A9C8005E9BBE /* ProductsCartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34FED722439A9C8005E9BBE /* ProductsCartTableViewController.swift */; };
+		D34FED752439A9D5005E9BBE /* ProductCartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34FED742439A9D5005E9BBE /* ProductCartTableViewCell.swift */; };
 		D37B89B0240B52EB00281998 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37B89AF240B52EB00281998 /* MapViewController.swift */; };
 		D37B89B2240B619C00281998 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37B89B1240B619C00281998 /* CameraViewController.swift */; };
 		D37B89B7240B683B00281998 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D37B89B6240B683B00281998 /* MapKit.framework */; };
@@ -48,6 +50,8 @@
 		D34FED6C24395487005E9BBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D34FED6E24395F9B005E9BBE /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		D34FED702439677C005E9BBE /* ProductsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewController.swift; sourceTree = "<group>"; };
+		D34FED722439A9C8005E9BBE /* ProductsCartTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsCartTableViewController.swift; sourceTree = "<group>"; };
+		D34FED742439A9D5005E9BBE /* ProductCartTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCartTableViewCell.swift; sourceTree = "<group>"; };
 		D37B89AF240B52EB00281998 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = ../MapViewController.swift; sourceTree = "<group>"; };
 		D37B89B1240B619C00281998 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		D37B89B6240B683B00281998 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -143,7 +147,9 @@
 				D3DBE3FA240B4DA800E5A29E /* ViewController.swift */,
 				D3DBE3FC240B4DA800E5A29E /* Main.storyboard */,
 				D34FED702439677C005E9BBE /* ProductsTableViewController.swift */,
+				D34FED722439A9C8005E9BBE /* ProductsCartTableViewController.swift */,
 				D34FED6E24395F9B005E9BBE /* ProductTableViewCell.swift */,
+				D34FED742439A9D5005E9BBE /* ProductCartTableViewCell.swift */,
 				D38EA946243918B2003E0EF3 /* StartViewController.swift */,
 				D30AE2B0241D777600469EC7 /* ProductListTableViewController.swift */,
 				D37B89B1240B619C00281998 /* CameraViewController.swift */,
@@ -305,9 +311,11 @@
 			files = (
 				D38EA9422438EA68003E0EF3 /* Supermarket.xcdatamodeld in Sources */,
 				D3DBE3FB240B4DA800E5A29E /* ViewController.swift in Sources */,
+				D34FED752439A9D5005E9BBE /* ProductCartTableViewCell.swift in Sources */,
 				D37B89B2240B619C00281998 /* CameraViewController.swift in Sources */,
 				D3DBE3F7240B4DA800E5A29E /* AppDelegate.swift in Sources */,
 				D3DBE3F9240B4DA800E5A29E /* SceneDelegate.swift in Sources */,
+				D34FED732439A9C8005E9BBE /* ProductsCartTableViewController.swift in Sources */,
 				D38EA947243918B2003E0EF3 /* StartViewController.swift in Sources */,
 				D37B89B0240B52EB00281998 /* MapViewController.swift in Sources */,
 				D34FED6F24395F9B005E9BBE /* ProductTableViewCell.swift in Sources */,

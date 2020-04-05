@@ -10,6 +10,8 @@ import UIKit
 
 class ProductTableViewCell: UITableViewCell {
     
+    private let manager = CoreDataManager()
+
     var productTotal: Product!
   
     @IBOutlet weak var product: UILabel!
@@ -24,8 +26,16 @@ class ProductTableViewCell: UITableViewCell {
 
     
     @IBAction func addCart(_ sender: UIButton) {
-        
-        
+        let photos = ["prod1", "prod2", "prod3","prod4","prod5","prod1", "prod2", "prod3","prod4","prod5"]
+        let names = ["Papas Lays", "Colombiana", "Arroz diana", "Arequipe", "Crema de leche", "Papas Lays", "Colombiana", "Arroz diana", "Arequipe", "Crema de leche"]
+        let precios = [1204, 2000,450,245,900,8000,1000,2300,2400,1200]
+        let opciones = [0,1]
+        for  i in opciones {
+            manager.createProduct(name : names[i], price : Double(precios[i]), sku : names[i], description : "Producto de alta calidad", photo : photos[i] )  {
+                
+            }
+
+    }
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

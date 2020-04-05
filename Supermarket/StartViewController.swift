@@ -10,14 +10,14 @@ import UIKit
 
 class StartViewController: UIViewController {
     var counter = 0
-    private let manager = CoreDataManager()
-
+    public let manager = CoreDataManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
     
     @IBOutlet weak var summaryLabel: UILabel!{
         didSet {

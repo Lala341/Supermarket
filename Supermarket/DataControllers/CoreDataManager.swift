@@ -72,6 +72,7 @@ class CoreDataManager {
         let shoppy = ShoppingList(context: context)
         shoppy.name = "Cart"
         shoppy.tag = "Mercado"
+        shoppy.products = []
         
         let user = User(context: context)
         user.name = name
@@ -108,10 +109,12 @@ class CoreDataManager {
     func fetchUser() -> User {
         //1
         let fetchRequest : NSFetchRequest<User> = User.fetchRequest()
+        
         do {
       
             //2
             let result = try container.viewContext.fetch(fetchRequest)
+            
             return result.last ?? User()
         } catch {
             print("El error obteniendo usuario(s) \(error)")
@@ -120,10 +123,68 @@ class CoreDataManager {
           //3
          return User()
     }
+    func fetchUserCart() -> ShoppingList {
+        //1
+        let fetchRequest : NSFetchRequest<ShoppingList> = ShoppingList.fetchRequest()
+        
+        do {
+      
+            //2
+            let result = try container.viewContext.fetch(fetchRequest)
+            
+            
+            return result.last ?? ShoppingList()
+        } catch {
+            print("El error obteniendo el carrito del usuario(s) \(error)")
+         }
+     
+          //3
+         return ShoppingList()
+    }
+    func addProductCart(name : String, productf : Product,  completion: @escaping() -> Void) {
+        // 2
+        var context = container.viewContext
+        
+        let fetchRequest : NSFetchRequest<ShoppingList> = ShoppingList.fetchRequest()
+        let fetchRequest2 : NSFetchRequest<Product> = Product.fetchRequest()
+              
+        let product = Product(context: container.viewContext)
+        product.name = productf.name
+        product.price = productf.price
+               product.sku = productf.sku
+               product.descrip = productf.description
+               product.photo = productf.photo
+        do {
+           let result = try context.fetch(fetchRequest )
+        let result2 = try context.fetch(fetchRequest2)
+            
+            var final = result2.last!
+            for i in result2{
+                if(i.name == productf.name){
+                    final = i
+                    
+                }
+            }
+            var final2 = result.last!
+            context.insert(final)
+            context.insert(final2)
+            final2.addToProducts(final)
+            try context.save()
+            
+            completion()
+        } catch {
+         
+          print("Error guardando producto — \(error)")
+        }
+    }
     func createProduct(name : String, price : Double, sku : String, description : String, photo : String , completion: @escaping() -> Void) {
            // 2
            let context = container.viewContext
          
+           let shoppy = ShoppingList(context: context)
+           shoppy.name = "Cart"
+           shoppy.tag = "Mercado"
+           shoppy.products = []
            
            let product = Product(context: context)
            product.name = name
@@ -131,6 +192,7 @@ class CoreDataManager {
         product.sku = sku
         product.descrip = description
         product.photo = photo
+        product.shoppingList = shoppy
            
            do {
                try context.save()

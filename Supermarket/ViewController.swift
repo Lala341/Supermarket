@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    public let manager = CoreDataManager()
 
     
     override func viewDidLoad() {
