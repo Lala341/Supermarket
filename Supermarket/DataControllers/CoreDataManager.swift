@@ -45,6 +45,23 @@ class CoreDataManager {
         print("Error Borrando los usuarios \(error)")
         }
     }
+    func deleteProducts() {
+     
+     //1
+     let context = container.viewContext
+     //2
+     let fetchRequest : NSFetchRequest<Product> = Product.fetchRequest()
+     //3
+     let deleteBatch = NSBatchDeleteRequest(fetchRequest: fetchRequest as! NSFetchRequest<NSFetchRequestResult>)
+     do {
+     
+         //4
+         try context.execute(deleteBatch)
+         print("éxito borrando productos")
+        }catch {
+        print("Error Borrando los productos \(error)")
+        }
+    }
     func createUser(name : String, phone : String, email : String,gender : String, dateOfBirth : String, completion: @escaping() -> Void) {
         // 2
         let context = container.viewContext
@@ -95,7 +112,7 @@ class CoreDataManager {
       
             //2
             let result = try container.viewContext.fetch(fetchRequest)
-            return result.last ?? <#default value#>
+            return result.last ?? User()
         } catch {
             print("El error obteniendo usuario(s) \(error)")
          }
@@ -103,7 +120,7 @@ class CoreDataManager {
           //3
          return User()
     }
-    func createProduct(name : String, price : Int16, sku : String, description : String, photo : Data, completion: @escaping() -> Void) {
+    func createProduct(name : String, price : Double, sku : String, description : String, photo : String , completion: @escaping() -> Void) {
            // 2
            let context = container.viewContext
          
@@ -155,7 +172,7 @@ class CoreDataManager {
                     return i
                 }
             }
-            return result.last ?? <#default value#>
+            return result.last ?? Product()
         } catch {
             print("El error obteniendo producto(s) \(error)")
          }
@@ -178,7 +195,7 @@ class CoreDataManager {
                     return i
                 }
             }
-            return result.last ?? <#default value#>
+            return result.last ?? Product()
         } catch {
             print("El error obteniendo producto(s) \(error)")
          }

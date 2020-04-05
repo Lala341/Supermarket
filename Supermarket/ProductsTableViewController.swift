@@ -15,7 +15,6 @@ class ProductsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         loadProducts()
@@ -37,19 +36,26 @@ class ProductsTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        var cellIdentifier = "ProductTableViewCell"
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ProductTableViewCell  else {
-            fatalError("The dequeued cell is not an instance of ProductTableViewCell.")
-        }
+       let cellIdentifier = "ProductTableViewCell"
+            let cell: ProductTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! ProductTableViewCell
+
+      
         let product = products[indexPath.row]
         // Configure the cell...
-        cell.product.text = product.name
-        cell.photo.image =  UIImage(data : product.photo ?? <#default value#>)
-        cell.price.text =  "$ \(product.price)"
+        print(product.price)
+        print(String(describing: product.name) )
+        var name: String!
+        name = product.name
+        cell.product.text = name  ?? "Colombina"
+        var namep: String!
+        namep = product.photo
+        cell.photo.image =  UIImage(named : namep ?? "prod1")
+        cell.price.text =  "$ \(product.price)" ?? "$ 2000"
         cell.productTotal = product
         
         return cell
     }
+    @IBOutlet weak var cell: ProductTableViewCell!
     private func loadProducts() {
         
         let produ = manager.fetchProduts()

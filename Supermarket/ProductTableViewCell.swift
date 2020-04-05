@@ -11,16 +11,23 @@ import UIKit
 class ProductTableViewCell: UITableViewCell {
     
     var productTotal: Product!
+  
     @IBOutlet weak var product: UILabel!
+    
     @IBOutlet weak var price: UILabel!
+    
     @IBOutlet weak var photo: UIImageView!
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+    
+    @IBAction func addCart(_ sender: UIButton) {
+        
+        
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
