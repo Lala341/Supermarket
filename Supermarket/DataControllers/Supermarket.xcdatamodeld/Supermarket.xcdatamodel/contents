@@ -17,6 +17,7 @@
     <entity name="Product" representedClassName="Product" syncable="YES" codeGenerationType="class">
         <attribute name="descrip" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="photo" optional="YES" attributeType="Binary"/>
         <attribute name="price" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="sku" optional="YES" attributeType="String"/>
         <relationship name="shoppingList" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ShoppingList" inverseName="products" inverseEntity="ShoppingList"/>
@@ -61,12 +62,12 @@
     </entity>
     <elements>
         <element name="Chain" positionX="-141.14453125" positionY="-166.47265625" width="129.953125" height="118"/>
-        <element name="Product" positionX="304.82421875" positionY="-128.46484375" width="128" height="133"/>
-        <element name="Transaction" positionX="-138.66796875" positionY="-10.50390625" width="128" height="118"/>
         <element name="Discount" positionX="104.6328125" positionY="-18.41015625" width="128" height="118"/>
+        <element name="Product" positionX="304.82421875" positionY="-128.46484375" width="128" height="148"/>
         <element name="ShoppingList" positionX="49.7890625" positionY="175.23828125" width="128" height="103"/>
+        <element name="Store" positionX="98.94921875" positionY="-168.921875" width="128" height="133"/>
+        <element name="Transaction" positionX="-138.66796875" positionY="-10.50390625" width="128" height="118"/>
         <element name="User" positionX="-128.5078125" positionY="262.25390625" width="128" height="178"/>
         <element name="VirtualCart" positionX="111.2890625" positionY="286.65234375" width="128" height="88"/>
-        <element name="Store" positionX="98.94921875" positionY="-168.921875" width="128" height="133"/>
     </elements>
 </model>

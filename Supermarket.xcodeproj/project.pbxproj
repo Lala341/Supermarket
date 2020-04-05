@@ -8,16 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		D30AE2B1241D777600469EC7 /* ProductListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30AE2B0241D777600469EC7 /* ProductListTableViewController.swift */; };
+		D34FED6D24395487005E9BBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D34FED6C24395487005E9BBE /* Assets.xcassets */; };
+		D34FED6F24395F9B005E9BBE /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34FED6E24395F9B005E9BBE /* ProductTableViewCell.swift */; };
+		D34FED712439677C005E9BBE /* ProductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34FED702439677C005E9BBE /* ProductsTableViewController.swift */; };
 		D37B89B0240B52EB00281998 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37B89AF240B52EB00281998 /* MapViewController.swift */; };
 		D37B89B2240B619C00281998 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37B89B1240B619C00281998 /* CameraViewController.swift */; };
 		D37B89B7240B683B00281998 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D37B89B6240B683B00281998 /* MapKit.framework */; };
 		D38EA9422438EA68003E0EF3 /* Supermarket.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D38EA9402438EA68003E0EF3 /* Supermarket.xcdatamodeld */; };
 		D38EA9442438FDB3003E0EF3 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38EA9432438FDB3003E0EF3 /* CoreDataManager.swift */; };
+		D38EA947243918B2003E0EF3 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38EA946243918B2003E0EF3 /* StartViewController.swift */; };
 		D3DBE3F7240B4DA800E5A29E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBE3F6240B4DA800E5A29E /* AppDelegate.swift */; };
 		D3DBE3F9240B4DA800E5A29E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBE3F8240B4DA800E5A29E /* SceneDelegate.swift */; };
 		D3DBE3FB240B4DA800E5A29E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBE3FA240B4DA800E5A29E /* ViewController.swift */; };
 		D3DBE3FE240B4DA800E5A29E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3DBE3FC240B4DA800E5A29E /* Main.storyboard */; };
-		D3DBE400240B4DAD00E5A29E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3DBE3FF240B4DAD00E5A29E /* Assets.xcassets */; };
 		D3DBE403240B4DAD00E5A29E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3DBE401240B4DAD00E5A29E /* LaunchScreen.storyboard */; };
 		D3DBE40E240B4DAE00E5A29E /* SupermarketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBE40D240B4DAE00E5A29E /* SupermarketTests.swift */; };
 		D3DBE419240B4DAE00E5A29E /* SupermarketUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBE418240B4DAE00E5A29E /* SupermarketUITests.swift */; };
@@ -42,17 +45,20 @@
 
 /* Begin PBXFileReference section */
 		D30AE2B0241D777600469EC7 /* ProductListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListTableViewController.swift; sourceTree = "<group>"; };
+		D34FED6C24395487005E9BBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D34FED6E24395F9B005E9BBE /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		D34FED702439677C005E9BBE /* ProductsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewController.swift; sourceTree = "<group>"; };
 		D37B89AF240B52EB00281998 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = ../MapViewController.swift; sourceTree = "<group>"; };
 		D37B89B1240B619C00281998 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		D37B89B6240B683B00281998 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D38EA9412438EA68003E0EF3 /* Supermarket.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Supermarket.xcdatamodel; sourceTree = "<group>"; };
 		D38EA9432438FDB3003E0EF3 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		D38EA946243918B2003E0EF3 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		D3DBE3F3240B4DA800E5A29E /* Supermarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Supermarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3DBE3F6240B4DA800E5A29E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3DBE3F8240B4DA800E5A29E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D3DBE3FA240B4DA800E5A29E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D3DBE3FD240B4DA800E5A29E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D3DBE3FF240B4DAD00E5A29E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3DBE402240B4DAD00E5A29E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D3DBE404240B4DAD00E5A29E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3DBE409240B4DAE00E5A29E /* SupermarketTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SupermarketTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +103,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D38EA945243916A4003E0EF3 /* DataControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D38EA9402438EA68003E0EF3 /* Supermarket.xcdatamodeld */,
+				D38EA9432438FDB3003E0EF3 /* CoreDataManager.swift */,
+			);
+			path = DataControllers;
+			sourceTree = "<group>";
+		};
 		D3DBE3EA240B4DA800E5A29E = {
 			isa = PBXGroup;
 			children = (
@@ -121,18 +136,20 @@
 		D3DBE3F5240B4DA800E5A29E /* Supermarket */ = {
 			isa = PBXGroup;
 			children = (
+				D34FED6C24395487005E9BBE /* Assets.xcassets */,
 				D37B89AF240B52EB00281998 /* MapViewController.swift */,
 				D3DBE3F6240B4DA800E5A29E /* AppDelegate.swift */,
 				D3DBE3F8240B4DA800E5A29E /* SceneDelegate.swift */,
 				D3DBE3FA240B4DA800E5A29E /* ViewController.swift */,
 				D3DBE3FC240B4DA800E5A29E /* Main.storyboard */,
+				D34FED702439677C005E9BBE /* ProductsTableViewController.swift */,
+				D34FED6E24395F9B005E9BBE /* ProductTableViewCell.swift */,
+				D38EA946243918B2003E0EF3 /* StartViewController.swift */,
 				D30AE2B0241D777600469EC7 /* ProductListTableViewController.swift */,
 				D37B89B1240B619C00281998 /* CameraViewController.swift */,
-				D3DBE3FF240B4DAD00E5A29E /* Assets.xcassets */,
 				D3DBE401240B4DAD00E5A29E /* LaunchScreen.storyboard */,
 				D3DBE404240B4DAD00E5A29E /* Info.plist */,
-				D38EA9402438EA68003E0EF3 /* Supermarket.xcdatamodeld */,
-				D38EA9432438FDB3003E0EF3 /* CoreDataManager.swift */,
+				D38EA945243916A4003E0EF3 /* DataControllers */,
 			);
 			path = Supermarket;
 			sourceTree = "<group>";
@@ -260,7 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3DBE403240B4DAD00E5A29E /* LaunchScreen.storyboard in Resources */,
-				D3DBE400240B4DAD00E5A29E /* Assets.xcassets in Resources */,
+				D34FED6D24395487005E9BBE /* Assets.xcassets in Resources */,
 				D3DBE3FE240B4DA800E5A29E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,7 +308,10 @@
 				D37B89B2240B619C00281998 /* CameraViewController.swift in Sources */,
 				D3DBE3F7240B4DA800E5A29E /* AppDelegate.swift in Sources */,
 				D3DBE3F9240B4DA800E5A29E /* SceneDelegate.swift in Sources */,
+				D38EA947243918B2003E0EF3 /* StartViewController.swift in Sources */,
 				D37B89B0240B52EB00281998 /* MapViewController.swift in Sources */,
+				D34FED6F24395F9B005E9BBE /* ProductTableViewCell.swift in Sources */,
+				D34FED712439677C005E9BBE /* ProductsTableViewController.swift in Sources */,
 				D38EA9442438FDB3003E0EF3 /* CoreDataManager.swift in Sources */,
 				D30AE2B1241D777600469EC7 /* ProductListTableViewController.swift in Sources */,
 			);
