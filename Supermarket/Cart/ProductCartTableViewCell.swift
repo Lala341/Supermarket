@@ -10,10 +10,11 @@ import UIKit
 
 class ProductCartTableViewCell: UITableViewCell {
     
-    public let manager = CoreDataManager()
+    public var manager : CoreDataManager!
 
     var productTotal: Product!
-  
+    var cartmanager = CartCoreDataManager();
+    
     @IBOutlet weak var product: UILabel!
     
     @IBOutlet weak var price: UILabel!
@@ -28,8 +29,7 @@ class ProductCartTableViewCell: UITableViewCell {
 
     
     @IBAction func removeCart(_ sender: UIButton) {
-        
-        manager.fetchUser().shopList?.removeFromProducts(productTotal)
+        cartmanager.fetchUserCart(container: manager.getContainer()).removeFromProducts(productTotal)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

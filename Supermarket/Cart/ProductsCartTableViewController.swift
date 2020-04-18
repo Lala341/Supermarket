@@ -10,8 +10,10 @@ import UIKit
 
 class ProductsCartTableViewController: UITableViewController {
     
-    private let manager = CoreDataManager()
-
+    public var manager : CoreDataManager!;
+    var productmanager = ProductCoreDataManager();
+    var cartmanager = CartCoreDataManager();
+         
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +41,7 @@ class ProductsCartTableViewController: UITableViewController {
        let cellIdentifier = "ProductCartTableViewCell"
             let cell: ProductCartTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! ProductCartTableViewCell
 
-      
+        cell.manager = manager
         let product = products[indexPath.row]
         // Configure the cell...
         print(product.price)
@@ -50,7 +52,7 @@ class ProductsCartTableViewController: UITableViewController {
         var namep: String!
         namep = product.photo
         cell.photo.image =  UIImage(named : namep ?? "prod1")
-        cell.price.text =  "$ \(product.price)" ?? "$ 2000"
+        cell.price.text =  "$ \(product.price)" 
         cell.productTotal = product
         
         return cell
@@ -58,27 +60,21 @@ class ProductsCartTableViewController: UITableViewController {
     @IBOutlet weak var cell: ProductTableViewCell!
     
     private func loadProducts() {
+      
         
-        
-        let produs : [Product]
-        
-        produs = manager.fetchProduts()
+        let cart = cartmanager.fetchUserCart(container: manager.getContainer())
         
         var produ  : [Product] = []
-        var o = 0
         
-        for i in produs
+        for i in cart.products!
         {
-            if(o<=1){
-                produ.append(i)
-            }
+            produ.append(i as! Product)
             
-            o=o+1
         }
-        
+     
         print(produ)
         products = produ
-        
+ 
     }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

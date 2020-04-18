@@ -10,7 +10,8 @@ import UIKit
 
 class ProductsTableViewController: UITableViewController {
     
-    private let manager = CoreDataManager()
+    public var manager: CoreDataManager!;
+    
 
 
     override func viewDidLoad() {
@@ -21,7 +22,16 @@ class ProductsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.destination is ProductsCartTableViewController
+        {
+            let vc = segue.destination as? ProductsCartTableViewController
+            vc?.manager = manager
+        }
+    }
+    var productmanager = ProductCoreDataManager();
+    
     // MARK: - Table view data source
     var products = [Product]()
 
@@ -39,7 +49,7 @@ class ProductsTableViewController: UITableViewController {
        let cellIdentifier = "ProductTableViewCell"
             let cell: ProductTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! ProductTableViewCell
 
-      
+        cell.manager = manager
         let product = products[indexPath.row]
         // Configure the cell...
         print(product.price)
@@ -50,15 +60,16 @@ class ProductsTableViewController: UITableViewController {
         var namep: String!
         namep = product.photo
         cell.photo.image =  UIImage(named : namep ?? "prod1")
-        cell.price.text =  "$ \(product.price)" ?? "$ 2000"
+        cell.price.text =  "$ \(product.price)" 
         cell.productTotal = product
+        
         
         return cell
     }
     @IBOutlet weak var cell: ProductTableViewCell!
     private func loadProducts() {
         
-        let produ = manager.fetchProduts()
+        let produ = productmanager.fetchProduts(container: manager.getContainer())
         
         
         products = produ
