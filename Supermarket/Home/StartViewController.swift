@@ -7,19 +7,44 @@
 //
 
 import UIKit
+import Network
 
 class StartViewController: UIViewController {
     var counter = 0;
     public let manager = CoreDataManager();
     var usermanager = UserCoreDataManager();
     var productmanager = ProductCoreDataManager();
-    
+    let networkMonitor = NWPathMonitor()
+
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        networkMonitor.pathUpdateHandler = { path in
+            
+               if path.status == .satisfied {
+                   print("Estás conectado a la red")
+               
+               } else {
+                   print("No estás conectado a la red")
+               
+               DispatchQueue.main.async {
+                              let VC = self.storyboard!.instantiateViewController(withIdentifier: "NotConnectionId") as! NotConection
+                VC.modalPresentationStyle = .fullScreen
+                VC.manager = self.manager
+                                            self.present(VC, animated: true, completion: nil)
+                                        
+                                        self.show(VC, sender: self)
+                           }
+            
+            }
+           }
+
+           let queue = DispatchQueue(label: "Network connectivity")
+           networkMonitor.start(queue: queue)
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
