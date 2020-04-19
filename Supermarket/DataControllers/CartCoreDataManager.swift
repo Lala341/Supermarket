@@ -60,6 +60,35 @@ class CartCoreDataManager {
           print("Error guardando producto — \(error)")
         }
     }
-    
+    func deleteProductCart(container : NSPersistentContainer, name : String, productf : Product,  completion: @escaping() -> Void) {
+        // 2
+        let context = container.viewContext
+        
+        let fetchRequest : NSFetchRequest<ShoppingList> = ShoppingList.fetchRequest()
+        let fetchRequest2 : NSFetchRequest<Product> = Product.fetchRequest()
+              
+        
+        do {
+           let result = try context.fetch(fetchRequest )
+        let result2 = try context.fetch(fetchRequest2)
+            
+            var final = result2.last!
+            for i in result2{
+                if(i.name == productf.name){
+                    final = i
+                    
+                }
+            }
+            let final2 = result.last!
+            final.shoppingList = final2
+            final2.removeFromProducts(final)
+            try context.save()
+            
+            completion()
+        } catch {
+         
+          print("Error eliminando producto — \(error)")
+        }
+    }
     
 }

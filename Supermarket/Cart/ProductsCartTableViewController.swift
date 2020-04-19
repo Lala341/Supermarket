@@ -13,6 +13,7 @@ class ProductsCartTableViewController: UITableViewController {
     public var manager : CoreDataManager!;
     var productmanager = ProductCoreDataManager();
     var cartmanager = CartCoreDataManager();
+    var delegate: ProductsCartTableView!
          
 
     override func viewDidLoad() {
@@ -44,6 +45,7 @@ class ProductsCartTableViewController: UITableViewController {
             let cell: ProductCartTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! ProductCartTableViewCell
 
         cell.manager = manager
+        cell.delegate = delegate
         let product = products[indexPath.row]
         // Configure the cell...
         print(product.price)
