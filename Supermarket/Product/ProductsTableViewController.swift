@@ -10,30 +10,24 @@ import UIKit
 
 class ProductsTableViewController: UITableViewController {
     
-    public var manager: CoreDataManager!;
+    public var manager: CoreDataManager!
+    var cartmanager = CartCoreDataManager()
+    var productmanager = ProductCoreDataManager()
+    var products = [Product]()
+    var delegate: ProductsTableView!
     
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         loadProducts()
+        
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    {
-        if segue.destination is ProductsCartTableViewController
-        {
-            let vc = segue.destination as? ProductsCartTableViewController
-            vc?.manager = manager
-        }
-    }
-    var productmanager = ProductCoreDataManager();
     
-    // MARK: - Table view data source
-    var products = [Product]()
+   
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -50,6 +44,7 @@ class ProductsTableViewController: UITableViewController {
             let cell: ProductTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! ProductTableViewCell
 
         cell.manager = manager
+        cell.delegate = delegate
         let product = products[indexPath.row]
         // Configure the cell...
         print(product.price)
@@ -60,13 +55,13 @@ class ProductsTableViewController: UITableViewController {
         var namep: String!
         namep = product.photo
         cell.photo.image =  UIImage(named : namep ?? "prod1")
-        cell.price.text =  "$ \(product.price)" 
+        cell.price.text =  "$ \(product.price)"
         cell.productTotal = product
-        
         
         return cell
     }
-    @IBOutlet weak var cell: ProductTableViewCell!
+    
+    
     private func loadProducts() {
         
         let produ = productmanager.fetchProduts(container: manager.getContainer())
@@ -75,6 +70,7 @@ class ProductsTableViewController: UITableViewController {
         products = produ
         
     }
+   
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
@@ -101,7 +97,7 @@ class ProductsTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 

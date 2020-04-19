@@ -20,6 +20,8 @@ class ProductsCartTableViewController: UITableViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         loadProducts()
+        updateUI()
+              
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
@@ -58,7 +60,8 @@ class ProductsCartTableViewController: UITableViewController {
         return cell
     }
     @IBOutlet weak var cell: ProductTableViewCell!
-    
+    @IBOutlet weak var resumeCart:UIBarItem!
+       
     private func loadProducts() {
       
         
@@ -75,6 +78,20 @@ class ProductsCartTableViewController: UITableViewController {
         print(produ)
         products = produ
  
+    }
+    func updateUI() {
+            //3
+        let cart = cartmanager.fetchUserCart(container: manager.getContainer())
+               
+        var price : Double = 0
+               
+               for i in cart.products!
+               {
+                price = price + (i as! Product).price
+                   
+               }
+            
+        resumeCart.title = "$ \(price)"
     }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

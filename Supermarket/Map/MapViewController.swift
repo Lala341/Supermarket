@@ -28,7 +28,7 @@ class MapViewController: UIViewController {
         annotation.coordinate = location
         annotation.title = "Big Ben"
         annotation.subtitle = "London"
-        //mapView.addAnnotation(annotation)
+        mapView.addAnnotation(annotation)
         // Do any additional setup after loading the view.
     }
     

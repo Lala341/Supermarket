@@ -29,6 +29,12 @@ class StartViewController: UIViewController {
             let vc = segue.destination as? ProductsTableViewController
             vc?.manager = manager
         }
+        else if segue.destination is ProductsTableView
+        {
+            let vc = segue.destination as? ProductsTableView
+            vc?.manager = manager
+        }
+        
     }
     
   /*  @IBOutlet weak var summaryLabel: UILabel!{

@@ -11,20 +11,24 @@ import UIKit
 class ProductTableViewCell: UITableViewCell {
     
     public var manager : CoreDataManager!
-
     var productTotal: Product!
-    var cartmanager = CartCoreDataManager();
-       
+    var delegate: ProductsTableView!
+
+    var cartmanager = CartCoreDataManager()
+    
     @IBOutlet weak var product: UILabel!
     
     @IBOutlet weak var price: UILabel!
     
     @IBOutlet weak var photo: UIImageView!
+    
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
     
     @IBAction func addCart(_ sender: UIButton) {
       /*  let photos = ["prod1", "prod2", "prod3","prod4","prod5","prod1", "prod2", "prod3","prod4","prod5"]
@@ -35,7 +39,11 @@ class ProductTableViewCell: UITableViewCell {
             manager.createProduct(name : names[i], price : Double(precios[i]), sku : names[i], description : "Producto de alta calidad", photo : photos[i] )  {
                 
             }*/
-        cartmanager.addProductCart(container: manager.getContainer(), name: productTotal.name!, productf: productTotal, completion: {})
+        print("add")
+        cartmanager.addProductCart(container: manager.getContainer(), name: productTotal.name!, productf: productTotal, completion: {[weak self] in
+             //2
+             print("add2")
+            self?.delegate.updateUI()})
         
 
     }
@@ -46,6 +54,6 @@ class ProductTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }
 

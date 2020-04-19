@@ -15,22 +15,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Discover" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q83-sa-aq7">
-                                <rect key="frame" x="79" y="42" width="216" height="96"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <color key="textColor" red="0.0" green="0.54117647059999996" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="126"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A better place to shop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cvx-vz-FML">
-                                <rect key="frame" x="102" y="130" width="170" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.54117647059999996" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo_transparent" translatesAutoresizingMaskIntoConstraints="NO" id="dG6-dw-OqL">
                                 <rect key="frame" x="-39" y="194" width="453" height="278"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -71,6 +55,14 @@
                                     <segue destination="bDR-sg-ohs" kind="presentation" modalPresentationStyle="fullScreen" id="Fjw-ez-xOB"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yNj-3D-z8E">
+                                <rect key="frame" x="295" y="480" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="yNE-j7-9hX" kind="presentation" modalPresentationStyle="fullScreen" id="a27-bI-gdC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="sha-1V-LUC"/>
@@ -90,7 +82,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" mapType="hybrid" showsScale="YES" showsTraffic="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ll6-mK-qfO">
-                                <rect key="frame" x="0.0" y="-5" width="377" height="672"/>
+                                <rect key="frame" x="0.0" y="-1" width="375" height="629"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lxs-Nv-8Zc">
@@ -109,8 +101,9 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bba-5a-G54">
                                 <rect key="frame" x="20" y="513" width="339" height="71"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.54117647059999996" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="20" right="8"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Select a shopping center to begin">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -118,6 +111,31 @@
                                 <connections>
                                     <segue destination="pAW-hd-5qW" kind="presentation" modalPresentationStyle="fullScreen" id="tE4-ve-YhR"/>
                                 </connections>
+                            </button>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a56-N2-1nx">
+                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="0.0" right="8"/>
+                                <items>
+                                    <tabBarItem title="Home" image="house.fill" catalog="system" id="qnj-tu-37m">
+                                        <color key="badgeColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tabBarItem>
+                                    <tabBarItem title="Search" image="magnifyingglass" catalog="system" id="cke-hG-aTN"/>
+                                    <tabBarItem title="Places" image="star.fill" catalog="system" id="RVY-uP-JnU"/>
+                                    <tabBarItem title="Profile" image="person.fill" catalog="system" id="9B0-DN-uDd"/>
+                                </items>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="selectedImageTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tabBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L3O-D9-ad5">
+                                <rect key="frame" x="161" y="592" width="53" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="55"/>
+                                <state key="normal" image="cart">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="39" scale="large" weight="bold"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -131,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QU8-V5-UG2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1243.4782608695652" y="268.20652173913044"/>
+            <point key="canvasLocation" x="1242.4000000000001" y="267.61619190404798"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="vFq-LE-G3n">
@@ -1400,31 +1418,59 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
             </objects>
             <point key="canvasLocation" x="1048.8" y="1700.5997001499252"/>
         </scene>
+        <!--Products Table View-->
+        <scene sceneID="B2z-GW-f9e">
+            <objects>
+                <viewController id="yNE-j7-9hX" customClass="ProductsTableView" customModule="Supermarket" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="veQ-fh-hvf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aIs-yx-uP6">
+                                <rect key="frame" x="-5" y="8" width="380" height="603"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="bDR-sg-ohs" kind="embed" id="QeR-56-RkY"/>
+                                </connections>
+                            </containerView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="bottom" semanticContentAttribute="forceLeftToRight" id="9Le-dc-p3z">
+                                <rect key="frame" x="0.0" y="615" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="0.0" right="8"/>
+                                <items>
+                                    <barButtonItem image="cart.badge.plus" catalog="system" style="plain" id="Fj6-KE-7fG">
+                                        <color key="tintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <segue destination="eMu-RZ-Hvk" kind="presentation" modalPresentationStyle="fullScreen" id="Ii9-Kk-Lxd"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem tag="4" title="$ 3.204" width="311.33334350585938" style="done" id="zgx-qi-fNe"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="mvP-lK-NUF"/>
+                    </view>
+                    <connections>
+                        <outlet property="resumeCart" destination="zgx-qi-fNe" id="XXm-od-DMl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HcX-TM-gFJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-538.39999999999998" y="1427.136431784108"/>
+        </scene>
         <!--Products Table View Controller-->
         <scene sceneID="Bh8-bh-Sr0">
             <objects>
                 <tableViewController id="bDR-sg-ohs" customClass="ProductsTableViewController" customModule="Supermarket" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="93" sectionHeaderHeight="93" sectionFooterHeight="28" id="4FR-p1-YFO">
+                    <tableView key="view" clipsSubviews="YES" contentMode="bottom" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="93" sectionHeaderHeight="93" sectionFooterHeight="28" id="4FR-p1-YFO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="cH3-94-U1W">
-                            <rect key="frame" x="0.0" y="206" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                            <items>
-                                <barButtonItem image="cart.badge.plus" catalog="system" style="plain" id="1Uz-2C-MCd">
-                                    <color key="tintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <connections>
-                                        <segue destination="eMu-RZ-Hvk" kind="presentation" modalPresentationStyle="fullScreen" id="GdP-Tz-1la"/>
-                                    </connections>
-                                </barButtonItem>
-                                <barButtonItem tag="4" title="$ 3.204" width="311.33334350585938" style="done" id="k2u-Fp-Vve"/>
-                            </items>
-                        </toolbar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ProductTableViewCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProductTableViewCell" rowHeight="150" id="lgf-bn-o4S" customClass="ProductTableViewCell" customModule="Supermarket" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="150"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lgf-bn-o4S" id="wIY-7d-FXg">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
@@ -1458,7 +1504,7 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                                             <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                             <state key="normal" title="Button" image="plus" catalog="system"/>
                                             <connections>
-                                                <action selector="addCart:" destination="lgf-bn-o4S" eventType="touchUpInside" id="Byf-E9-9P8"/>
+                                                <action selector="addCart:" destination="lgf-bn-o4S" eventType="touchUpInside" id="FYo-Xm-kpW"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -1475,7 +1521,7 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TtF-Ae-aYH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="352.80000000000001" y="1728.4857571214395"/>
+            <point key="canvasLocation" x="342" y="1717"/>
         </scene>
         <!--Products Cart Table View Controller-->
         <scene sceneID="MZV-nu-gfO">
@@ -1485,9 +1531,11 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="q6C-pD-ZpX">
+                        <toolbar key="tableFooterView" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" id="q6C-pD-ZpX">
                             <rect key="frame" x="0.0" y="206" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                            <viewLayoutGuide key="safeArea" id="hUF-P9-AII"/>
                             <items>
                                 <barButtonItem image="creditcard" catalog="system" style="plain" id="NOd-Z8-G0V">
                                     <color key="tintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1549,10 +1597,48 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                         </prototypes>
                         <sections/>
                     </tableView>
+                    <connections>
+                        <outlet property="resumeCart" destination="mA0-4f-BgA" id="DLt-V6-QcC"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kfo-6s-H54" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="441" y="2516"/>
+        </scene>
+        <!--Products Table View-->
+        <scene sceneID="NlG-0A-4IR">
+            <objects>
+                <viewController id="Rhy-Ax-C35" customClass="ProductsTableView" customModule="Supermarket" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DB3-XS-oKj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mxm-Vs-nkW">
+                                <rect key="frame" x="-5" y="8" width="380" height="603"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            </containerView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="bottom" semanticContentAttribute="forceLeftToRight" id="PgY-ch-SjE">
+                                <rect key="frame" x="0.0" y="615" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="0.0" right="8"/>
+                                <items>
+                                    <barButtonItem image="cart.badge.plus" catalog="system" style="plain" id="aJI-yj-Dbw">
+                                        <color key="tintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem tag="4" title="$ 3.204" width="311.33334350585938" style="done" id="nb4-hJ-Hcb"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Flg-KV-4vH"/>
+                    </view>
+                    <connections>
+                        <outlet property="resumeCart" destination="nb4-hJ-Hcb" id="M1b-9F-vfW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8ke-C5-FkP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-538" y="2234"/>
         </scene>
     </scenes>
     <resources>
@@ -1569,20 +1655,25 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
         <image name="chevron.left" catalog="system" width="48" height="64"/>
         <image name="creditcard" catalog="system" width="64" height="44"/>
         <image name="creditcard.fill" catalog="system" width="64" height="44"/>
+        <image name="house.fill" catalog="system" width="64" height="52"/>
         <image name="info.circle.fill" catalog="system" width="64" height="60"/>
         <image name="location.fill" catalog="system" width="64" height="56"/>
         <image name="logo_transparent" width="237" height="237"/>
+        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
         <image name="mappin.and.ellipse" catalog="system" width="58" height="64"/>
+        <image name="person.fill" catalog="system" width="64" height="60"/>
         <image name="plus" catalog="system" width="64" height="56"/>
         <image name="producto" width="1045" height="837"/>
         <image name="qrcode.viewfinder" catalog="system" width="64" height="56"/>
         <image name="route" width="231" height="157"/>
+        <image name="star.fill" catalog="system" width="64" height="58"/>
         <image name="trash" catalog="system" width="60" height="64"/>
         <image name="x.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Fjw-ez-xOB"/>
         <segue reference="PJT-Vi-vpY"/>
-        <segue reference="LCN-kO-pep"/>
+        <segue reference="zU4-Qk-aLM"/>
         <segue reference="QU6-gQ-YyL"/>
         <segue reference="o2v-sv-7fO"/>
         <segue reference="I5B-m4-yKE"/>
