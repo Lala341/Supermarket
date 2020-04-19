@@ -32,7 +32,6 @@ class ProductsCartTableView: UIViewController {
         {
             let vc = segue.destination as? ProductsTableViewController
             vc?.manager = manager
-            vc?.delegate = self
             
             
         }

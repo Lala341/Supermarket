@@ -24,6 +24,8 @@
 		D38C1FDB244B87DE00B7A6C8 /* ProductsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C1FDA244B87DE00B7A6C8 /* ProductsTableView.swift */; };
 		D38C1FDD244C26EE00B7A6C8 /* NotConection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C1FDC244C26ED00B7A6C8 /* NotConection.swift */; };
 		D38C1FDF244C389400B7A6C8 /* ProductsCartTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C1FDE244C389400B7A6C8 /* ProductsCartTableView.swift */; };
+		D38C1FE1244C459A00B7A6C8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C1FE0244C459A00B7A6C8 /* ProfileViewController.swift */; };
+		D38C1FE3244C45F300B7A6C8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C1FE2244C45F300B7A6C8 /* HomeViewController.swift */; };
 		D38EA9422438EA68003E0EF3 /* Supermarket.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D38EA9402438EA68003E0EF3 /* Supermarket.xcdatamodeld */; };
 		D38EA9442438FDB3003E0EF3 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38EA9432438FDB3003E0EF3 /* CoreDataManager.swift */; };
 		D38EA947243918B2003E0EF3 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38EA946243918B2003E0EF3 /* StartViewController.swift */; };
@@ -71,6 +73,8 @@
 		D38C1FDA244B87DE00B7A6C8 /* ProductsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsTableView.swift; sourceTree = "<group>"; };
 		D38C1FDC244C26ED00B7A6C8 /* NotConection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotConection.swift; sourceTree = "<group>"; };
 		D38C1FDE244C389400B7A6C8 /* ProductsCartTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsCartTableView.swift; sourceTree = "<group>"; };
+		D38C1FE0244C459A00B7A6C8 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		D38C1FE2244C45F300B7A6C8 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D38EA9412438EA68003E0EF3 /* Supermarket.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Supermarket.xcdatamodel; sourceTree = "<group>"; };
 		D38EA9432438FDB3003E0EF3 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		D38EA946243918B2003E0EF3 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +159,8 @@
 			isa = PBXGroup;
 			children = (
 				D38EA946243918B2003E0EF3 /* StartViewController.swift */,
+				D38C1FE0244C459A00B7A6C8 /* ProfileViewController.swift */,
+				D38C1FE2244C45F300B7A6C8 /* HomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -379,6 +385,8 @@
 				D38C1FDB244B87DE00B7A6C8 /* ProductsTableView.swift in Sources */,
 				D35A08162449DBC6005CC7BB /* UserCoreDataManager.swift in Sources */,
 				D35A08182449DBF0005CC7BB /* CartCoreDataManager.swift in Sources */,
+				D38C1FE3244C45F300B7A6C8 /* HomeViewController.swift in Sources */,
+				D38C1FE1244C459A00B7A6C8 /* ProfileViewController.swift in Sources */,
 				D3DBE3FB240B4DA800E5A29E /* ViewController.swift in Sources */,
 				D34FED752439A9D5005E9BBE /* ProductCartTableViewCell.swift in Sources */,
 				D37B89B2240B619C00281998 /* CameraViewController.swift in Sources */,

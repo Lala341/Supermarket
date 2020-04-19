@@ -11,7 +11,8 @@ import MapKit
 
 class MapViewController: UIViewController {
 
-    
+    public var manager: CoreDataManager!
+
     @IBOutlet weak var mapView: MKMapView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,25 @@ class MapViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.destination is ProductsTableViewController
+        {
+            let vc = segue.destination as? ProductsTableViewController
+            vc?.manager = manager
+        }
+        else if segue.destination is ProductsTableView
+        {
+            let vc = segue.destination as? ProductsTableView
+            vc?.manager = manager
+        }
+        else if segue.destination is NotConection
+        {
+            let vc = segue.destination as? NotConection
+            vc?.manager = manager
+        }
+        
+    }
     /*
     // MARK: - Navigation
 

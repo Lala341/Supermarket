@@ -8,39 +8,86 @@
 
 import Foundation
 import UIKit
-
+import Network
 
 class NotConection: UIViewController {
-    
+    var counter = 0;
     public var manager: CoreDataManager!
+    var usermanager = UserCoreDataManager();
+    let networkMonitor = NWPathMonitor()
+
     
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        // Do any additional setup after loading the view.
+        networkMonitor.pathUpdateHandler = { path in
+            
+               if path.status == .satisfied {
+                   print("Estás conectado a la red")
+               
+               } else {
+                   print("No estás conectado a la red")
+               
+               DispatchQueue.main.async {
+                              let VC = self.storyboard!.instantiateViewController(withIdentifier: "NotConnectionId") as! NotConection
+                VC.modalPresentationStyle = .fullScreen
+                VC.manager = self.manager
+                                            self.present(VC, animated: true, completion: nil)
+                                        
+                                        self.show(VC, sender: self)
+                           }
+            
+            }
+           }
+
+           let queue = DispatchQueue(label: "Network connectivity")
+           networkMonitor.start(queue: queue)
+        
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        
         if segue.destination is ProductsTableViewController
         {
             let vc = segue.destination as? ProductsTableViewController
             vc?.manager = manager
-            
-            
         }
-        if segue.destination is ProductsCartTableViewController
+        else if segue.destination is ProductsTableView
         {
-            let vc = segue.destination as? ProductsCartTableViewController
+            let vc = segue.destination as? ProductsTableView
             vc?.manager = manager
         }
+        
     }
+    
+  /*  @IBOutlet weak var summaryLabel: UILabel!{
+        didSet {
+                   summaryLabel.text = "Registros en la base: \(0)\r\nÚltimo registro: nil"
+        }
+     }
+    */
+    
+ /*     func updateUI() {
+            //3            counter = counter + 1
+            let users = usermanager.fetchUsers(container: manager.getContainer())
+            summaryLabel.text = "Último registro añadido"
+    }*/
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
+
+
 
     
 
-}
+

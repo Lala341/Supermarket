@@ -116,10 +116,18 @@
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="Home" image="house.fill" catalog="system" width="99" id="BfB-u4-9TL"/>
+                                    <barButtonItem title="Home" image="house.fill" catalog="system" width="99" id="BfB-u4-9TL">
+                                        <connections>
+                                            <segue destination="sjd-HN-3Il" kind="presentation" modalPresentationStyle="fullScreen" id="bO2-vJ-li2"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem title="Home" image="magnifyingglass" catalog="system" width="72.5" id="ZAu-74-52X"/>
                                     <barButtonItem title="Home" image="star.fill" catalog="system" width="141" id="1RW-AB-vIF"/>
-                                    <barButtonItem title="Home" image="person.fill" catalog="system" id="lxg-sF-UdE"/>
+                                    <barButtonItem title="Home" image="person.fill" catalog="system" id="lxg-sF-UdE">
+                                        <connections>
+                                            <segue destination="74I-of-et0" kind="presentation" modalPresentationStyle="fullScreen" id="txZ-QF-wFj"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="clip" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tyT-Wa-9wu">
@@ -157,6 +165,9 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="yNE-j7-9hX" kind="presentation" modalPresentationStyle="fullScreen" id="Pxl-JG-EyK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1569,6 +1580,9 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                                 <state key="normal" title="  Estoy aquí" image="mappin.and.ellipse" catalog="system">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="addCart:" destination="yNE-j7-9hX" eventType="touchUpInside" id="t9X-G3-PMg"/>
+                                </connections>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gCW-gj-VpH">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
@@ -1621,6 +1635,7 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                         <viewLayoutGuide key="safeArea" id="mvP-lK-NUF"/>
                     </view>
                     <connections>
+                        <outlet property="data" destination="GGE-PA-4gD" id="Uhs-lW-eCa"/>
                         <outlet property="resumeCart" destination="zgx-qi-fNe" id="XXm-od-DMl"/>
                     </connections>
                 </viewController>
@@ -1756,10 +1771,10 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
             </objects>
             <point key="canvasLocation" x="598" y="1907"/>
         </scene>
-        <!--Map View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="oTK-mm-gnb">
             <objects>
-                <viewController wantsFullScreenLayout="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="74I-of-et0" customClass="MapViewController" customModule="Supermarket" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController wantsFullScreenLayout="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="74I-of-et0" customClass="ProfileViewController" customModule="Supermarket" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleAspectFill" id="7br-jd-uYx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2190,7 +2205,7 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
         <!--Products Table View-->
         <scene sceneID="Z3v-98-voW">
             <objects>
-                <viewController id="sjd-HN-3Il" customClass="ProductsTableView" customModule="Supermarket" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="HomeId" storyboardIdentifier="HomeId" id="sjd-HN-3Il" customClass="ProductsTableView" customModule="Supermarket" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qbX-o3-Hbf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2279,6 +2294,9 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="yNE-j7-9hX" kind="presentation" modalPresentationStyle="fullScreen" id="8vS-ZK-7YK"/>
+                                </connections>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="bottom" semanticContentAttribute="forceLeftToRight" id="f9f-Rw-riT">
                                 <rect key="frame" x="-3" y="564" width="375" height="44"/>
@@ -2358,8 +2376,8 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
         <image name="Tab - Fixed Tabs - Text &amp; Icons - Flat" width="360" height="81"/>
         <image name="arrow.left" catalog="system" width="64" height="48"/>
         <image name="arrow.right" catalog="system" width="64" height="48"/>
-        <image name="cart" catalog="system" width="64" height="50"/>
         <image name="cart" width="399" height="400"/>
+        <image name="cart" catalog="system" width="64" height="50"/>
         <image name="cart.badge.plus" catalog="system" width="64" height="48"/>
         <image name="cart.fill" catalog="system" width="64" height="50"/>
         <image name="checkmark.rectangle.fill" catalog="system" width="64" height="46"/>
@@ -2390,9 +2408,11 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
         <image name="x.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="bO2-vJ-li2"/>
+        <segue reference="txZ-QF-wFj"/>
         <segue reference="k4j-4f-v1i"/>
         <segue reference="QeR-56-RkY"/>
-        <segue reference="Tnd-u1-6e6"/>
+        <segue reference="Pxl-JG-EyK"/>
         <segue reference="EU6-dN-Bvi"/>
         <segue reference="O7v-ML-5Qo"/>
         <segue reference="L08-A4-t6I"/>
