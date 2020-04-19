@@ -25,7 +25,7 @@ class StartViewController: UIViewController {
         do {
         
         networkMonitor.pathUpdateHandler = { path in
-            
+               //sguzmanm: Same comment as with the HomeViewController PR
                if path.status == .satisfied {
                    print("Estás conectado a la red")
                
@@ -48,6 +48,7 @@ class StartViewController: UIViewController {
             
         }
         catch  {
+           // sguzmanm: In your vid I saw a warning with this catch, stating that there are no errors generated above. I´d suggest removing this if it is the case
            print("Error — \(error)")
         }
         
