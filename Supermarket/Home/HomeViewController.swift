@@ -25,18 +25,19 @@ class HomeViewController: UIViewController {
             
                if path.status == .satisfied {
                    print("Estás conectado a la red")
-               
+                   // sguzmanm: For readability, I suggest making an early return here or somwthing similar (since I don´t use swift I´m not sure if this changes the behaviour of your code). WIth this you wouldn´t need the else statement down and your code would be more clear. I´m not saying the implementation is wrong, just a suggestion
+                   // return
                } else {
                    print("No estás conectado a la red")
                
-               DispatchQueue.main.async {
+                   // sguzmanm: Be careful with indentation, it makes your code clearer and less confusing to read
+                   DispatchQueue.main.async {
                               let VC = self.storyboard!.instantiateViewController(withIdentifier: "NotConnectionId") as! NotConection
-                VC.modalPresentationStyle = .fullScreen
-                VC.manager = self.manager
-                                            self.present(VC, animated: true, completion: nil)
-                                        
-                                        self.show(VC, sender: self)
-                           }
+                   VC.modalPresentationStyle = .fullScreen
+                   VC.manager = self.manager
+                   self.present(VC, animated: true, completion: nil)
+                   self.show(VC, sender: self)
+                }
             
             }
            }
@@ -61,6 +62,7 @@ class HomeViewController: UIViewController {
         
     }
     
+    // sguzmanm: Why is this commented?
   /*  @IBOutlet weak var summaryLabel: UILabel!{
         didSet {
                    summaryLabel.text = "Registros en la base: \(0)\r\nÚltimo registro: nil"
