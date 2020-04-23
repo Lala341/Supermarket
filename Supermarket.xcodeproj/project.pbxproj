@@ -173,6 +173,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D38C1FE4244C55A200B7A6C8 /* Conectivity */ = {
+			isa = PBXGroup;
+			children = (
+				D38C1FDC244C26ED00B7A6C8 /* NotConection.swift */,
+				D38C1FD6244B64DC00B7A6C8 /* Reachability.swift */,
+			);
+			path = Conectivity;
+			sourceTree = "<group>";
+		};
 		D38EA945243916A4003E0EF3 /* DataControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,8 +233,7 @@
 				D3DBE401240B4DAD00E5A29E /* LaunchScreen.storyboard */,
 				D3DBE404240B4DAD00E5A29E /* Info.plist */,
 				D38EA945243916A4003E0EF3 /* DataControllers */,
-				D38C1FD6244B64DC00B7A6C8 /* Reachability.swift */,
-				D38C1FDC244C26ED00B7A6C8 /* NotConection.swift */,
+				D38C1FE4244C55A200B7A6C8 /* Conectivity */,
 			);
 			path = Supermarket;
 			sourceTree = "<group>";
