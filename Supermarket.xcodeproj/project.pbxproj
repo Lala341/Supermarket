@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D30C3D15245391FD00BB96E7 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30C3D14245391FD00BB96E7 /* TabBarViewController.swift */; };
 		D34FED6D24395487005E9BBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D34FED6C24395487005E9BBE /* Assets.xcassets */; };
 		D34FED6F24395F9B005E9BBE /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34FED6E24395F9B005E9BBE /* ProductTableViewCell.swift */; };
 		D34FED712439677C005E9BBE /* ProductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34FED702439677C005E9BBE /* ProductsTableViewController.swift */; };
@@ -56,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D30C3D14245391FD00BB96E7 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		D34FED6C24395487005E9BBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D34FED6E24395F9B005E9BBE /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		D34FED702439677C005E9BBE /* ProductsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewController.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				D3DBE404240B4DAD00E5A29E /* Info.plist */,
 				D38EA945243916A4003E0EF3 /* DataControllers */,
 				D38C1FE4244C55A200B7A6C8 /* Conectivity */,
+				D30C3D14245391FD00BB96E7 /* TabBarViewController.swift */,
 			);
 			path = Supermarket;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				D3DBE3F9240B4DA800E5A29E /* SceneDelegate.swift in Sources */,
 				D35A08122449D9D2005CC7BB /* StoreCoreDataManager.swift in Sources */,
 				D34FED732439A9C8005E9BBE /* ProductsCartTableViewController.swift in Sources */,
+				D30C3D15245391FD00BB96E7 /* TabBarViewController.swift in Sources */,
 				D38EA947243918B2003E0EF3 /* StartViewController.swift in Sources */,
 				D37B89B0240B52EB00281998 /* MapViewController.swift in Sources */,
 				D35A08142449DBB4005CC7BB /* ProductCoreDataManager.swift in Sources */,

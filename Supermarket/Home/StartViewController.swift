@@ -11,7 +11,7 @@ import Network
 
 class StartViewController: UIViewController {
     var counter = 0;
-    public let manager = CoreDataManager();
+    var manager = CoreDataManager();
     var usermanager = UserCoreDataManager();
     var productmanager = ProductCoreDataManager();
     let networkMonitor = NWPathMonitor()
@@ -22,6 +22,9 @@ class StartViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
+            self.nextView()
+        })
         do {
         
         networkMonitor.pathUpdateHandler = { path in
@@ -55,29 +58,28 @@ class StartViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        if segue.destination is ProductsTableViewController
+        if segue.destination is TabBarViewController
         {
-            let vc = segue.destination as? ProductsTableViewController
+            let vc = segue.destination as? TabBarViewController
             vc?.manager = manager
         }
-        else if segue.destination is ProductsTableView
-        {
-            let vc = segue.destination as? ProductsTableView
-            vc?.manager = manager
-        }
+    
         else if segue.destination is NotConection
         {
             let vc = segue.destination as? NotConection
             vc?.manager = manager
         }
-        else if segue.destination is MapViewController
-        {
-            let vc = segue.destination as? MapViewController
-            vc?.manager = manager
-        }
+        
         
     }
-    
+    func nextView(){
+        
+        let VC = self.storyboard!.instantiateViewController(withIdentifier: "TabBarView") as! TabBarViewController
+        VC.modalPresentationStyle = .fullScreen
+         self.present(VC, animated: true, completion: nil)
+         self.show(VC, sender: self)
+        
+    }
   /*  @IBOutlet weak var summaryLabel: UILabel!{
         didSet {
                    summaryLabel.text = "Registros en la base: \(0)\r\nÚltimo registro: nil"
