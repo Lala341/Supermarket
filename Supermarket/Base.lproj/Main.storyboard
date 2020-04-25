@@ -1399,7 +1399,7 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
             <objects>
                 <tableViewController id="bDR-sg-ohs" customClass="ProductsTableViewController" customModule="Supermarket" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="bottom" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="93" sectionHeaderHeight="93" sectionFooterHeight="28" id="4FR-p1-YFO">
-                        <rect key="frame" x="0.0" y="0.0" width="385" height="383"/>
+                        <rect key="frame" x="0.0" y="0.0" width="385" height="406"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -2555,7 +2555,7 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                                     <outlet property="photo" destination="RbB-Pu-wS8" id="4PR-Q7-qwW"/>
                                     <outlet property="price" destination="hWW-6F-FVu" id="6Ks-9K-3LC"/>
                                     <outlet property="product" destination="2Kd-jw-AS8" id="Y68-VI-s8Z"/>
-                                    <segue destination="4KH-ei-xq4" kind="show" identifier="ShowProducts" id="0fC-bF-KJe"/>
+                                    <segue destination="4KH-ei-xq4" kind="show" identifier="ShowProducts" id="yg3-Se-Efb"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -2599,13 +2599,6 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                         <rect key="frame" x="0.0" y="0.0" width="380" height="494"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fk5-1t-vxX">
-                                <rect key="frame" x="-2" y="49" width="385" height="396"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <connections>
-                                    <segue destination="bDR-sg-ohs" kind="embed" id="Tbf-tC-caP"/>
-                                </connections>
-                            </containerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Products" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crK-8b-mic">
                                 <rect key="frame" x="30" y="20" width="69" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2613,6 +2606,13 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fk5-1t-vxX">
+                                <rect key="frame" x="-3" y="-72" width="385" height="517"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="bDR-sg-ohs" kind="embed" id="Tbf-tC-caP"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Ksr-9L-mh5"/>
@@ -2622,7 +2622,7 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eLa-Ky-wpc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1571.2" y="3305.8470764617696"/>
+            <point key="canvasLocation" x="1569.5999999999999" y="3304.9475262368819"/>
         </scene>
     </scenes>
     <resources>
@@ -2633,8 +2633,8 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
         <image name="arrow.left" catalog="system" width="64" height="48"/>
         <image name="arrow.right" catalog="system" width="64" height="48"/>
         <image name="camera.fill" catalog="system" width="64" height="48"/>
-        <image name="cart" catalog="system" width="64" height="50"/>
         <image name="cart" width="399" height="400"/>
+        <image name="cart" catalog="system" width="64" height="50"/>
         <image name="cart.badge.plus" catalog="system" width="64" height="48"/>
         <image name="cart.fill" catalog="system" width="64" height="50"/>
         <image name="checkmark.rectangle.fill" catalog="system" width="64" height="46"/>
