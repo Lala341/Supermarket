@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		30BF857561709F0FBFCA7835 /* Pods_SupermarketTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6ECC0352CA376DAA6434B5A /* Pods_SupermarketTests.framework */; };
 		4D5C1609D9CEF9E551C99B71 /* Pods_Supermarket_SupermarketUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF86FE7C219563DEE23F2C59 /* Pods_Supermarket_SupermarketUITests.framework */; };
+		B1ABEBEA24540A37000ED439 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ABEBE924540A37000ED439 /* LoginViewController.swift */; };
 		D30C3D15245391FD00BB96E7 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30C3D14245391FD00BB96E7 /* TabBarViewController.swift */; };
 		D34FED6D24395487005E9BBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D34FED6C24395487005E9BBE /* Assets.xcassets */; };
 		D34FED6F24395F9B005E9BBE /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34FED6E24395F9B005E9BBE /* ProductTableViewCell.swift */; };
@@ -65,6 +66,7 @@
 		8384B162E529C7E211D8987C /* Pods-Supermarket-SupermarketUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Supermarket-SupermarketUITests.debug.xcconfig"; path = "Target Support Files/Pods-Supermarket-SupermarketUITests/Pods-Supermarket-SupermarketUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8691A0DEA2BDB3122E30D4C7 /* Pods-Supermarket-SupermarketUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Supermarket-SupermarketUITests.release.xcconfig"; path = "Target Support Files/Pods-Supermarket-SupermarketUITests/Pods-Supermarket-SupermarketUITests.release.xcconfig"; sourceTree = "<group>"; };
 		92317418731EFAAEB94CBFEA /* Pods-SupermarketTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SupermarketTests.release.xcconfig"; path = "Target Support Files/Pods-SupermarketTests/Pods-SupermarketTests.release.xcconfig"; sourceTree = "<group>"; };
+		B1ABEBE924540A37000ED439 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B6ECC0352CA376DAA6434B5A /* Pods_SupermarketTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SupermarketTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D30C3D14245391FD00BB96E7 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		D34FED6C24395487005E9BBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -146,6 +148,14 @@
 				92317418731EFAAEB94CBFEA /* Pods-SupermarketTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		B1ABEBE8245409DE000ED439 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B1ABEBE924540A37000ED439 /* LoginViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		D35A081C244A72A8005CC7BB /* Product */ = {
@@ -253,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				D39FA1982453B23300FCFE66 /* ProductRequest.swift */,
+				B1ABEBE8245409DE000ED439 /* Login */,
 				D35A0822244A7467005CC7BB /* Home */,
 				D35A0821244A7332005CC7BB /* Camera */,
 				D35A0820244A7320005CC7BB /* Map */,
@@ -517,6 +528,7 @@
 				D38C1FD7244B64DC00B7A6C8 /* Reachability.swift in Sources */,
 				D34FED6F24395F9B005E9BBE /* ProductTableViewCell.swift in Sources */,
 				D34FED712439677C005E9BBE /* ProductsTableViewController.swift in Sources */,
+				B1ABEBEA24540A37000ED439 /* LoginViewController.swift in Sources */,
 				D38EA9442438FDB3003E0EF3 /* CoreDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

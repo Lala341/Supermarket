@@ -72,6 +72,7 @@ class StartViewController: UIViewController {
         
         
     }
+    
     func nextView(){
         
         let VC = self.storyboard!.instantiateViewController(withIdentifier: "TabBarView") as! TabBarViewController
