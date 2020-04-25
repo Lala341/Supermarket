@@ -14,7 +14,8 @@ class ProductsTableViewController: UITableViewController {
     var productmanager = ProductCoreDataManager()
     var products = [ProductRequest]()
     var delegate: ProductsTableView!
-    
+    var storeTotal: StoreRequest!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Uncomment the following line to preserve selection between presentations
@@ -69,7 +70,7 @@ class ProductsTableViewController: UITableViewController {
        // products = produ
         print("1")
         var produ: [ProductRequest] = []
-        let url = URL(string: "http://ec2-18-212-16-222.compute-1.amazonaws.com:8081/products")!
+        let url = URL(string: "http://ec2-18-212-16-222.compute-1.amazonaws.com:8081/stores/\(storeTotal.id)/products")!
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 print("error: \(error)")

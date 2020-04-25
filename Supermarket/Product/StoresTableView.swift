@@ -24,6 +24,8 @@ class StoresTableView: UIViewController {
         element = true;
         data.setTitle("Almacenado", for: UIControl.State())
     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        //updateUI()

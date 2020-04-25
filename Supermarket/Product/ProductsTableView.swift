@@ -13,7 +13,8 @@ class ProductsTableView: UIViewController {
     
     public var manager: CoreDataManager!
     var cartmanager = CartCoreDataManager()
-    
+    var storeTotal: StoreRequest!
+
     let networkMonitor = NWPathMonitor()
     var element = false;
     @IBOutlet weak var data: UIButton!
@@ -71,6 +72,7 @@ class ProductsTableView: UIViewController {
             let vc = segue.destination as? ProductsTableViewController
             vc?.manager = manager
             vc?.delegate = self
+            vc?.storeTotal = storeTotal
             
             
         }

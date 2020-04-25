@@ -22,31 +22,15 @@ class StoreTableViewCell: UITableViewCell {
     
     @IBOutlet weak var photo: UIImageView!
     
-    
-    
-    
+   
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    
-    @IBAction func addCart(_ sender: UIButton) {
-      /*  let photos = ["prod1", "prod2", "prod3","prod4","prod5","prod1", "prod2", "prod3","prod4","prod5"]
-        let names = ["Papas Lays", "Colombiana", "Arroz diana", "Arequipe", "Crema de leche", "Papas Lays", "Colombiana", "Arroz diana", "Arequipe", "Crema de leche"]
-        let precios = [1204, 2000,450,245,900,8000,1000,2300,2400,1200]
-        let opciones = [0,1]
-        for  i in opciones {
-            manager.createProduct(name : names[i], price : Double(precios[i]), sku : names[i], description : "Producto de alta calidad", photo : photos[i] )  {
-                
-            }*/
-        print("add")
-        
-
-    }
-    
+ 
     
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+     super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }

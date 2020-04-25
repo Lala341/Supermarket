@@ -13,7 +13,6 @@ class ProductTableViewCell: UITableViewCell {
     public var manager : CoreDataManager!
     var productTotal: ProductRequest!
     var delegate: ProductsTableView!
-
     var cartmanager = CartCoreDataManager()
     
     @IBOutlet weak var product: UILabel!
