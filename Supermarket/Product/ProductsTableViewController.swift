@@ -68,9 +68,9 @@ class ProductsTableViewController: UITableViewController {
         
        // let produ = productmanager.fetchProduts(container: manager.getContainer())
        // products = produ
-        print("1")
+        print(storeTotal.id!)
         var produ: [ProductRequest] = []
-        let url = URL(string: "http://ec2-18-212-16-222.compute-1.amazonaws.com:8081/stores/\(storeTotal.id)/products")!
+        let url = URL(string: "http://ec2-18-212-16-222.compute-1.amazonaws.com:8081/stores/\(storeTotal.id!)/products")!
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 print("error: \(error)")
