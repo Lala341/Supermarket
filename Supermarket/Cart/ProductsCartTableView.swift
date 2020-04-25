@@ -19,7 +19,7 @@ class ProductsCartTableView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       updateUI()
+     //  updateUI()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
@@ -44,15 +44,23 @@ class ProductsCartTableView: UIViewController {
     }
   func updateUI() {
           //3
-      let cart = cartmanager.fetchUserCart(container: manager.getContainer())
-             
+      let havecart = cartmanager.haveCart(container: manager.getContainer())
+      
+       
+       print(havecart)
+    
       var price : Double = 0
+    if(havecart == true){
+        let cart = cartmanager.fetchUserCart(container: manager.getContainer())
+           print(cart)
+        
+        for i in cart!.products!
+        {
+         price = price + (i as! Product).price
+            
+        }
+    }
              
-             for i in cart.products!
-             {
-              price = price + (i as! Product).price
-                 
-             }
           
       resumeCart.title = "$ \(price)"
   }

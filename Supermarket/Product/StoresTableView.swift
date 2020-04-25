@@ -84,7 +84,7 @@ class StoresTableView: UIViewController {
              
       var price : Double = 0
              
-             for i in cart.products!
+    for i in cart!.products!
              {
               price = price + (i as! Product).price
                  

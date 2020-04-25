@@ -11,7 +11,7 @@ import CoreData
 class CartCoreDataManager {
     //2
   
-    func fetchUserCart(container : NSPersistentContainer) -> ShoppingList {
+    func fetchUserCart(container : NSPersistentContainer) -> ShoppingList? {
         //1
         let fetchRequest : NSFetchRequest<ShoppingList> = ShoppingList.fetchRequest()
         
@@ -20,16 +20,39 @@ class CartCoreDataManager {
             //2
             let result = try container.viewContext.fetch(fetchRequest)
             
+            if(result.count==0){
+                return nil
+            }
             
-            return result.last ?? ShoppingList()
+            return (result.last ?? ShoppingList())
         } catch {
             print("El error obteniendo el carrito del usuario(s) \(error)")
          }
      
           //3
-         return ShoppingList()
+         return nil
     }
-    
+    func haveCart(container : NSPersistentContainer) -> Bool {
+        //1
+        let fetchRequest : NSFetchRequest<ShoppingList> = ShoppingList.fetchRequest()
+        
+        do {
+      
+            //2
+            let result = try container.viewContext.fetch(fetchRequest)
+            
+            if(result.count==0){
+                return false
+            }
+            
+            return true
+        } catch {
+            print("El error obteniendo el carrito del usuario(s) \(error)")
+         }
+     
+          //3
+         return false
+    }
     func addProductCart(container : NSPersistentContainer, name : String, productf : ProductRequest,  completion: @escaping() -> Void) {
         // 2
         let context = container.viewContext

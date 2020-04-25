@@ -20,7 +20,6 @@ class StartViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
             self.nextView()
@@ -62,6 +61,8 @@ class StartViewController: UIViewController {
         {
             let vc = segue.destination as? TabBarViewController
             vc?.manager = manager
+            
+           
         }
     
         else if segue.destination is NotConection
@@ -70,12 +71,22 @@ class StartViewController: UIViewController {
             vc?.manager = manager
         }
         
+        else if segue.destination is MapViewController
+               {
+                   let vc = segue.destination as? MapViewController
+                   vc?.manager = manager
+               }
+        
         
     }
     
     func nextView(){
         
         let VC = self.storyboard!.instantiateViewController(withIdentifier: "TabBarView") as! TabBarViewController
+        VC.manager = manager
+       print("dos")
+                         print(manager)
+       
         VC.modalPresentationStyle = .fullScreen
          self.present(VC, animated: true, completion: nil)
          self.show(VC, sender: self)

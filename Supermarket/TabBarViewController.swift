@@ -9,35 +9,32 @@
 import UIKit
 
 class TabBarViewController: UITabBarController {
-    var manager = CoreDataManager();
+     public var manager : CoreDataManager!;
+       
     override func viewDidLoad() {
         super.viewDidLoad()
-
+           print("uno11")
+           print(self.viewControllers)
+        var uno = (self.viewControllers![0] as! MapViewController)
+           uno.manager = manager
+           print(uno.manager)
+        
+        
+        let dos = (self.viewControllers![1] as! StoresTableView)
+                  dos.manager = manager
+        
+        let tres = (self.viewControllers![2] as! ProductsCartTableView)
+        tres.manager = manager
+        
+        let cuatro = (self.viewControllers![3] as! ProductsTableView)
+        cuatro.manager = manager
+        
+        let cinco = (self.viewControllers![4] as! ProfileViewController)
+        cinco.manager = manager
         // Do any additional setup after loading the view.
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
        {
-           if segue.destination is ProductsTableViewController
-           {
-               let vc = segue.destination as? ProductsTableViewController
-               vc?.manager = manager
-           }
-           else if segue.destination is ProductsTableView
-           {
-               let vc = segue.destination as? ProductsTableView
-               vc?.manager = manager
-           }
-           else if segue.destination is NotConection
-           {
-               let vc = segue.destination as? NotConection
-               vc?.manager = manager
-           }
-           else if segue.destination is MapViewController
-           {
-               let vc = segue.destination as? MapViewController
-               vc?.manager = manager
-           }
-           
        }
 
     /*

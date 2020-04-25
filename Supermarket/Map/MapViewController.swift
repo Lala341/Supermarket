@@ -16,6 +16,8 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("perro")
+        print(manager)
         let location = CLLocationCoordinate2D(latitude: 4.627153,
             longitude:  -74.106616)
         
@@ -45,9 +47,24 @@ class MapViewController: UIViewController {
             let vc = segue.destination as? ProductsTableView
             vc?.manager = manager
         }
+         else if segue.destination is ProductsCartTableViewController
+         {
+             let vc = segue.destination as? ProductsCartTableViewController
+             vc?.manager = manager
+         }
+         else if segue.destination is ProductsCartTableView
+         {
+             let vc = segue.destination as? ProductsCartTableView
+             vc?.manager = manager
+         }
         else if segue.destination is NotConection
         {
             let vc = segue.destination as? NotConection
+            vc?.manager = manager
+        }
+        else if segue.destination is MapViewController
+        {
+            let vc = segue.destination as? MapViewController
             vc?.manager = manager
         }
         

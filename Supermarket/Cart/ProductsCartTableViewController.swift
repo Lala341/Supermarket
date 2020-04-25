@@ -21,7 +21,7 @@ class ProductsCartTableViewController: UITableViewController {
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         loadProducts()
-        updateUI()
+       // updateUI()
               
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
@@ -66,16 +66,26 @@ class ProductsCartTableViewController: UITableViewController {
        
     private func loadProducts() {
       
+         print(manager)
+         let havecart = cartmanager.haveCart(container: manager.getContainer())
+       
         
-        let cart = cartmanager.fetchUserCart(container: manager.getContainer())
-        
+        print(havecart)
         var produ  : [Product] = []
         
-        for i in cart.products!
-        {
-            produ.append(i as! Product)
+        
+        if(havecart == true){
             
+             let cart = cartmanager.fetchUserCart(container: manager.getContainer())
+            
+            
+            for i in cart!.products!
+            {
+                produ.append(i as! Product)
+                
+            }
         }
+        
      
         print(produ)
         products = produ
@@ -87,7 +97,7 @@ class ProductsCartTableViewController: UITableViewController {
                
         var price : Double = 0
                
-               for i in cart.products!
+        for i in cart!.products!
                {
                 price = price + (i as! Product).price
                    
