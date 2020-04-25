@@ -26,7 +26,7 @@ class ProductsTableView: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-       updateUI()
+       //updateUI()
         do{
             if(element==false){ DispatchQueue.main.async {
                 self.networkMonitor.pathUpdateHandler = { path in

@@ -1399,15 +1399,15 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
             <objects>
                 <tableViewController id="bDR-sg-ohs" customClass="ProductsTableViewController" customModule="Supermarket" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="bottom" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="93" sectionHeaderHeight="93" sectionFooterHeight="28" id="4FR-p1-YFO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="380" height="469"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ProductTableViewCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProductTableViewCell" rowHeight="150" id="lgf-bn-o4S" customClass="ProductTableViewCell" customModule="Supermarket" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="150"/>
+                                <rect key="frame" x="0.0" y="28" width="380" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lgf-bn-o4S" id="wIY-7d-FXg">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="380" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRK-4Q-Zfh">
@@ -1456,7 +1456,7 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TtF-Ae-aYH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-459" y="1111"/>
+            <point key="canvasLocation" x="-71" y="4719"/>
         </scene>
         <!--Products Cart Table View Controller-->
         <scene sceneID="MZV-nu-gfO">
@@ -2236,7 +2236,7 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ve2-zi-fhR">
                                 <rect key="frame" x="51" y="331" width="273" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GuF-Zy-GOU">
@@ -2377,7 +2377,7 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
         <!--Whish-->
         <scene sceneID="Cpm-Jj-DMb">
             <objects>
-                <viewController id="IEW-E7-oLj" customClass="ProductsCartTableView" customModule="Supermarket" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="IEW-E7-oLj" customClass="ProductsTableView" customModule="Supermarket" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AcM-Ag-vaK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2386,7 +2386,7 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                                 <rect key="frame" x="0.0" y="149" width="380" height="469"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
-                                    <segue destination="eMu-RZ-Hvk" kind="embed" id="T60-27-t0t"/>
+                                    <segue destination="bDR-sg-ohs" kind="embed" id="vrl-6L-aDf"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -2508,8 +2508,7 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
         <image name="x.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ClX-IM-QPh"/>
-        <segue reference="Fjw-ez-xOB"/>
+        <segue reference="vrl-6L-aDf"/>
         <segue reference="a27-bI-gdC"/>
         <segue reference="LCN-kO-pep"/>
         <segue reference="QU6-gQ-YyL"/>

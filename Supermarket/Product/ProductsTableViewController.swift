@@ -5,7 +5,6 @@
 //  Created by Laura Isabella Forero Camacho on 4/04/20.
 //  Copyright © 2020 Laura Isabella Forero Camacho. All rights reserved.
 //
-
 import UIKit
 
 class ProductsTableViewController: UITableViewController {
@@ -13,7 +12,7 @@ class ProductsTableViewController: UITableViewController {
     public var manager: CoreDataManager!
     var cartmanager = CartCoreDataManager()
     var productmanager = ProductCoreDataManager()
-    var products = [Product]()
+    var products = [ProductRequest]()
     var delegate: ProductsTableView!
     
     override func viewDidLoad() {
@@ -56,7 +55,9 @@ class ProductsTableViewController: UITableViewController {
         namep = product.photo
         cell.photo.image =  UIImage(named : namep ?? "prod1")
         cell.price.text =  "$ \(product.price)"
+        
         cell.productTotal = product
+        
         
         return cell
     }
@@ -64,11 +65,51 @@ class ProductsTableViewController: UITableViewController {
     
     private func loadProducts() {
         
-        let produ = productmanager.fetchProduts(container: manager.getContainer())
-        
-        
-        products = produ
-        
+       // let produ = productmanager.fetchProduts(container: manager.getContainer())
+       // products = produ
+        print("1")
+        var produ: [ProductRequest] = []
+        let url = URL(string: "http://ec2-18-212-16-222.compute-1.amazonaws.com:8081/products")!
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                print("error: \(error)")
+            } else {
+               
+                
+                if let data = data, let dataString = String(data: data, encoding: .utf8) {
+                    print("data: \(dataString)")
+                   let dataf = dataString.data(using: .utf8)!
+                    do {
+                        if let jsonArray = try JSONSerialization.jsonObject(with: dataf, options : .allowFragments) as? [Dictionary<String,Any>]
+                        {
+                           print(jsonArray) // use the json here
+
+                            var temp : ProductRequest!
+                            
+                            for i in jsonArray{
+                                print(i["name"]!)
+                                temp = ProductRequest(name: i["name"]! as! String, price: Int(i["price"]! as! Double), sku: i["sku"]! as! String, descrip: i["description"]! as! String, photo: "prod1", id: i["_id"]! as! String, store: i["store_id"]! as! Int, cantidad: 0 )
+                                
+                                produ.append(temp)
+                                
+                            }
+                            self.products = produ
+                            print(self.products)
+                            DispatchQueue.main.async {
+                                self.tableView.reloadData()
+                            }
+                            
+                            
+                        } else {
+                            print("bad json")
+                        }
+                    } catch let error as NSError {
+                        print(error)
+                    }
+                }
+            }
+        }
+        task.resume()
     }
    
     /*

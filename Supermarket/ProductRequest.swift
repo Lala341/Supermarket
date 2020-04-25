@@ -8,16 +8,27 @@
 
 import Foundation
 
-struct ProductRequest: Codable {
+class ProductRequest {
     
-    let name: String?
-    let price: Int?
-    let sku: String?
-    let descrip: String?
-    let photo: String?
-    let id: String?
-    let store: Int?
+    var name: String?
+    var price: Int?
+    var sku: String?
+    var descrip: String?
+    var photo: String?
+    var id: String?
+    var store: Int?
+    var cantidad: Int?
     
+    init(name: String, price: Int, sku: String, descrip: String, photo: String, id: String, store: Int, cantidad: Int) { // Constructor
+        self.name = name
+        self.price = price
+        self.sku = sku
+        self.descrip = descrip
+        self.photo = photo
+        self.id = id
+        self.store = store
+        self.cantidad = cantidad
+    }
     private enum CodingKeys: String, CodingKey {
         case store = "store_id"
         case id = "_id"

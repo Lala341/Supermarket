@@ -30,15 +30,32 @@ class CartCoreDataManager {
          return ShoppingList()
     }
     
-    func addProductCart(container : NSPersistentContainer, name : String, productf : Product,  completion: @escaping() -> Void) {
+    func addProductCart(container : NSPersistentContainer, name : String, productf : ProductRequest,  completion: @escaping() -> Void) {
         // 2
         let context = container.viewContext
         
         let fetchRequest : NSFetchRequest<ShoppingList> = ShoppingList.fetchRequest()
         let fetchRequest2 : NSFetchRequest<Product> = Product.fetchRequest()
-              
+    
+        
+        let shoppy = ShoppingList(context: context)
+                  shoppy.name = "Cart"
+                  shoppy.tag = "Mercado"
+                  shoppy.products = []
+                  
+                  let product = Product(context: context)
+        product.name = productf.name
+        product.price = Double(productf.price!)
+        product.sku = productf.sku
+        product.descrip = productf.descrip
+        product.id = productf.id
+        product.photo = productf.photo
+        product.shoppingList = shoppy
+        product.cantidad = Int16(Int64(0))
         
         do {
+            try context.save()
+            
            let result = try context.fetch(fetchRequest )
         let result2 = try context.fetch(fetchRequest2)
             

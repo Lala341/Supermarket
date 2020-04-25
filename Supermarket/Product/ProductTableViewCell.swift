@@ -11,7 +11,7 @@ import UIKit
 class ProductTableViewCell: UITableViewCell {
     
     public var manager : CoreDataManager!
-    var productTotal: Product!
+    var productTotal: ProductRequest!
     var delegate: ProductsTableView!
 
     var cartmanager = CartCoreDataManager()
