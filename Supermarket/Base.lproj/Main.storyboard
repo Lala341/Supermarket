@@ -1074,17 +1074,17 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
             <objects>
                 <tableViewController id="Sul-yU-ZvW" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="amM-X5-a3H">
-                        <rect key="frame" x="0.0" y="0.0" width="380" height="514"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <sections>
                             <tableViewSection headerTitle="" footerTitle="" id="E1j-cy-ObN">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="wZ8-Na-tDu">
-                                        <rect key="frame" x="0.0" y="28" width="380" height="100"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wZ8-Na-tDu" id="81E-eM-0kK">
-                                            <rect key="frame" x="0.0" y="0.0" width="380" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="store" translatesAutoresizingMaskIntoConstraints="NO" id="S4W-jY-ffe">
@@ -1107,10 +1107,10 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="ngC-JQ-F7j">
-                                        <rect key="frame" x="0.0" y="128" width="380" height="100"/>
+                                        <rect key="frame" x="0.0" y="128" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ngC-JQ-F7j" id="a9O-qC-J8N">
-                                            <rect key="frame" x="0.0" y="0.0" width="380" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="store" translatesAutoresizingMaskIntoConstraints="NO" id="qf9-tm-zW3">
@@ -1133,10 +1133,10 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="100" id="ygu-mq-snB">
-                                        <rect key="frame" x="0.0" y="228" width="380" height="100"/>
+                                        <rect key="frame" x="0.0" y="228" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ygu-mq-snB" id="nrD-L9-w13">
-                                            <rect key="frame" x="0.0" y="0.0" width="380" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="store" translatesAutoresizingMaskIntoConstraints="NO" id="XG7-O4-oqO">
@@ -1169,7 +1169,7 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="udu-0f-Jb8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="730" y="3194"/>
+            <point key="canvasLocation" x="1658" y="3193"/>
         </scene>
         <!--Alkosto 68-->
         <scene sceneID="KGf-y4-coP">
@@ -1596,7 +1596,7 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
         <!--Search-->
         <scene sceneID="83i-7y-c6n">
             <objects>
-                <viewController id="8MU-be-5fO" customClass="ProductsTableView" customModule="Supermarket" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8MU-be-5fO" customClass="StoresTableView" customModule="Supermarket" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UIB-Ou-WvW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1605,7 +1605,7 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                                 <rect key="frame" x="-3" y="104" width="380" height="514"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
-                                    <segue destination="Sul-yU-ZvW" kind="embed" id="4i5-UH-nCc"/>
+                                    <segue destination="LGl-dC-I9b" kind="embed" id="GcV-4R-Z6a"/>
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ya-Rh-unB">
@@ -2464,6 +2464,61 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
             </objects>
             <point key="canvasLocation" x="725.60000000000002" y="2532.6836581709149"/>
         </scene>
+        <!--Stores Table View Controller-->
+        <scene sceneID="QMy-p4-rEI">
+            <objects>
+                <tableViewController id="LGl-dC-I9b" customClass="StoresTableViewController" customModule="Supermarket" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="bottom" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="93" sectionHeaderHeight="93" sectionFooterHeight="28" id="3o1-Se-lrg">
+                        <rect key="frame" x="0.0" y="0.0" width="380" height="514"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ProductTableViewCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProductTableViewCell" rowHeight="150" id="nl7-uy-DrB" customClass="StoreTableViewCell" customModule="Supermarket" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="380" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nl7-uy-DrB" id="eln-Qs-mvs">
+                                    <rect key="frame" x="0.0" y="0.0" width="380" height="150"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Kd-jw-AS8">
+                                            <rect key="frame" x="158" y="11" width="206" height="29"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWW-6F-FVu">
+                                            <rect key="frame" x="158" y="48" width="206" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RbB-Pu-wS8">
+                                            <rect key="frame" x="16" y="2" width="121" height="88"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xP5-Pc-ng9">
+                                            <rect key="frame" x="301" y="-125" width="227" height="93"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Button" image="cart"/>
+                                        </button>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="photo" destination="RbB-Pu-wS8" id="4PR-Q7-qwW"/>
+                                    <outlet property="price" destination="hWW-6F-FVu" id="6Ks-9K-3LC"/>
+                                    <outlet property="product" destination="2Kd-jw-AS8" id="Y68-VI-s8Z"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="21b-X6-c1x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="726" y="3239"/>
+        </scene>
     </scenes>
     <resources>
         <image name="500px-Codigo_QR" width="179" height="179"/>
@@ -2472,8 +2527,8 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
         <image name="Tab - Fixed Tabs - Text &amp; Icons - Flat" width="360" height="81"/>
         <image name="arrow.left" catalog="system" width="64" height="48"/>
         <image name="arrow.right" catalog="system" width="64" height="48"/>
-        <image name="cart" width="399" height="400"/>
         <image name="cart" catalog="system" width="64" height="50"/>
+        <image name="cart" width="399" height="400"/>
         <image name="cart.badge.plus" catalog="system" width="64" height="48"/>
         <image name="cart.fill" catalog="system" width="64" height="50"/>
         <image name="checkmark.rectangle.fill" catalog="system" width="64" height="46"/>

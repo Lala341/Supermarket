@@ -22,6 +22,10 @@
 		D35A08162449DBC6005CC7BB /* UserCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35A08152449DBC6005CC7BB /* UserCoreDataManager.swift */; };
 		D35A08182449DBF0005CC7BB /* CartCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35A08172449DBF0005CC7BB /* CartCoreDataManager.swift */; };
 		D35A081A2449DDE8005CC7BB /* TransactionCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35A08192449DDE8005CC7BB /* TransactionCoreDataManager.swift */; };
+		D371E3122454A0A500CA2A67 /* StoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371E3112454A0A400CA2A67 /* StoresTableViewController.swift */; };
+		D371E3142454A0BC00CA2A67 /* StoresTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371E3132454A0BC00CA2A67 /* StoresTableView.swift */; };
+		D371E3162454A0D100CA2A67 /* StoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371E3152454A0D100CA2A67 /* StoreTableViewCell.swift */; };
+		D371E3182454A15800CA2A67 /* StoreRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371E3172454A15800CA2A67 /* StoreRequest.swift */; };
 		D37B89B0240B52EB00281998 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37B89AF240B52EB00281998 /* MapViewController.swift */; };
 		D37B89B2240B619C00281998 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37B89B1240B619C00281998 /* CameraViewController.swift */; };
 		D37B89B7240B683B00281998 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D37B89B6240B683B00281998 /* MapKit.framework */; };
@@ -81,6 +85,10 @@
 		D35A08152449DBC6005CC7BB /* UserCoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCoreDataManager.swift; sourceTree = "<group>"; };
 		D35A08172449DBF0005CC7BB /* CartCoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartCoreDataManager.swift; sourceTree = "<group>"; };
 		D35A08192449DDE8005CC7BB /* TransactionCoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionCoreDataManager.swift; sourceTree = "<group>"; };
+		D371E3112454A0A400CA2A67 /* StoresTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoresTableViewController.swift; path = Supermarket/Product/StoresTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		D371E3132454A0BC00CA2A67 /* StoresTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoresTableView.swift; path = Supermarket/Product/StoresTableView.swift; sourceTree = SOURCE_ROOT; };
+		D371E3152454A0D100CA2A67 /* StoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreTableViewCell.swift; sourceTree = "<group>"; };
+		D371E3172454A15800CA2A67 /* StoreRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreRequest.swift; sourceTree = "<group>"; };
 		D37B89AF240B52EB00281998 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D37B89B1240B619C00281998 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		D37B89B6240B683B00281998 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -207,6 +215,16 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		D371E3102454A08000CA2A67 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				D371E3152454A0D100CA2A67 /* StoreTableViewCell.swift */,
+				D371E3132454A0BC00CA2A67 /* StoresTableView.swift */,
+				D371E3112454A0A400CA2A67 /* StoresTableViewController.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
 		D37B89B5240B683B00281998 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,7 +284,9 @@
 		D3DBE3F5240B4DA800E5A29E /* Supermarket */ = {
 			isa = PBXGroup;
 			children = (
+				D371E3102454A08000CA2A67 /* Store */,
 				D39FA1982453B23300FCFE66 /* ProductRequest.swift */,
+				D371E3172454A15800CA2A67 /* StoreRequest.swift */,
 				B1ABEBE8245409DE000ED439 /* Login */,
 				D35A0822244A7467005CC7BB /* Home */,
 				D35A0821244A7332005CC7BB /* Camera */,
@@ -566,7 +586,9 @@
 				D35A081A2449DDE8005CC7BB /* TransactionCoreDataManager.swift in Sources */,
 				D38EA9422438EA68003E0EF3 /* Supermarket.xcdatamodeld in Sources */,
 				D38C1FDB244B87DE00B7A6C8 /* ProductsTableView.swift in Sources */,
+				D371E3162454A0D100CA2A67 /* StoreTableViewCell.swift in Sources */,
 				D35A08162449DBC6005CC7BB /* UserCoreDataManager.swift in Sources */,
+				D371E3122454A0A500CA2A67 /* StoresTableViewController.swift in Sources */,
 				D39FA1992453B23300FCFE66 /* ProductRequest.swift in Sources */,
 				D35A08182449DBF0005CC7BB /* CartCoreDataManager.swift in Sources */,
 				D38C1FE3244C45F300B7A6C8 /* HomeViewController.swift in Sources */,
@@ -580,10 +602,12 @@
 				D35A08122449D9D2005CC7BB /* StoreCoreDataManager.swift in Sources */,
 				D34FED732439A9C8005E9BBE /* ProductsCartTableViewController.swift in Sources */,
 				D30C3D15245391FD00BB96E7 /* TabBarViewController.swift in Sources */,
+				D371E3142454A0BC00CA2A67 /* StoresTableView.swift in Sources */,
 				D38EA947243918B2003E0EF3 /* StartViewController.swift in Sources */,
 				D37B89B0240B52EB00281998 /* MapViewController.swift in Sources */,
 				D35A08142449DBB4005CC7BB /* ProductCoreDataManager.swift in Sources */,
 				D38C1FD7244B64DC00B7A6C8 /* Reachability.swift in Sources */,
+				D371E3182454A15800CA2A67 /* StoreRequest.swift in Sources */,
 				D34FED6F24395F9B005E9BBE /* ProductTableViewCell.swift in Sources */,
 				D34FED712439677C005E9BBE /* ProductsTableViewController.swift in Sources */,
 				B1ABEBEA24540A37000ED439 /* LoginViewController.swift in Sources */,
