@@ -3,13 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		6A170FAC6F7C689E85C3CFCF /* Pods_Supermarket_SupermarketUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7FE6B1CB9B306D6377AD0F /* Pods_Supermarket_SupermarketUITests.framework */; };
 		A6440550E5E0F00FF5A32205 /* Pods_SupermarketTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC6908F25632BF70FA0F7E8 /* Pods_SupermarketTests.framework */; };
 		B146660090DD89D6C94502CC /* Pods_Supermarket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F1C70BFE3BE31769EB2F363 /* Pods_Supermarket.framework */; };
+		B19850B224558789008831D7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19850B124558789008831D7 /* RegisterViewController.swift */; };
 		B1ABEBEA24540A37000ED439 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ABEBE924540A37000ED439 /* LoginViewController.swift */; };
 		D30C3D15245391FD00BB96E7 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30C3D14245391FD00BB96E7 /* TabBarViewController.swift */; };
 		D34FED6D24395487005E9BBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D34FED6C24395487005E9BBE /* Assets.xcassets */; };
@@ -73,6 +74,7 @@
 		8691A0DEA2BDB3122E30D4C7 /* Pods-Supermarket-SupermarketUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Supermarket-SupermarketUITests.release.xcconfig"; path = "Target Support Files/Pods-Supermarket-SupermarketUITests/Pods-Supermarket-SupermarketUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8F1C70BFE3BE31769EB2F363 /* Pods_Supermarket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Supermarket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92317418731EFAAEB94CBFEA /* Pods-SupermarketTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SupermarketTests.release.xcconfig"; path = "Target Support Files/Pods-SupermarketTests/Pods-SupermarketTests.release.xcconfig"; sourceTree = "<group>"; };
+		B19850B124558789008831D7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		B1ABEBE924540A37000ED439 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D30C3D14245391FD00BB96E7 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		D34FED6C24395487005E9BBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				B1ABEBE924540A37000ED439 /* LoginViewController.swift */,
+				B19850B124558789008831D7 /* RegisterViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				D34FED732439A9C8005E9BBE /* ProductsCartTableViewController.swift in Sources */,
 				D30C3D15245391FD00BB96E7 /* TabBarViewController.swift in Sources */,
 				D371E3142454A0BC00CA2A67 /* StoresTableView.swift in Sources */,
+				B19850B224558789008831D7 /* RegisterViewController.swift in Sources */,
 				D38EA947243918B2003E0EF3 /* StartViewController.swift in Sources */,
 				D37B89B0240B52EB00281998 /* MapViewController.swift in Sources */,
 				D35A08142449DBB4005CC7BB /* ProductCoreDataManager.swift in Sources */,

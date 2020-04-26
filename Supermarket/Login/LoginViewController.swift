@@ -23,6 +23,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     var usermanager = UserCoreDataManager();
     let networkMonitor = NWPathMonitor()
     
+    //MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         emailTextField.delegate = self
@@ -54,6 +55,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    //MARK: prepare
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         if segue.destination is TabBarViewController
@@ -67,9 +69,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             let vc = segue.destination as? NotConection
             vc?.manager = manager
         }
-        
-        
     }
+    
     //MARK: UITextFieldDelegate
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // Hide the keyboard.
@@ -116,6 +117,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         task.resume()
     }
     
+    //MARK: Internal functions
     func sha256(_ data: String) -> String{
         let dataData = Data(data.utf8)
         let hashed = SHA256.hash(data: dataData)
