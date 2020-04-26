@@ -58,8 +58,10 @@ class StoresTableViewController: UITableViewController {
         
         namep = store.photo
         print(namep)
-        cell.photo.image = UIImage(url: URL(string: "http://ec2-18-212-16-222.compute-1.amazonaws.com:8082/images/\(namep!)"))
+        cell.photo.image = UIImage(named: "store")
             
+            
+           
             //UIImage(named : namep ?? "prod1")
         cell.price.text =  store.address
         
