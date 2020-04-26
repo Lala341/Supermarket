@@ -1469,6 +1469,19 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                                     <barButtonItem tag="4" title="Empty list." width="311.33334350585938" style="done" id="Tqi-iD-I9F"/>
                                 </items>
                             </toolbar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="empty" translatesAutoresizingMaskIntoConstraints="NO" id="2Pc-y6-wWC">
+                                <rect key="frame" x="30" y="183" width="315" height="270"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNj-d2-Z2B">
+                                <rect key="frame" x="129" y="461" width="117" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Scan a product
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.1019607843" green="0.16078431369999999" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="z2X-LS-JHi"/>
@@ -1478,7 +1491,10 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="buttone" destination="fNj-d2-Z2B" id="dzN-yL-Axm"/>
+                        <outlet property="imagee" destination="2Pc-y6-wWC" id="yrU-3W-8Jz"/>
                         <outlet property="resumeCart" destination="Tqi-iD-I9F" id="3mx-CQ-RH2"/>
+                        <outlet property="table" destination="D0g-Zb-fxi" id="ntQ-79-EIF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n69-HA-GYY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1914,6 +1930,9 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                                 <state key="normal" title="Clean">
                                     <color key="titleColor" red="0.1019607843" green="0.16078431369999999" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="delete" destination="IEW-E7-oLj" eventType="touchUpInside" id="u3T-5E-WTV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvL-b9-vI6">
                                 <rect key="frame" x="155" y="113" width="204" height="21"/>
@@ -1940,6 +1959,19 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                                     <barButtonItem tag="4" title="Empty list." width="311.33334350585938" style="done" id="uZF-HV-73w"/>
                                 </items>
                             </toolbar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="empty" translatesAutoresizingMaskIntoConstraints="NO" id="mJf-Lj-SJI">
+                                <rect key="frame" x="30" y="193" width="315" height="270"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83K-6r-ESM">
+                                <rect key="frame" x="129" y="471" width="132" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Search a product
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.1019607843" green="0.16078431369999999" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="MWm-Mh-ZdC"/>
@@ -1949,7 +1981,10 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="buttone" destination="83K-6r-ESM" id="nQI-uk-yUa"/>
+                        <outlet property="imagee" destination="mJf-Lj-SJI" id="3Fy-Kv-aPY"/>
                         <outlet property="resumeCart" destination="uZF-HV-73w" id="Gkv-u6-YRs"/>
+                        <outlet property="table" destination="bIE-Ub-JuO" id="VPJ-X2-ttu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hho-hh-7eX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2096,6 +2131,19 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                                     <barButtonItem tag="4" title="Empty list." width="311.33334350585938" style="done" id="HtH-g2-b4F"/>
                                 </items>
                             </toolbar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="empty" translatesAutoresizingMaskIntoConstraints="NO" id="44N-OH-0nS">
+                                <rect key="frame" x="33" y="184" width="315" height="270"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6M-gw-vbZ">
+                                <rect key="frame" x="132" y="462" width="132" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Search a product
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.1019607843" green="0.16078431369999999" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="d38-wT-PzF"/>
@@ -2104,6 +2152,11 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                         <color key="badgeColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="buttone" destination="V6M-gw-vbZ" id="OAa-gN-Iaf"/>
+                        <outlet property="imagee" destination="44N-OH-0nS" id="pTf-0J-J6C"/>
+                        <outlet property="table" destination="RP8-ny-uIx" id="eWx-Wc-lNA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7fU-VS-i8x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2273,8 +2326,8 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
         <image name="arrow.left" catalog="system" width="64" height="48"/>
         <image name="arrow.right" catalog="system" width="64" height="48"/>
         <image name="camera.fill" catalog="system" width="64" height="48"/>
-        <image name="cart" catalog="system" width="64" height="50"/>
         <image name="cart" width="399" height="400"/>
+        <image name="cart" catalog="system" width="64" height="50"/>
         <image name="cart.badge.plus" catalog="system" width="64" height="48"/>
         <image name="cart.fill" catalog="system" width="64" height="50"/>
         <image name="checkmark.rectangle.fill" catalog="system" width="64" height="46"/>
@@ -2282,6 +2335,7 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
         <image name="circle.fill" catalog="system" width="64" height="60"/>
         <image name="creditcard" catalog="system" width="64" height="44"/>
         <image name="creditcard.fill" catalog="system" width="64" height="44"/>
+        <image name="empty" width="512" height="512"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>
         <image name="iconName" width="512" height="629"/>
         <image name="iconOnly" width="512" height="512"/>

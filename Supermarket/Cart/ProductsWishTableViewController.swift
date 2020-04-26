@@ -15,7 +15,12 @@ class ProductsWishTableViewController: UITableViewController {
     var cartmanager = CartCoreDataManager();
     var delegate: ProductsWishTableView!
          
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        actualizarTabla()
+        
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Uncomment the following line to preserve selection between presentations

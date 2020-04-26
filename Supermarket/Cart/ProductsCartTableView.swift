@@ -27,6 +27,7 @@ class ProductsCartTableView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     updateUIIni()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
@@ -49,12 +50,18 @@ class ProductsCartTableView: UIViewController {
             vc?.delegate = self
         }
     }
+    
+    @IBOutlet weak var table: UIView!
+    @IBOutlet weak var imagee: UIImageView!
+    @IBOutlet weak var buttone: UILabel!
     @IBAction func delete(){
         cartmanager.cleanCart(container: manager.getContainer(),  completion: {[weak self] in
          //2
          print("clean")
             self?.updateUI()
-
+            self?.table.isHidden = true
+self?.imagee.isHidden = false
+    self?.buttone.isHidden = false
         })
     }
     
@@ -76,9 +83,15 @@ class ProductsCartTableView: UIViewController {
                
            }
        }
-       if(price == 0){
+      if(price == 0){
+           self.table.isHidden = true
+           self.imagee.isHidden = false
+           self.buttone.isHidden = false
            resumeCart.title = "Empty list."
        }else{
+           self.table.isHidden = false
+           self.imagee.isHidden = true
+           self.buttone.isHidden = true
            resumeCart.title = "$ \(price)"
        }
            
@@ -103,8 +116,14 @@ class ProductsCartTableView: UIViewController {
         }
     }
     if(price == 0){
+        self.table.isHidden = true
+        self.imagee.isHidden = false
+        self.buttone.isHidden = false
         resumeCart.title = "Empty list."
     }else{
+        self.table.isHidden = false
+        self.imagee.isHidden = true
+        self.buttone.isHidden = true
         resumeCart.title = "$ \(price)"
     }
           
