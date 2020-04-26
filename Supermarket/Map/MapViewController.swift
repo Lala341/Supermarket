@@ -9,17 +9,22 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController, MKMapViewDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     public var manager: CoreDataManager!
     fileprivate let locationManager: CLLocationManager =  CLLocationManager()
     @IBOutlet weak var mapView: MKMapView!
+    var primer: Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
-       mapView.delegate = self
-locationManager.requestWhenInUseAuthorization()
+        mapView.delegate = self
+        locationManager.delegate=self
+        locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = kCLDistanceFilterNone
+        let center = CLLocationCoordinate2D(latitude:4.6243997, longitude: -74.0678175)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
+        self.mapView.setRegion(region, animated: true)
         locationManager.startUpdatingLocation()
         mapView.showsUserLocation = true
         self.loadData()
@@ -152,14 +157,20 @@ locationManager.requestWhenInUseAuthorization()
         
         
     }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last{
-            let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
-            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
-            self.mapView.setRegion(region, animated: true)
+            if(primer == false){
+                print("location.coordinate.latitude")
+                print(location.coordinate.latitude)
+                let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+                let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
+                self.mapView.setRegion(region, animated: true)
+                self.primer = true
+            }
+            
         }
     }
-
   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {

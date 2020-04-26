@@ -55,7 +55,7 @@ class ProductsTableViewController: UITableViewController {
         var namep: String!
         namep = product.photo
         cell.photo.image =  UIImage(named : namep ?? "prod1")
-        cell.price.text =  "$ \(product.price)"
+        cell.price.text =  "$ \(product.price!)"
         
         cell.productTotal = product
         
