@@ -63,6 +63,10 @@ class ProductsCartTableView: UIViewController {
              
           
       resumeCart.title = "$ \(price)"
+    
+    let ac = UIAlertController( title: "Done",  message: "Product removed", preferredStyle: .alert)
+     ac.addAction(UIAlertAction(title: "OK", style: .default))
+    present(ac, animated: true)
   }
 
     

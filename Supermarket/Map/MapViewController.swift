@@ -9,20 +9,142 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, MKMapViewDelegate {
 
     public var manager: CoreDataManager!
     fileprivate let locationManager: CLLocationManager =  CLLocationManager()
     @IBOutlet weak var mapView: MKMapView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        locationManager.requestWhenInUseAuthorization()
+       mapView.delegate = self
+locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.distanceFilter = kCLDistanceFilterNone
         locationManager.startUpdatingLocation()
         mapView.showsUserLocation = true
-        
+        self.loadData()
         // Do any additional setup after loading the view.
+    }
+    func loadData(){
+      print("1")
+        var stor: [StoreRequest] = []
+        let url = URL(string: "http://ec2-18-212-16-222.compute-1.amazonaws.com:8084/analytics/question3")!
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                print("error: \(error)")
+            } else {
+               
+                
+                if let data = data, let dataString = String(data: data, encoding: .utf8) {
+                    print("data: \(dataString)")
+                   let dataf = dataString.data(using: .utf8)!
+                    do {
+                        if let jsonArray = try JSONSerialization.jsonObject(with: data, options: []) as? [String:[String: Any]]
+                        {
+                           print(jsonArray) // use the json here
+                            var i = 1;
+                            var annnotations: [StoreAnnotation] = []
+                           var annotation = StoreAnnotation(
+                                title : "Te",
+                                subtitle : "gato",
+                                thirdAttribut: Int(1), coordinate : CLLocationCoordinate2D(latitude: 4.5972017, longitude: -74.0887572))
+                            annotation.title = "Te"
+                            annotation.subtitle = "gato"
+                            annotation.coordinate = CLLocationCoordinate2D(latitude: 4.5972017, longitude: -74.0887572)
+                            while( i < 7){
+                                print(jsonArray["\(i)"]!["name"]!)
+                                
+                                annotation = StoreAnnotation(
+                                    title : (jsonArray["\(i)"]!["name"]! as? String)!,
+                                    subtitle : (jsonArray["\(i)"]!["address"]! as? String)!,
+                                    thirdAttribut: (jsonArray["\(i)"]!["id"]! as? Int)!, coordinate : CLLocationCoordinate2D(latitude: (jsonArray["\(i)"]!["loc_lat"]! as? Double)!, longitude: (jsonArray["\(i)"]!["loc_lon"]! as? Double)!))
+                                annotation.title = jsonArray["\(i)"]!["name"]! as? String
+                                annotation.subtitle = jsonArray["\(i)"]!["address"]! as? String
+                                annotation.coordinate = CLLocationCoordinate2D(latitude: jsonArray["\(i)"]!["loc_lat"]! as! Double, longitude: jsonArray["\(i)"]!["loc_lon"]! as! Double)
+                               
+                                
+                                i = i + 1;
+                                print(i);
+                                annnotations.append(annotation)
+                                
+                                
+                                
+                            }
+                           DispatchQueue.main.async {
+                              
+                            for j in annnotations{
+                                self.mapView.addAnnotation(j)
+                                }
+                            }
+                            
+                            
+                            
+                        } else {
+                            print("bad json")
+                        }
+                    } catch let error as NSError {
+                        print(error)
+                    }
+                }
+            }
+        }
+        task.resume()
+        
+    }
+   func mapView (_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?{
+
+
+        let identifier = "MyPin"
+
+        if annotation.isKind(of: MKUserLocation.self) {
+        return nil
+        }
+
+        // Reuse the annotation if possible
+        var annotationView:MKPinAnnotationView? = mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
+
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView?.canShowCallout = true
+        
+    }
+    
+    let pinImage = UIImage(named: "marker")
+           let size = CGSize(width: 55, height: 55)
+           UIGraphicsBeginImageContext(size)
+           pinImage!.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+           let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+
+    annotationView?.image = resizedImage
+    print( resizedImage!.scale)
+
+
+        let leftIconView = UIImageView(frame: CGRect.init(x: 0, y: 0, width: 53, height: 53))
+        leftIconView.image = UIImage(named: "prod1")
+        annotationView?.leftCalloutAccessoryView = leftIconView
+    
+   let rightButton = UIButton(type: .contactAdd)
+    annotationView?.rightCalloutAccessoryView = rightButton
+
+    
+        return annotationView
+    }
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if let storeAnnotation = view.annotation as? StoreAnnotation{
+           
+            print("pp"); print(storeAnnotation.getThirdAttribut);
+        }
+
+        
+        let capital = view.annotation
+        let placeName = capital?.title
+        let placeInfo = capital?.subtitle
+
+        let ac = UIAlertController(title: placeName!, message: placeInfo!, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
+        
+        
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last{
@@ -31,7 +153,8 @@ class MapViewController: UIViewController {
             self.mapView.setRegion(region, animated: true)
         }
     }
-   
+
+  
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         if segue.destination is ProductsTableViewController
@@ -78,4 +201,25 @@ class MapViewController: UIViewController {
     */
     
 }
+class StoreAnnotation: NSObject, MKAnnotation {
+    var coordinate: CLLocationCoordinate2D
+    var title: String?
+    var subtitle: String?
 
+let thirdAttribut: Int
+
+init(title: String, subtitle: String, thirdAttribut: Int, coordinate: CLLocationCoordinate2D) {
+    self.thirdAttribut = thirdAttribut
+    self.coordinate = coordinate
+    self.title = title
+    self.subtitle = subtitle
+    super.init()
+}
+
+
+
+
+var getThirdAttribut: Int {
+    return thirdAttribut
+}
+}

@@ -96,8 +96,11 @@ class ProductsTableView: UIViewController {
                }
             
         resumeCart.title = "$ \(price)"
+        
     }
-      
+      let ac = UIAlertController( title: "Done",  message: "Product added", preferredStyle: .alert)
+      ac.addAction(UIAlertAction(title: "OK", style: .default))
+     present(ac, animated: true)
   }
 
     
