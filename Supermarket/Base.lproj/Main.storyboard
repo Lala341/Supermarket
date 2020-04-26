@@ -1278,7 +1278,7 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                                             <rect key="frame" x="339" y="53" width="36" height="45"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="31"/>
-                                            <state key="normal" title="Button" image="trash" catalog="system"/>
+                                            <state key="normal" image="trash" catalog="system"/>
                                             <connections>
                                                 <action selector="removeCart:" destination="Uck-1v-vc9" eventType="touchUpInside" id="7p6-01-Ccb"/>
                                             </connections>
@@ -1297,7 +1297,7 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kfo-6s-H54" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1800" y="4700"/>
+            <point key="canvasLocation" x="-1800" y="4773"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="V4Q-OI-0s8">
@@ -1858,12 +1858,15 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="rDA-Nm-ZeC"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="h91-gU-fZe"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="h91-gU-fZe">
+                        <color key="badgeColor" red="0.96862745100000003" green="0.80784313730000001" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="dateb" destination="Koj-kB-N3s" id="LoJ-Z5-IOB"/>
                         <outlet property="email" destination="j8i-18-577" id="TVx-x6-hI5"/>
                         <outlet property="gender" destination="eWs-37-haU" id="WlX-Ae-hR6"/>
+                        <outlet property="logout" destination="fUf-Kb-xIA" id="CtL-HQ-Xe3"/>
                         <outlet property="name" destination="Y7y-RN-lwN" id="Ch9-rM-umR"/>
                         <outlet property="password" destination="5gS-Bk-0yJ" id="g8j-7a-N6U"/>
                         <outlet property="phone" destination="faO-Rp-n6a" id="v0e-uo-JsK"/>
@@ -2039,7 +2042,7 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
             </objects>
             <point key="canvasLocation" x="722" y="3308"/>
         </scene>
-        <!--Whish-->
+        <!--Wish-->
         <scene sceneID="kGw-np-BBx">
             <objects>
                 <viewController id="gDm-FY-Xkh" customClass="ProductsTableView" customModule="Supermarket" customModuleProvider="target" sceneMemberID="viewController">
@@ -2050,12 +2053,15 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RP8-ny-uIx">
                                 <rect key="frame" x="0.0" y="149" width="380" height="469"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="xvN-x4-NFl" kind="embed" id="4dw-3K-J64"/>
+                                </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="d38-wT-PzF"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Whish" image="list.dash" catalog="system" id="9rQ-fD-4jd">
+                    <tabBarItem key="tabBarItem" title="Wish" image="list.dash" catalog="system" id="9rQ-fD-4jd">
                         <color key="badgeColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -2153,7 +2159,71 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w42-zr-8TJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-122.40000000000001" y="4772.5637181409302"/>
+            <point key="canvasLocation" x="-126" y="4617"/>
+        </scene>
+        <!--Products Cart Table View Controller-->
+        <scene sceneID="U1Y-JV-c6e">
+            <objects>
+                <tableViewController id="xvN-x4-NFl" customClass="ProductsCartTableViewController" customModule="Supermarket" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="93" sectionHeaderHeight="93" sectionFooterHeight="28" id="xeq-cR-8VB">
+                        <rect key="frame" x="0.0" y="0.0" width="380" height="469"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ProductCartTableViewCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProductCartTableViewCell" rowHeight="150" id="3Ss-Ak-VWS" customClass="ProductCartTableViewCell" customModule="Supermarket" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="380" height="150"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3Ss-Ak-VWS" id="L9L-fw-Mzu">
+                                    <rect key="frame" x="0.0" y="0.0" width="380" height="150"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5GC-ko-v4S">
+                                            <rect key="frame" x="158" y="11" width="206" height="29"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lms-Sa-5tg">
+                                            <rect key="frame" x="158" y="48" width="206" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wvL-7B-buj">
+                                            <rect key="frame" x="16" y="2" width="121" height="88"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPx-0F-hB8">
+                                            <rect key="frame" x="301" y="-125" width="227" height="93"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Button" image="cart"/>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eN3-qs-7Bs">
+                                            <rect key="frame" x="339" y="53" width="36" height="45"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                            <state key="normal" image="trash" catalog="system"/>
+                                            <connections>
+                                                <action selector="removeCart:" destination="3Ss-Ak-VWS" eventType="touchUpInside" id="HO3-sP-Lgz"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="photo" destination="wvL-7B-buj" id="y5R-nH-9hL"/>
+                                    <outlet property="price" destination="lms-Sa-5tg" id="5cU-TO-9bu"/>
+                                    <outlet property="product" destination="5GC-ko-v4S" id="f4S-BP-aCH"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mjf-pB-22t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-924" y="4773"/>
         </scene>
     </scenes>
     <resources>

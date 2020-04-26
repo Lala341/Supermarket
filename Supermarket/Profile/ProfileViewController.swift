@@ -21,13 +21,14 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var gender: UITextField!
     @IBOutlet weak var phone: UITextField!
     @IBOutlet weak var dateb: UITextField!
+    @IBOutlet weak var logout: UIButton!
     
        
        override func viewDidLoad() {
            super.viewDidLoad()
+           self.logout.layer.cornerRadius = 10
            
         self.darTransaction()
-        
         do{
            networkMonitor.pathUpdateHandler = { path in
                       

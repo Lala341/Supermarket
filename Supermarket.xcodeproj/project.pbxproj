@@ -31,6 +31,9 @@
 		D37486E52455F55300132778 /* TransactionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37486E42455F55300132778 /* TransactionsTableViewController.swift */; };
 		D37486E72455F56100132778 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37486E62455F56100132778 /* TransactionTableViewCell.swift */; };
 		D37486E92455F5C500132778 /* TransactionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37486E82455F5C500132778 /* TransactionRequest.swift */; };
+		D37486ED24560D1400132778 /* ProductsWishTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37486EC24560D1400132778 /* ProductsWishTableViewController.swift */; };
+		D37486EF24560D2300132778 /* ProductsWishTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37486EE24560D2300132778 /* ProductsWishTableView.swift */; };
+		D37486F124560D3900132778 /* ProductWishTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37486F024560D3900132778 /* ProductWishTableViewCell.swift */; };
 		D37B89B0240B52EB00281998 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37B89AF240B52EB00281998 /* MapViewController.swift */; };
 		D37B89B2240B619C00281998 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37B89B1240B619C00281998 /* CameraViewController.swift */; };
 		D37B89B7240B683B00281998 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D37B89B6240B683B00281998 /* MapKit.framework */; };
@@ -99,6 +102,9 @@
 		D37486E42455F55300132778 /* TransactionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransactionsTableViewController.swift; path = Supermarket/Product/TransactionsTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		D37486E62455F56100132778 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransactionTableViewCell.swift; path = Supermarket/Product/TransactionTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		D37486E82455F5C500132778 /* TransactionRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionRequest.swift; sourceTree = "<group>"; };
+		D37486EC24560D1400132778 /* ProductsWishTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProductsWishTableViewController.swift; path = Supermarket/Cart/ProductsWishTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		D37486EE24560D2300132778 /* ProductsWishTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsWishTableView.swift; sourceTree = "<group>"; };
+		D37486F024560D3900132778 /* ProductWishTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductWishTableViewCell.swift; sourceTree = "<group>"; };
 		D37B89AF240B52EB00281998 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D37B89B1240B619C00281998 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		D37B89B6240B683B00281998 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -221,7 +227,6 @@
 			isa = PBXGroup;
 			children = (
 				D38EA946243918B2003E0EF3 /* StartViewController.swift */,
-				D38C1FE0244C459A00B7A6C8 /* ProfileViewController.swift */,
 				D38C1FE2244C45F300B7A6C8 /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -244,6 +249,42 @@
 				D37486E42455F55300132778 /* TransactionsTableViewController.swift */,
 			);
 			path = Transaction;
+			sourceTree = "<group>";
+		};
+		D37486EB24560C4A00132778 /* Wish */ = {
+			isa = PBXGroup;
+			children = (
+				D37486EC24560D1400132778 /* ProductsWishTableViewController.swift */,
+				D37486EE24560D2300132778 /* ProductsWishTableView.swift */,
+				D37486F024560D3900132778 /* ProductWishTableViewCell.swift */,
+			);
+			path = Wish;
+			sourceTree = "<group>";
+		};
+		D37486F224560D6A00132778 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				D39FA1982453B23300FCFE66 /* ProductRequest.swift */,
+				D37486E82455F5C500132778 /* TransactionRequest.swift */,
+				D371E3172454A15800CA2A67 /* StoreRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		D37486F324560D8300132778 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				D38C1FE0244C459A00B7A6C8 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		D37486F424560D9C00132778 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				D30C3D14245391FD00BB96E7 /* TabBarViewController.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		D37B89B5240B683B00281998 /* Frameworks */ = {
@@ -305,11 +346,12 @@
 		D3DBE3F5240B4DA800E5A29E /* Supermarket */ = {
 			isa = PBXGroup;
 			children = (
+				D37486F424560D9C00132778 /* TabBar */,
+				D37486F324560D8300132778 /* Profile */,
+				D37486F224560D6A00132778 /* Request */,
+				D37486EB24560C4A00132778 /* Wish */,
 				D37486E32455F51A00132778 /* Transaction */,
 				D371E3102454A08000CA2A67 /* Store */,
-				D39FA1982453B23300FCFE66 /* ProductRequest.swift */,
-				D37486E82455F5C500132778 /* TransactionRequest.swift */,
-				D371E3172454A15800CA2A67 /* StoreRequest.swift */,
 				B1ABEBE8245409DE000ED439 /* Login */,
 				D35A0822244A7467005CC7BB /* Home */,
 				D35A0821244A7332005CC7BB /* Camera */,
@@ -325,7 +367,6 @@
 				D3DBE404240B4DAD00E5A29E /* Info.plist */,
 				D38EA945243916A4003E0EF3 /* DataControllers */,
 				D38C1FE4244C55A200B7A6C8 /* Conectivity */,
-				D30C3D14245391FD00BB96E7 /* TabBarViewController.swift */,
 			);
 			path = Supermarket;
 			sourceTree = "<group>";
@@ -559,6 +600,7 @@
 				D371E3162454A0D100CA2A67 /* StoreTableViewCell.swift in Sources */,
 				D35A08162449DBC6005CC7BB /* UserCoreDataManager.swift in Sources */,
 				D371E3122454A0A500CA2A67 /* StoresTableViewController.swift in Sources */,
+				D37486F124560D3900132778 /* ProductWishTableViewCell.swift in Sources */,
 				D39FA1992453B23300FCFE66 /* ProductRequest.swift in Sources */,
 				D35A08182449DBF0005CC7BB /* CartCoreDataManager.swift in Sources */,
 				D38C1FE3244C45F300B7A6C8 /* HomeViewController.swift in Sources */,
@@ -573,6 +615,7 @@
 				D3DBE3F9240B4DA800E5A29E /* SceneDelegate.swift in Sources */,
 				D35A08122449D9D2005CC7BB /* StoreCoreDataManager.swift in Sources */,
 				D34FED732439A9C8005E9BBE /* ProductsCartTableViewController.swift in Sources */,
+				D37486ED24560D1400132778 /* ProductsWishTableViewController.swift in Sources */,
 				D30C3D15245391FD00BB96E7 /* TabBarViewController.swift in Sources */,
 				D371E3142454A0BC00CA2A67 /* StoresTableView.swift in Sources */,
 				B19850B224558789008831D7 /* RegisterViewController.swift in Sources */,
@@ -584,6 +627,7 @@
 				D371E3182454A15800CA2A67 /* StoreRequest.swift in Sources */,
 				D34FED6F24395F9B005E9BBE /* ProductTableViewCell.swift in Sources */,
 				D34FED712439677C005E9BBE /* ProductsTableViewController.swift in Sources */,
+				D37486EF24560D2300132778 /* ProductsWishTableView.swift in Sources */,
 				B1ABEBEA24540A37000ED439 /* LoginViewController.swift in Sources */,
 				D38EA9442438FDB3003E0EF3 /* CoreDataManager.swift in Sources */,
 			);
