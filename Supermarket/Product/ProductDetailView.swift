@@ -14,7 +14,8 @@ class ProductDetailView:  UIViewController {
     public var productTotal: ProductRequest!
     var delegate: ProductsTableView!
     var cartmanager = CartCoreDataManager()
-    
+    var delegatetab: TabBarViewController!
+
 
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var name: UILabel!
@@ -32,7 +33,7 @@ class ProductDetailView:  UIViewController {
     self.price.text = "$ \(productTotal.price!)"
            self.descrip.text = productTotal.descrip
            self.count.text = " \(0)"
-           self.image.image = UIImage(named: "prod1")
+           self.image.image = UIImage(url: URL(string: "http://ec2-18-212-16-222.compute-1.amazonaws.com:8082/images/\(productTotal.photo!)"))
         }
     @IBAction func addCart(_ sender: UIButton) {
       /*  let photos = ["prod1", "prod2", "prod3","prod4","prod5","prod1", "prod2", "prod3","prod4","prod5"]

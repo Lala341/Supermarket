@@ -12,10 +12,18 @@ class ProductsCartTableView: UIViewController {
     
     public var manager: CoreDataManager!
     var cartmanager = CartCoreDataManager()
-    
+    var delegatetab: TabBarViewController!
+
     
 @IBOutlet weak var resumeCart: UIBarButtonItem!
     
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        updateUIIni()
+        
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
     updateUIIni()
@@ -41,6 +49,15 @@ class ProductsCartTableView: UIViewController {
             vc?.delegate = self
         }
     }
+    @IBAction func delete(){
+        cartmanager.cleanCart(container: manager.getContainer(),  completion: {[weak self] in
+         //2
+         print("clean")
+            self?.updateUI()
+
+        })
+    }
+    
   func updateUIIni() {
              //3
          let havecart = cartmanager.haveCart(container: manager.getContainer())

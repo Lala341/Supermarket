@@ -13,7 +13,8 @@ class StoresTableView: UIViewController {
     
     public var manager: CoreDataManager!
     var cartmanager = CartCoreDataManager()
-    
+    var delegatetab: TabBarViewController!
+
     let networkMonitor = NWPathMonitor()
     var element = false;
     @IBOutlet weak var data: UIButton!

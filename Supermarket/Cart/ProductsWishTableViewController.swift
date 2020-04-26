@@ -56,7 +56,7 @@ class ProductsWishTableViewController: UITableViewController {
         cell.product.text = name  ?? "Colombina"
         var namep: String!
         namep = product.photo
-        cell.photo.image =  UIImage(named : namep ?? "prod1")
+        cell.photo.image =  UIImage(url: URL(string: "http://ec2-18-212-16-222.compute-1.amazonaws.com:8082/images/\(namep!)"))
         cell.price.text =  "$ \(product.price)" 
         cell.productTotal = product
         cell.delegatefinal = self

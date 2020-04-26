@@ -53,6 +53,32 @@ class CartCoreDataManager {
           //3
          return false
     }
+    func cleanCart(container : NSPersistentContainer,  completion: @escaping() -> Void) {
+        //1
+        let fetchRequest : NSFetchRequest<ShoppingList> = ShoppingList.fetchRequest()
+        
+        do {
+      
+            //2
+            let result = try container.viewContext.fetch(fetchRequest)
+            
+            if(result.count>0){
+                result.last?.products = []
+            }
+            
+            try container.viewContext.save()
+            
+           completion()
+                       
+        } catch {
+            print("El error obteniendo el carrito del usuario(s) \(error)")
+         }
+     
+          //3
+completion()
+        
+        
+    }
     func addProductCart(container : NSPersistentContainer, name : String, productf : ProductRequest,  completion: @escaping() -> Void) {
         // 2
         let context = container.viewContext
@@ -61,11 +87,7 @@ class CartCoreDataManager {
         let fetchRequest2 : NSFetchRequest<Product> = Product.fetchRequest()
     
         
-        let shoppy = ShoppingList(context: context)
-                  shoppy.name = "Cart"
-                  shoppy.tag = "Mercado"
-                  shoppy.products = []
-                  
+       
                   let product = Product(context: context)
         product.name = productf.name
         product.price = Double(productf.price!)
@@ -73,7 +95,6 @@ class CartCoreDataManager {
         product.descrip = productf.descrip
         product.id = productf.id
         product.photo = productf.photo
-        product.shoppingList = shoppy
         product.cantidad = Int16(Int64(0))
         
         do {

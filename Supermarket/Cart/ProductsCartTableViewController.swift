@@ -15,7 +15,13 @@ class ProductsCartTableViewController: UITableViewController {
     var cartmanager = CartCoreDataManager();
     var delegate: ProductsCartTableView!
          
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        actualizarTabla()
+        
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Uncomment the following line to preserve selection between presentations
@@ -55,7 +61,7 @@ class ProductsCartTableViewController: UITableViewController {
         cell.product.text = name  ?? "Colombina"
         var namep: String!
         namep = product.photo
-        cell.photo.image =  UIImage(named : namep ?? "prod1")
+        cell.photo.image =  UIImage(url: URL(string: "http://ec2-18-212-16-222.compute-1.amazonaws.com:8082/images/\(namep!)"))
         cell.price.text =  "$ \(product.price)" 
         cell.productTotal = product
         cell.delegatefinal = self

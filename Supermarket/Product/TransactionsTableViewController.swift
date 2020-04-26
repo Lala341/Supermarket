@@ -14,6 +14,9 @@ class TransactionsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator()
+        indicator.startAnimating()
+        indicator.backgroundColor = .white
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         loadTransactions()
@@ -22,7 +25,16 @@ class TransactionsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
+    var indicator = UIActivityIndicatorView()
+
+          func activityIndicator() {
+              indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+              indicator.transform = CGAffineTransform(scaleX: 2, y: 2);
+
+              indicator.style = UIActivityIndicatorView.Style.gray
+              indicator.center = self.view.center
+              self.view.addSubview(indicator)
+          }
   
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -90,6 +102,9 @@ class TransactionsTableViewController: UITableViewController {
                             print(self.transactions)
                             DispatchQueue.main.async {
                                 self.tableView.reloadData()
+                                
+                                self.indicator.stopAnimating()
+                                self.indicator.hidesWhenStopped = true
                             }
                             
                             

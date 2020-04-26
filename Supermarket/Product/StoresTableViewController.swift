@@ -14,11 +14,15 @@ class StoresTableViewController: UITableViewController {
     var productmanager = StoreCoreDataManager()
     var stores = [StoreRequest]()
     var delegate: StoresTableView!
-    
+    var delegatetab: TabBarViewController!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
+        activityIndicator()
+        indicator.startAnimating()
+        indicator.backgroundColor = .white
         loadProducts()
         
         
@@ -51,8 +55,12 @@ class StoresTableViewController: UITableViewController {
         name = store.name
         cell.product.text = name  ?? "Colombina"
         var namep: String!
+        
         namep = store.photo
-        cell.photo.image =  UIImage(named : namep ?? "prod1")
+        print(namep)
+        cell.photo.image = UIImage(url: URL(string: "http://ec2-18-212-16-222.compute-1.amazonaws.com:8082/images/\(namep!)"))
+            
+            //UIImage(named : namep ?? "prod1")
         cell.price.text =  store.address
         
         cell.storeTotal = store
@@ -60,7 +68,17 @@ class StoresTableViewController: UITableViewController {
         
         return cell
     }
-    
+    var indicator = UIActivityIndicatorView()
+
+       func activityIndicator() {
+           indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+           indicator.transform = CGAffineTransform(scaleX: 2, y: 2);
+
+           indicator.style = UIActivityIndicatorView.Style.gray
+           indicator.center = self.view.center
+           self.view.addSubview(indicator)
+       }
+       
        override func prepare(for segue: UIStoryboardSegue, sender: Any?)
           {
               
@@ -101,7 +119,7 @@ class StoresTableViewController: UITableViewController {
                                 print(jsonArray["\(i)"]!["name"]!)
                                 
                                 
-                                temp = StoreRequest(name: jsonArray["\(i)"]!["name"]! as? String, address: jsonArray["\(i)"]!["address"]! as! String, photo: "prod1", id: jsonArray["\(i)"]!["id"]! as! Int )
+                                temp = StoreRequest(name: jsonArray["\(i)"]!["name"]! as? String, address: jsonArray["\(i)"]!["address"]! as! String, photo: jsonArray["\(i)"]!["logo_img"]! as! String, id: jsonArray["\(i)"]!["id"]! as! Int )
                                 
                                 stor.append(temp)
                                 i = i + 1
@@ -110,6 +128,8 @@ class StoresTableViewController: UITableViewController {
                             print(self.stores)
                             DispatchQueue.main.async {
                                 self.tableView.reloadData()
+                                self.indicator.stopAnimating()
+                                self.indicator.hidesWhenStopped = true
                             }
                             
                             

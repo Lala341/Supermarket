@@ -14,7 +14,8 @@ class ProductTableViewCell: UITableViewCell {
     var productTotal: ProductRequest!
     var delegate: ProductsTableView!
     var cartmanager = CartCoreDataManager()
-    
+    var delegatetab: TabBarViewController!
+
     @IBOutlet weak var product: UILabel!
     
     @IBOutlet weak var price: UILabel!
@@ -42,7 +43,8 @@ class ProductTableViewCell: UITableViewCell {
         cartmanager.addProductCart(container: manager.getContainer(), name: productTotal.name!, productf: productTotal, completion: {[weak self] in
              //2
              print("add2")
-           // self?.delegate.updateUI()
+            
+           self?.delegate.updateUI()
             
             
 

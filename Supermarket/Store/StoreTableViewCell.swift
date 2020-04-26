@@ -13,6 +13,7 @@ class StoreTableViewCell: UITableViewCell {
     public var manager : CoreDataManager!
     var storeTotal: StoreRequest!
     var delegate: StoresTableView!
+    var delegatetab: TabBarViewController!
 
     var cartmanager = CartCoreDataManager()
     

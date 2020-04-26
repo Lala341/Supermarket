@@ -127,7 +127,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
 
         let leftIconView = UIImageView(frame: CGRect.init(x: 0, y: 0, width: 53, height: 53))
-        leftIconView.image = UIImage(named: "prod1")
+        leftIconView.image = UIImage(named: "store")
         annotationView?.leftCalloutAccessoryView = leftIconView
     
    let rightButton = UIButton(type: .contactAdd)

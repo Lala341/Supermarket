@@ -15,17 +15,34 @@ class ProductsTableViewController: UITableViewController {
     var products = [ProductRequest]()
     var delegate: ProductsTableView!
     var storeTotal: StoreRequest!
+    var delegatetab: TabBarViewController!
 
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
+        activityIndicator()
+        indicator.startAnimating()
+        indicator.backgroundColor = .white
         loadProducts()
         
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    var indicator = UIActivityIndicatorView()
+
+    func activityIndicator() {
+        indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+        indicator.transform = CGAffineTransform(scaleX: 2, y: 2);
+
+        indicator.style = UIActivityIndicatorView.Style.gray
+        indicator.center = self.view.center
+        self.view.addSubview(indicator)
+    }
+    
     
    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
    {
@@ -77,7 +94,7 @@ class ProductsTableViewController: UITableViewController {
         cell.product.text = name  ?? "Colombina"
         var namep: String!
         namep = product.photo
-        cell.photo.image =  UIImage(named : namep ?? "prod1")
+        cell.photo.image = UIImage(url: URL(string: "http://ec2-18-212-16-222.compute-1.amazonaws.com:8082/images/\(namep!)"))
         cell.price.text =  "$ \(product.price!)"
         
         cell.productTotal = product
@@ -112,7 +129,7 @@ class ProductsTableViewController: UITableViewController {
                             
                             for i in jsonArray{
                                 print(i["name"]!)
-                                temp = ProductRequest(name: i["name"]! as! String, price: Int(i["price"]! as! Double), sku: i["sku"]! as! String, descrip: i["description"]! as! String, photo: "prod1", id: i["_id"]! as! String, store: i["store_id"]! as! Int, cantidad: 0 )
+                                temp = ProductRequest(name: i["name"]! as! String, price: Int(i["price"]! as! Double), sku: i["sku"]! as! String, descrip: i["description"]! as! String, photo:i["img_url"]! as! String, id: i["_id"]! as! String, store: i["store_id"]! as! Int, cantidad: 0 )
                                 
                                 produ.append(temp)
                                 
@@ -121,6 +138,8 @@ class ProductsTableViewController: UITableViewController {
                             print(self.products)
                             DispatchQueue.main.async {
                                 self.tableView.reloadData()
+                                self.indicator.stopAnimating()
+                                self.indicator.hidesWhenStopped = true
                             }
                             
                             

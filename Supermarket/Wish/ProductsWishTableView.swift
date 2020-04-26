@@ -12,7 +12,8 @@ class ProductsWishTableView: UIViewController {
     
     public var manager: CoreDataManager!
     var cartmanager = CartCoreDataManager()
-    
+    var delegatetab: TabBarViewController!
+
     
     
 @IBOutlet weak var resumeCart: UIBarButtonItem!

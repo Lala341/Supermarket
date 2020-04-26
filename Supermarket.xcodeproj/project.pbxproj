@@ -47,6 +47,7 @@
 		D38EA9442438FDB3003E0EF3 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38EA9432438FDB3003E0EF3 /* CoreDataManager.swift */; };
 		D38EA947243918B2003E0EF3 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38EA946243918B2003E0EF3 /* StartViewController.swift */; };
 		D39FA1992453B23300FCFE66 /* ProductRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39FA1982453B23300FCFE66 /* ProductRequest.swift */; };
+		D3C754782456286B001B0D9D /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C754772456286A001B0D9D /* UIImage.swift */; };
 		D3DBE3F7240B4DA800E5A29E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBE3F6240B4DA800E5A29E /* AppDelegate.swift */; };
 		D3DBE3F9240B4DA800E5A29E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBE3F8240B4DA800E5A29E /* SceneDelegate.swift */; };
 		D3DBE3FB240B4DA800E5A29E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBE3FA240B4DA800E5A29E /* ViewController.swift */; };
@@ -118,6 +119,7 @@
 		D38EA9432438FDB3003E0EF3 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		D38EA946243918B2003E0EF3 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		D39FA1982453B23300FCFE66 /* ProductRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRequest.swift; sourceTree = "<group>"; };
+		D3C754772456286A001B0D9D /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		D3DBE3F3240B4DA800E5A29E /* Supermarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Supermarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3DBE3F6240B4DA800E5A29E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3DBE3F8240B4DA800E5A29E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				D39FA1982453B23300FCFE66 /* ProductRequest.swift */,
+				D3C754772456286A001B0D9D /* UIImage.swift */,
 				D37486E82455F5C500132778 /* TransactionRequest.swift */,
 				D371E3172454A15800CA2A67 /* StoreRequest.swift */,
 			);
@@ -616,6 +619,7 @@
 				D35A08122449D9D2005CC7BB /* StoreCoreDataManager.swift in Sources */,
 				D34FED732439A9C8005E9BBE /* ProductsCartTableViewController.swift in Sources */,
 				D37486ED24560D1400132778 /* ProductsWishTableViewController.swift in Sources */,
+				D3C754782456286B001B0D9D /* UIImage.swift in Sources */,
 				D30C3D15245391FD00BB96E7 /* TabBarViewController.swift in Sources */,
 				D371E3142454A0BC00CA2A67 /* StoresTableView.swift in Sources */,
 				B19850B224558789008831D7 /* RegisterViewController.swift in Sources */,

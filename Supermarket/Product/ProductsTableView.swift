@@ -14,6 +14,7 @@ class ProductsTableView: UIViewController {
     public var manager: CoreDataManager!
     var cartmanager = CartCoreDataManager()
     var storeTotal: StoreRequest!
+    var delegatetab: TabBarViewController!
 
     let networkMonitor = NWPathMonitor()
     var element = false;
@@ -83,6 +84,11 @@ class ProductsTableView: UIViewController {
         }
     }
   
+    func updateUI(){
+    let ac = UIAlertController( title: "Done",  message: "Product added", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+       present(ac, animated: true)
+    }
 
     
 
