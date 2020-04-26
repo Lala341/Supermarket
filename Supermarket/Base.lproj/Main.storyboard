@@ -2224,12 +2224,27 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                                 <state key="normal" title="Log in">
                                     <color key="titleColor" red="0.1019607843" green="0.16078431369999999" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginActionButton:" destination="fnu-C8-APV" eventType="touchUpInside" id="3Ts-tw-qyA"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVz-2J-mDq">
+                                <rect key="frame" x="51" y="431" width="273" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="1Ci-Vx-9Cw"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="4cy-Cf-SSP"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="Ve2-zi-fhR" id="pIo-JB-oM6"/>
+                        <outlet property="passwordTextField" destination="GuF-Zy-GOU" id="QN6-5V-9eB"/>
+                        <outlet property="warningLoginLabel" destination="tVz-2J-mDq" id="E7y-dq-y5G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uB6-fb-bbH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2564,8 +2579,8 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
         <image name="arrow.left" catalog="system" width="64" height="48"/>
         <image name="arrow.right" catalog="system" width="64" height="48"/>
         <image name="camera.fill" catalog="system" width="64" height="48"/>
-        <image name="cart" width="399" height="400"/>
         <image name="cart" catalog="system" width="64" height="50"/>
+        <image name="cart" width="399" height="400"/>
         <image name="cart.badge.plus" catalog="system" width="64" height="48"/>
         <image name="cart.fill" catalog="system" width="64" height="50"/>
         <image name="checkmark.rectangle.fill" catalog="system" width="64" height="46"/>
