@@ -13,13 +13,22 @@ class ProfileViewController: UIViewController {
     var counter = 0;
     public var manager: CoreDataManager!
     var usermanager = UserCoreDataManager();
-     let networkMonitor = NWPathMonitor()
+    let networkMonitor = NWPathMonitor()
 
-       
+    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var gender: UITextField!
+    @IBOutlet weak var phone: UITextField!
+    @IBOutlet weak var dateb: UITextField!
+    
        
        override func viewDidLoad() {
            super.viewDidLoad()
-           do{
+           
+        self.darTransaction()
+        
+        do{
            networkMonitor.pathUpdateHandler = { path in
                       
                          if path.status == .satisfied {
@@ -52,7 +61,23 @@ class ProfileViewController: UIViewController {
            // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
            // self.navigationItem.rightBarButtonItem = self.editButtonItem
        }
-    
+    func darTransaction(){
+        
+        let users: [User] = usermanager.fetchUsers(container: manager.getContainer())
+        if(users.count>0){
+            let user = users[0]
+            self.name.text = "Name: \(user.name!)"
+        self.email.text = "Email: \(user.email!)"
+        self.password.text = "Password: \(user.name!)"
+        self.gender.text = "Gender: \(user.gender!)"
+        self.phone.text = "Phone: \(user.phone!)"
+            self.dateb.text = "Date of Birth: \(user.dateOfBirth!)"
+        
+        
+        
+        }
+        
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         if segue.destination is ProductsTableViewController
