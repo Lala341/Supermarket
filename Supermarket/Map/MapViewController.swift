@@ -44,10 +44,11 @@ locationManager.requestWhenInUseAuthorization()
                            print(jsonArray) // use the json here
                             var i = 1;
                             var annnotations: [StoreAnnotation] = []
+                            
                            var annotation = StoreAnnotation(
                                 title : "Te",
                                 subtitle : "gato",
-                                thirdAttribut: Int(1), coordinate : CLLocationCoordinate2D(latitude: 4.5972017, longitude: -74.0887572))
+                                thirdAttribut: StoreRequest(name: "Te", address: "Te", photo: "Te", id: Int(1)), coordinate : CLLocationCoordinate2D(latitude: 4.5972017, longitude: -74.0887572))
                             annotation.title = "Te"
                             annotation.subtitle = "gato"
                             annotation.coordinate = CLLocationCoordinate2D(latitude: 4.5972017, longitude: -74.0887572)
@@ -57,7 +58,8 @@ locationManager.requestWhenInUseAuthorization()
                                 annotation = StoreAnnotation(
                                     title : (jsonArray["\(i)"]!["name"]! as? String)!,
                                     subtitle : (jsonArray["\(i)"]!["address"]! as? String)!,
-                                    thirdAttribut: (jsonArray["\(i)"]!["id"]! as? Int)!, coordinate : CLLocationCoordinate2D(latitude: (jsonArray["\(i)"]!["loc_lat"]! as? Double)!, longitude: (jsonArray["\(i)"]!["loc_lon"]! as? Double)!))
+                                    thirdAttribut:
+                                    StoreRequest(name: (jsonArray["\(i)"]!["name"]! as? String)!, address: (jsonArray["\(i)"]!["address"]! as? String)!, photo: (jsonArray["\(i)"]!["logo_img"]! as? String)!, id: ((jsonArray["\(i)"]!["id"]! as! Int))), coordinate : CLLocationCoordinate2D(latitude: (jsonArray["\(i)"]!["loc_lat"]! as? Double)!, longitude: (jsonArray["\(i)"]!["loc_lon"]! as? Double)!))
                                 annotation.title = jsonArray["\(i)"]!["name"]! as? String
                                 annotation.subtitle = jsonArray["\(i)"]!["address"]! as? String
                                 annotation.coordinate = CLLocationCoordinate2D(latitude: jsonArray["\(i)"]!["loc_lat"]! as! Double, longitude: jsonArray["\(i)"]!["loc_lon"]! as! Double)
@@ -133,16 +135,20 @@ locationManager.requestWhenInUseAuthorization()
         if let storeAnnotation = view.annotation as? StoreAnnotation{
            
             print("pp"); print(storeAnnotation.getThirdAttribut);
+            
+            
+            let VC = self.storyboard!.instantiateViewController(withIdentifier: "ProductsStoreId") as! ProductsTableView
+            
+                 
+             VC.manager = self.manager
+            VC.storeTotal = storeAnnotation.getThirdAttribut
+             
+             self.present(VC, animated: true, completion: nil)
+                                    
+                                    self.show(VC, sender: self)
         }
 
-        
-        let capital = view.annotation
-        let placeName = capital?.title
-        let placeInfo = capital?.subtitle
-
-        let ac = UIAlertController(title: placeName!, message: placeInfo!, preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .default))
-        present(ac, animated: true)
+    
         
         
     }
@@ -206,9 +212,9 @@ class StoreAnnotation: NSObject, MKAnnotation {
     var title: String?
     var subtitle: String?
 
-let thirdAttribut: Int
+let thirdAttribut: StoreRequest
 
-init(title: String, subtitle: String, thirdAttribut: Int, coordinate: CLLocationCoordinate2D) {
+init(title: String, subtitle: String, thirdAttribut: StoreRequest, coordinate: CLLocationCoordinate2D) {
     self.thirdAttribut = thirdAttribut
     self.coordinate = coordinate
     self.title = title
@@ -219,7 +225,7 @@ init(title: String, subtitle: String, thirdAttribut: Int, coordinate: CLLocation
 
 
 
-var getThirdAttribut: Int {
+var getThirdAttribut: StoreRequest {
     return thirdAttribut
 }
 }

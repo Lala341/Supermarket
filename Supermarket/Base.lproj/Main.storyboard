@@ -1333,15 +1333,15 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
             <objects>
                 <tableViewController id="bDR-sg-ohs" customClass="ProductsTableViewController" customModule="Supermarket" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="bottom" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="93" sectionHeaderHeight="93" sectionFooterHeight="28" id="4FR-p1-YFO">
-                        <rect key="frame" x="0.0" y="0.0" width="380" height="517"/>
+                        <rect key="frame" x="0.0" y="0.0" width="385" height="517"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ProductTableViewCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProductTableViewCell" rowHeight="150" id="lgf-bn-o4S" customClass="ProductTableViewCell" customModule="Supermarket" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="380" height="150"/>
+                                <rect key="frame" x="0.0" y="28" width="385" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lgf-bn-o4S" id="wIY-7d-FXg">
-                                    <rect key="frame" x="0.0" y="0.0" width="380" height="150"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="385" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRK-4Q-Zfh">
@@ -2540,7 +2540,7 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
         <!--Products Table View-->
         <scene sceneID="gmL-E8-Qbi">
             <objects>
-                <viewController id="4KH-ei-xq4" customClass="ProductsTableView" customModule="Supermarket" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProductsStoreId" id="4KH-ei-xq4" customClass="ProductsTableView" customModule="Supermarket" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fWb-VZ-Z6G">
                         <rect key="frame" x="0.0" y="0.0" width="380" height="494"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2579,8 +2579,8 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
         <image name="arrow.left" catalog="system" width="64" height="48"/>
         <image name="arrow.right" catalog="system" width="64" height="48"/>
         <image name="camera.fill" catalog="system" width="64" height="48"/>
-        <image name="cart" catalog="system" width="64" height="50"/>
         <image name="cart" width="399" height="400"/>
+        <image name="cart" catalog="system" width="64" height="50"/>
         <image name="cart.badge.plus" catalog="system" width="64" height="48"/>
         <image name="cart.fill" catalog="system" width="64" height="50"/>
         <image name="checkmark.rectangle.fill" catalog="system" width="64" height="46"/>
