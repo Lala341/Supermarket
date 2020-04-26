@@ -26,7 +26,7 @@ class TabBarViewController: UITabBarController {
         let tres = (self.viewControllers![2] as! ProductsCartTableView)
         tres.manager = manager
         
-        let cuatro = (self.viewControllers![3] as! ProductsTableView)
+        let cuatro = (self.viewControllers![3] as! ProductsWishTableView)
         cuatro.manager = manager
         
         let cinco = (self.viewControllers![4] as! ProfileViewController)

@@ -42,7 +42,7 @@ class ProductTableViewCell: UITableViewCell {
         cartmanager.addProductCart(container: manager.getContainer(), name: productTotal.name!, productf: productTotal, completion: {[weak self] in
              //2
              print("add2")
-            self?.delegate.updateUI()
+           // self?.delegate.updateUI()
             
             
 

@@ -58,7 +58,7 @@ class ProductsCartTableViewController: UITableViewController {
         cell.photo.image =  UIImage(named : namep ?? "prod1")
         cell.price.text =  "$ \(product.price)" 
         cell.productTotal = product
-        
+        cell.delegatefinal = self
         return cell
     }
     @IBOutlet weak var cell: ProductTableViewCell!
@@ -91,20 +91,13 @@ class ProductsCartTableViewController: UITableViewController {
         products = produ
  
     }
-    func updateUI() {
-            //3
-        let cart = cartmanager.fetchUserCart(container: manager.getContainer())
-               
-        var price : Double = 0
-               
-        for i in cart!.products!
-               {
-                price = price + (i as! Product).price
-                   
-               }
-            
-        resumeCart.title = "$ \(price)"
-    }
+    func actualizarTabla(){
+           loadProducts()
+           DispatchQueue.main.async {
+               self.tableView.reloadData()
+           }
+           
+       }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

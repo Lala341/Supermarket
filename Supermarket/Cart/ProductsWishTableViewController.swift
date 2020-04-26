@@ -13,13 +13,14 @@ class ProductsWishTableViewController: UITableViewController {
     public var manager : CoreDataManager!;
     var productmanager = ProductCoreDataManager();
     var cartmanager = CartCoreDataManager();
-    var delegate: ProductsCartTableView!
+    var delegate: ProductsWishTableView!
          
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
+        print(manager)
         loadProducts()
        // updateUI()
               
@@ -41,8 +42,8 @@ class ProductsWishTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-       let cellIdentifier = "ProductCartTableViewCell"
-            let cell: ProductCartTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! ProductCartTableViewCell
+       let cellIdentifier = "ProductWishTableViewCell"
+            let cell: ProductWishTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! ProductWishTableViewCell
 
         cell.manager = manager
         cell.delegate = delegate
@@ -58,16 +59,24 @@ class ProductsWishTableViewController: UITableViewController {
         cell.photo.image =  UIImage(named : namep ?? "prod1")
         cell.price.text =  "$ \(product.price)" 
         cell.productTotal = product
+        cell.delegatefinal = self
         
         return cell
     }
-    @IBOutlet weak var cell: ProductTableViewCell!
-    @IBOutlet weak var resumeCart:UIBarItem!
+    @IBOutlet weak var cell: ProductWishTableViewCell!
        
+    
+    func actualizarTabla(){
+        loadProducts()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+        
+    }
     private func loadProducts() {
       
-         print(manager)
-         let havecart = cartmanager.haveCart(container: manager.getContainer())
+print("manager")
+        let havecart = cartmanager.haveCart(container: manager.getContainer())
        
         
         print(havecart)
@@ -91,20 +100,7 @@ class ProductsWishTableViewController: UITableViewController {
         products = produ
  
     }
-    func updateUI() {
-            //3
-        let cart = cartmanager.fetchUserCart(container: manager.getContainer())
-               
-        var price : Double = 0
-               
-        for i in cart!.products!
-               {
-                price = price + (i as! Product).price
-                   
-               }
-            
-        resumeCart.title = "$ \(price)"
-    }
+  
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

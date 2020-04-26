@@ -14,8 +14,8 @@ class ProductWishTableViewCell: UITableViewCell {
 
     var productTotal: Product!
     var cartmanager = CartCoreDataManager();
-    var delegate: ProductsCartTableView!
-    
+    var delegate: ProductsWishTableView!
+    var delegatefinal: ProductsWishTableViewController!
     @IBOutlet weak var product: UILabel!
     
     @IBOutlet weak var price: UILabel!
@@ -33,7 +33,12 @@ class ProductWishTableViewCell: UITableViewCell {
         cartmanager.deleteProductCart(container: manager.getContainer(), name: productTotal.name!, productf: productTotal, completion: {[weak self] in
          //2
          print("add2")
-        self?.delegate.updateUI()})
+           
+        self?.delegate.updateUI()
+            self?.delegatefinal.actualizarTabla()
+            
+            
+        })
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

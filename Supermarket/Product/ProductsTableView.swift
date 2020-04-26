@@ -82,26 +82,7 @@ class ProductsTableView: UIViewController {
             vc?.manager = manager
         }
     }
-  func updateUI() {
-          //3
-    let cart = cartmanager.fetchUserCart(container: manager.getContainer())
-       
-    if(cart != nil){
-        var price : Double = 0
-               
-        for i in cart!.products!
-               {
-                price = price + (i as! Product).price
-                   
-               }
-            
-        resumeCart.title = "$ \(price)"
-        
-    }
-      let ac = UIAlertController( title: "Done",  message: "Product added", preferredStyle: .alert)
-      ac.addAction(UIAlertAction(title: "OK", style: .default))
-     present(ac, animated: true)
-  }
+  
 
     
 

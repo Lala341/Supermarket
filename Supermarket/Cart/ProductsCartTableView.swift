@@ -14,12 +14,11 @@ class ProductsCartTableView: UIViewController {
     var cartmanager = CartCoreDataManager()
     
     
-    
-    @IBOutlet weak var resumeCart: UIBarButtonItem!
+@IBOutlet weak var resumeCart: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     //  updateUI()
+    updateUIIni()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
@@ -42,6 +41,32 @@ class ProductsCartTableView: UIViewController {
             vc?.delegate = self
         }
     }
+  func updateUIIni() {
+             //3
+         let havecart = cartmanager.haveCart(container: manager.getContainer())
+         
+          
+          print(havecart)
+       
+         var price : Double = 0
+       if(havecart == true){
+           let cart = cartmanager.fetchUserCart(container: manager.getContainer())
+              print(cart)
+           
+           for i in cart!.products!
+           {
+            price = price + (i as! Product).price
+               
+           }
+       }
+       if(price == 0){
+           resumeCart.title = "Empty list."
+       }else{
+           resumeCart.title = "$ \(price)"
+       }
+           
+        
+     }
   func updateUI() {
           //3
       let havecart = cartmanager.haveCart(container: manager.getContainer())
@@ -60,9 +85,13 @@ class ProductsCartTableView: UIViewController {
             
         }
     }
-             
+    if(price == 0){
+        resumeCart.title = "Empty list."
+    }else{
+        resumeCart.title = "$ \(price)"
+    }
           
-      resumeCart.title = "$ \(price)"
+      
     
     let ac = UIAlertController( title: "Done",  message: "Product removed", preferredStyle: .alert)
      ac.addAction(UIAlertAction(title: "OK", style: .default))
