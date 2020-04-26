@@ -336,7 +336,6 @@
 				D3DBE3EF240B4DA800E5A29E /* Sources */,
 				D3DBE3F0240B4DA800E5A29E /* Frameworks */,
 				D3DBE3F1240B4DA800E5A29E /* Resources */,
-				A5826415BC91FBA6374EA98F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -355,7 +354,6 @@
 				D3DBE405240B4DAE00E5A29E /* Sources */,
 				D3DBE406240B4DAE00E5A29E /* Frameworks */,
 				D3DBE407240B4DAE00E5A29E /* Resources */,
-				4D9DA486CF610A02D2FCCF3F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -375,7 +373,6 @@
 				D3DBE410240B4DAE00E5A29E /* Sources */,
 				D3DBE411240B4DAE00E5A29E /* Frameworks */,
 				D3DBE412240B4DAE00E5A29E /* Resources */,
-				4C33FBA12F4EE895B45A8C02 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -480,40 +477,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4C33FBA12F4EE895B45A8C02 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Supermarket-SupermarketUITests/Pods-Supermarket-SupermarketUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Supermarket-SupermarketUITests/Pods-Supermarket-SupermarketUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Supermarket-SupermarketUITests/Pods-Supermarket-SupermarketUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4D9DA486CF610A02D2FCCF3F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SupermarketTests/Pods-SupermarketTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SupermarketTests/Pods-SupermarketTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SupermarketTests/Pods-SupermarketTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		60B85ADECC89CBB993A4F508 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -534,23 +497,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A5826415BC91FBA6374EA98F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Supermarket/Pods-Supermarket-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Supermarket/Pods-Supermarket-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Supermarket/Pods-Supermarket-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D7BCBD7B44DF8C24BB4CB849 /* [CP] Check Pods Manifest.lock */ = {

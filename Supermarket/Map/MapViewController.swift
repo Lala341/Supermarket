@@ -12,29 +12,26 @@ import MapKit
 class MapViewController: UIViewController {
 
     public var manager: CoreDataManager!
-
+    fileprivate let locationManager: CLLocationManager =  CLLocationManager()
     @IBOutlet weak var mapView: MKMapView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("perro")
-        print(manager)
-        let location = CLLocationCoordinate2D(latitude: 4.627153,
-            longitude:  -74.106616)
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.distanceFilter = kCLDistanceFilterNone
+        locationManager.startUpdatingLocation()
+        mapView.showsUserLocation = true
         
-        // 2
-        let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-        let region = MKCoordinateRegion(center: location, span: span)
-            mapView.setRegion(region, animated: true)
-            
-        //3
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = location
-        annotation.title = "Big Ben"
-        annotation.subtitle = "London"
-        mapView.addAnnotation(annotation)
         // Do any additional setup after loading the view.
     }
-    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last{
+            let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+            self.mapView.setRegion(region, animated: true)
+        }
+    }
+   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         if segue.destination is ProductsTableViewController
@@ -69,6 +66,7 @@ class MapViewController: UIViewController {
         }
         
     }
+    
     /*
     // MARK: - Navigation
 
@@ -78,5 +76,6 @@ class MapViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
 }
+
