@@ -27,7 +27,30 @@ class ProductsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+   {
+       
+    if  segue.identifier == "ShowProductDetail"{
+    
+    if let destination = segue.destination as? ProductDetailView {
+        
+        let blogIndex = tableView.indexPathForSelectedRow?.row
+            
+        let productTotal = self.products[blogIndex!]
+               
+              
+               destination.manager = manager
+                 destination.productTotal = productTotal
+               destination.delegate = delegate
+                     
+         
+        
+        
+        }
+     }
    
+       
+   }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections

@@ -117,7 +117,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     let pinImage = UIImage(named: "marker")
-           let size = CGSize(width: 55, height: 55)
+           let size = CGSize(width: 65, height: 65)
            UIGraphicsBeginImageContext(size)
            pinImage!.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
            let resizedImage = UIGraphicsGetImageFromCurrentImageContext()

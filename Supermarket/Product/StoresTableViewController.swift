@@ -69,6 +69,7 @@ class StoresTableViewController: UITableViewController {
                 let blogIndex = tableView.indexPathForSelectedRow?.row
             {
                 destination.storeTotal = self.stores[blogIndex]
+                destination.manager = manager
             }
           
               

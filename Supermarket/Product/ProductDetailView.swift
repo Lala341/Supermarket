@@ -8,27 +8,32 @@
 
 import UIKit
 
-class ProductTableViewCell: UITableViewCell {
+class ProductDetailView:  UIViewController {
     
     public var manager : CoreDataManager!
-    var productTotal: ProductRequest!
+    public var productTotal: ProductRequest!
     var delegate: ProductsTableView!
     var cartmanager = CartCoreDataManager()
     
-    @IBOutlet weak var product: UILabel!
-    
+
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var sku: UILabel!
     @IBOutlet weak var price: UILabel!
-    
-    @IBOutlet weak var photo: UIImageView!
-    
-    
+    @IBOutlet weak var count: UILabel!
+    @IBOutlet weak var descrip: UILabel!
     
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+   override func viewDidLoad() {
+    super.viewDidLoad()
         // Initialization code
-    }
-    
+    self.name.text = productTotal.name
+           self.sku.text = productTotal.sku
+    self.price.text = "$ \(productTotal.price!)"
+           self.descrip.text = productTotal.descrip
+           self.count.text = " \(0)"
+           self.image.image = UIImage(named: "prod1")
+        }
     @IBAction func addCart(_ sender: UIButton) {
       /*  let photos = ["prod1", "prod2", "prod3","prod4","prod5","prod1", "prod2", "prod3","prod4","prod5"]
         let names = ["Papas Lays", "Colombiana", "Arroz diana", "Arequipe", "Crema de leche", "Papas Lays", "Colombiana", "Arroz diana", "Arequipe", "Crema de leche"]
@@ -51,12 +56,16 @@ class ProductTableViewCell: UITableViewCell {
         
     }
     
-   
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+  {
+      
+      
+      if segue.destination is ProductsCartTableViewController
+      {
+          let vc = segue.destination as? ProductsCartTableViewController
+          vc?.manager = manager
+      }
+  }
     
 }
 

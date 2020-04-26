@@ -27,6 +27,7 @@
 		D371E3142454A0BC00CA2A67 /* StoresTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371E3132454A0BC00CA2A67 /* StoresTableView.swift */; };
 		D371E3162454A0D100CA2A67 /* StoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371E3152454A0D100CA2A67 /* StoreTableViewCell.swift */; };
 		D371E3182454A15800CA2A67 /* StoreRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371E3172454A15800CA2A67 /* StoreRequest.swift */; };
+		D37486E22455DDE200132778 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37486E12455DDE200132778 /* ProductDetailView.swift */; };
 		D37B89B0240B52EB00281998 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37B89AF240B52EB00281998 /* MapViewController.swift */; };
 		D37B89B2240B619C00281998 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37B89B1240B619C00281998 /* CameraViewController.swift */; };
 		D37B89B7240B683B00281998 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D37B89B6240B683B00281998 /* MapKit.framework */; };
@@ -91,6 +92,7 @@
 		D371E3132454A0BC00CA2A67 /* StoresTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoresTableView.swift; path = Supermarket/Product/StoresTableView.swift; sourceTree = SOURCE_ROOT; };
 		D371E3152454A0D100CA2A67 /* StoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreTableViewCell.swift; sourceTree = "<group>"; };
 		D371E3172454A15800CA2A67 /* StoreRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreRequest.swift; sourceTree = "<group>"; };
+		D37486E12455DDE200132778 /* ProductDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		D37B89AF240B52EB00281998 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D37B89B1240B619C00281998 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		D37B89B6240B683B00281998 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -178,6 +180,7 @@
 				D34FED702439677C005E9BBE /* ProductsTableViewController.swift */,
 				D38C1FDA244B87DE00B7A6C8 /* ProductsTableView.swift */,
 				D34FED6E24395F9B005E9BBE /* ProductTableViewCell.swift */,
+				D37486E12455DDE200132778 /* ProductDetailView.swift */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -532,6 +535,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D38C1FDF244C389400B7A6C8 /* ProductsCartTableView.swift in Sources */,
+				D37486E22455DDE200132778 /* ProductDetailView.swift in Sources */,
 				D35A081A2449DDE8005CC7BB /* TransactionCoreDataManager.swift in Sources */,
 				D38EA9422438EA68003E0EF3 /* Supermarket.xcdatamodeld in Sources */,
 				D38C1FDB244B87DE00B7A6C8 /* ProductsTableView.swift in Sources */,
