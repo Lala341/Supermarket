@@ -19,7 +19,7 @@ class StartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        createre()
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
             if self.usermanager.haveUser(container: self.manager.getContainer()){
                 self.nextTabBarView()
@@ -43,16 +43,65 @@ class StartViewController: UIViewController {
                    
                     
                 }
-               
-               } else {
+                else if(self.topMostController() != nil && self.topMostController()! is UITabBarController){
+                    
+                    let tab : UITabBarController = self.topMostController()! as! UITabBarController
+                    let m = tab.selectedIndex
+                    print(m)
+                       let items = tab.tabBar.items
+                        
+                        (items![0] ).isEnabled = true
+                    (items![0] ).badgeColor = .gray
+                        (items![1] ).isEnabled = true
+                    
+                        (items![4] ).isEnabled = true
+                        (items![2] ).isEnabled = true
+                        (items![3] ).isEnabled = true
+                        (items![1] ).badgeColor = .gray
+                        (items![2] ).badgeColor = .gray
+                        (items![3] ).badgeColor = .gray
+                        (items![4] ).badgeColor = .gray
+                        
+                        
+                        
+                    
+                    
+                }} else {
                    print("No estás conectado a la red")
                
                DispatchQueue.main.async {
-                              let VC = self.storyboard!.instantiateViewController(withIdentifier: "NotConnectionId") as! NotConection
-                VC.modalPresentationStyle = .fullScreen
                 
-                                      
-                self.topMostController()!.present(VC,animated: true, completion: nil)
+                
+                if(self.topMostController() != nil && self.topMostController()! is UITabBarController){
+                    
+                    let tab : UITabBarController = self.topMostController()! as! UITabBarController
+                    let m = tab.selectedIndex
+                    print(m)
+                    if(m == 2 || m == 3){
+                        let items = tab.tabBar.items
+                        
+                        (items![0] ).isEnabled = false
+                        (items![1] ).isEnabled = false
+                        (items![4] ).isEnabled = false
+                        
+                        
+                        
+                    }else{
+                        let VC = self.storyboard!.instantiateViewController(withIdentifier: "NotConnectionId") as! NotConection
+                        VC.modalPresentationStyle = .fullScreen
+                        
+                                              
+                        self.topMostController()!.present(VC,animated: true, completion: nil)
+                    }
+                    
+                }else{
+                    let VC = self.storyboard!.instantiateViewController(withIdentifier: "NotConnectionId") as! NotConection
+                    VC.modalPresentationStyle = .fullScreen
+                    
+                                          
+                    self.topMostController()!.present(VC,animated: true, completion: nil)
+                }
+                              
                            }
             
             }
@@ -126,7 +175,7 @@ print("coco")
     }
     
     func nextLoginView(){
-        
+        createre()
         let VC = self.storyboard!.instantiateViewController(withIdentifier: "LoginViewID") as! LoginViewController
         VC.manager = manager
         
@@ -143,18 +192,15 @@ print("coco")
      */
     @IBAction func createRecords(_ sender: UIButton) {
     
-        usermanager.createUser(container: manager.getContainer(), id: "1", name : "Laura", phone : "32037777", email : "li.forero@hotmail.com",gender : "femenino", dateOfBirth : "2020-12-01") { [weak self] in
-               //2
-              // self?.updateUI()
-            }
+      
         let photos = ["prod1", "prod2", "prod3","prod4","prod5","prod1", "prod2", "prod3","prod4","prod5"]
         let names = ["Papas Lays", "Colombiana", "Arroz diana", "Arequipe", "Crema de leche", "Papas Lays", "Colombiana", "Arroz diana", "Arequipe", "Crema de leche"]
         let precios = [1204, 2000,450,245,900,8000,1000,2300,2400,1200]
         let opciones = [0,1,2,3,4,5,6,7,8,9]
-        for  i in opciones {
+        let i = opciones[0]
             productmanager.createProduct(container: manager.getContainer(), name : names[i], price : Double(precios[i]), sku : names[i], description : "Producto de alta calidad", photo : photos[i] )  {
                 
-            }
+            
             
         }
         
@@ -163,15 +209,15 @@ print("coco")
     func createre()
     {
         let photos = ["prod1", "prod2", "prod3","prod4","prod5","prod1", "prod2", "prod3","prod4","prod5"]
-               let names = ["Papas Lays", "Colombiana", "Arroz diana", "Arequipe", "Crema de leche", "Papas Lays", "Colombiana", "Arroz diana", "Arequipe", "Crema de leche"]
-               let precios = [1204, 2000,450,245,900,8000,1000,2300,2400,1200]
-               let opciones = [0,1,2,3,4,5,6,7,8,9]
-               for  i in opciones {
-                   productmanager.createProduct(container: manager.getContainer(), name : names[i], price : Double(precios[i]), sku : names[i], description : "Producto de alta calidad", photo : photos[i] )  {
-                       
-                   }
-                   
-               }
+        let names = ["Papas Lays", "Colombiana", "Arroz diana", "Arequipe", "Crema de leche", "Papas Lays", "Colombiana", "Arroz diana", "Arequipe", "Crema de leche"]
+        let precios = [1204, 2000,450,245,900,8000,1000,2300,2400,1200]
+        let opciones = [0,1,2,3,4,5,6,7,8,9]
+        let i = opciones[0]
+            productmanager.createProduct(container: manager.getContainer(), name : names[i], price : Double(precios[i]), sku : names[i], description : "Producto de alta calidad", photo : photos[i] )  {
+                
+            
+            
+        }
     }
     
     

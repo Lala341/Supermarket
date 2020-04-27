@@ -11,8 +11,9 @@ import UIKit
 class TabBarViewController: UITabBarController {
      public var manager : CoreDataManager!;
     var actualizadowish : Bool = false;
-    
-    
+   
+   
+
     override func viewDidLoad() {
         super.viewDidLoad()
            print("uno11")
