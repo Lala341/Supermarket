@@ -13,7 +13,7 @@ class TransactionTableViewCell: UITableViewCell {
     public var manager : CoreDataManager!
     var transactionTotal: TransactionRequest!
     var cartmanager = CartCoreDataManager()
-    
+    var usermanager = UserCoreDataManager();
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var payment: UILabel!
     @IBOutlet weak var value: UILabel!

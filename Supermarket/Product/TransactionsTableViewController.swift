@@ -11,6 +11,7 @@ class TransactionsTableViewController: UITableViewController {
     
     public var manager: CoreDataManager!
     var transactions = [TransactionRequest]()
+    var usermanager = UserCoreDataManager();
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +71,7 @@ class TransactionsTableViewController: UITableViewController {
         
        // let produ = productmanager.fetchProduts(container: manager.getContainer())
        // products = produ
+        
         var userid = "5ea075140757bccae7cbf5ca"
         var produ: [TransactionRequest] = []
         let url = URL(string: "http://ec2-18-212-16-222.compute-1.amazonaws.com:8085/transactions/\(userid)")!
