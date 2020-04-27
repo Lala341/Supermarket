@@ -21,7 +21,6 @@ class ProductDetailView:  UIViewController {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var sku: UILabel!
     @IBOutlet weak var price: UILabel!
-    @IBOutlet weak var count: UILabel!
     @IBOutlet weak var descrip: UILabel!
     
     
@@ -32,7 +31,6 @@ class ProductDetailView:  UIViewController {
            self.sku.text = productTotal.sku
     self.price.text = "$ \(productTotal.price!)"
            self.descrip.text = productTotal.descrip
-           self.count.text = " \(0)"
            self.image.image = UIImage(url: URL(string: "http://ec2-18-212-16-222.compute-1.amazonaws.com:8082/images/\(productTotal.photo!)"))
         }
     @IBAction func addCart(_ sender: UIButton) {
@@ -49,7 +47,9 @@ class ProductDetailView:  UIViewController {
              //2
              print("add2")
             //self?.delegate.updateUI()
-            
+            let ac = UIAlertController( title: "Done",  message: "Product added", preferredStyle: .alert)
+             ac.addAction(UIAlertAction(title: "OK", style: .default))
+            self!.present(ac, animated: true)
             
 
             

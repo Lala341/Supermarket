@@ -91,7 +91,6 @@ completion()
                 
         
         do {
-            try context.save()
             
            let result = try context.fetch(fetchRequest )
         let result2 = try context.fetch(fetchRequest2)
@@ -128,8 +127,8 @@ completion()
                       product.photo = productf.photo
                       product.cantidad = Int16(productf.cantidad!)
                       
-                final.shoppingList = final2
-                final2.addToProducts(final)
+                product.shoppingList = final2
+                final2.addToProducts(product)
             }
             else{
                  final.cantidad = final.cantidad + Int16(productf.cantidad!)

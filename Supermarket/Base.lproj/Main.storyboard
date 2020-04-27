@@ -1165,7 +1165,7 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wish List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LO8-XN-maV">
-                                <rect key="frame" x="44" y="424" width="97" height="21"/>
+                                <rect key="frame" x="44" y="438" width="97" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -1185,29 +1185,8 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4wZ-8y-qLa">
-                                <rect key="frame" x="107" y="453" width="44" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="geT-lk-2xW">
-                                <rect key="frame" x="39" y="452" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <color key="tintColor" red="0.1019607843" green="0.16078431369999999" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <state key="normal" image="plus.circle.fill" catalog="system"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4SS-6M-vaP">
-                                <rect key="frame" x="65" y="452" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <color key="tintColor" red="0.1019607843" green="0.16078431369999999" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <state key="normal" image="minus.circle.fill" catalog="system"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CYh-pX-G0P">
-                                <rect key="frame" x="175" y="451" width="74" height="30"/>
+                                <rect key="frame" x="170" y="434" width="74" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.96862745100000003" green="0.80784313730000001" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1223,7 +1202,6 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                         <viewLayoutGuide key="safeArea" id="Gj3-ZU-9Xb"/>
                     </view>
                     <connections>
-                        <outlet property="count" destination="4wZ-8y-qLa" id="Yni-mo-JEQ"/>
                         <outlet property="descrip" destination="NDS-03-NWm" id="Fog-Sy-a7q"/>
                         <outlet property="image" destination="ShE-Bk-hbe" id="YNJ-F7-wfd"/>
                         <outlet property="name" destination="A6b-fP-uLu" id="5vC-ua-YM7"/>
@@ -2330,6 +2308,7 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="cant" destination="FtN-iU-xrk" id="U9D-rg-l45"/>
                                     <outlet property="photo" destination="wvL-7B-buj" id="y5R-nH-9hL"/>
                                     <outlet property="price" destination="lms-Sa-5tg" id="5cU-TO-9bu"/>
                                     <outlet property="product" destination="5GC-ko-v4S" id="f4S-BP-aCH"/>
@@ -2373,12 +2352,10 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
         <image name="magnifyingglass" catalog="system" width="64" height="56"/>
         <image name="map" catalog="system" width="64" height="56"/>
         <image name="mappin.and.ellipse" catalog="system" width="58" height="64"/>
-        <image name="minus.circle.fill" catalog="system" width="64" height="60"/>
         <image name="pencil.circle.fill" catalog="system" width="64" height="60"/>
         <image name="person.crop.circle" catalog="system" width="64" height="60"/>
         <image name="person.fill" catalog="system" width="64" height="60"/>
         <image name="plus" catalog="system" width="64" height="56"/>
-        <image name="plus.circle.fill" catalog="system" width="64" height="60"/>
         <image name="power" catalog="system" width="64" height="62"/>
         <image name="producto" width="1045" height="837"/>
         <image name="qrcode.viewfinder" catalog="system" width="64" height="56"/>

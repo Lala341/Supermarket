@@ -65,7 +65,7 @@ class ProductsWishTableViewController: UITableViewController {
         cell.price.text =  "$ \(product.price)" 
         cell.productTotal = product
         cell.delegatefinal = self
-        
+        cell.cant.text = "\(product.cantidad)"
         return cell
     }
     @IBOutlet weak var cell: ProductWishTableViewCell!
