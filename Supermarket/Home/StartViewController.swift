@@ -15,19 +15,17 @@ class StartViewController: UIViewController {
     var usermanager = UserCoreDataManager();
     var productmanager = ProductCoreDataManager();
     let networkMonitor = NWPathMonitor()
-
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        usermanager.createUser(container: manager.getContainer(), id: "1", name : "Laura", phone : "32037777", email : "li.forero@hotmail.com",gender : "femenino", dateOfBirth : "2020-12-01") { [weak self] in
-           //2
-          // self?.updateUI()
-        }
         createre()
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
-            self.nextView()
+            if self.usermanager.haveUser(container: self.manager.getContainer()){
+                self.nextTabBarView()
+            } else {
+                self.nextLoginView()
+            }
         })
         do {
         
@@ -93,32 +91,47 @@ print("coco")
         }
         
         else if segue.destination is MapViewController
-               {
-                   let vc = segue.destination as? MapViewController
-                   vc?.manager = manager
-               }
+        {
+            let vc = segue.destination as? MapViewController
+            vc?.manager = manager
+        }
+            
+        else if segue.destination is LoginViewController
+        {
+            let vc = segue.destination as? LoginViewController
+            vc?.manager = manager
+        }
         
         
     }
     
-    func nextView(){
+    func nextTabBarView(){
         
         let VC = self.storyboard!.instantiateViewController(withIdentifier: "TabBarView") as! TabBarViewController
         VC.manager = manager
-       print("dos")
-                         print(manager)
-       
+        
         VC.modalPresentationStyle = .fullScreen
-         self.present(VC, animated: true, completion: nil)
-         self.show(VC, sender: self)
+        self.present(VC, animated: true, completion: nil)
+        self.show(VC, sender: self)
         
     }
-  /*  @IBOutlet weak var summaryLabel: UILabel!{
-        didSet {
-                   summaryLabel.text = "Registros en la base: \(0)\r\nÚltimo registro: nil"
-        }
+    
+    func nextLoginView(){
+        
+        let VC = self.storyboard!.instantiateViewController(withIdentifier: "LoginViewID") as! LoginViewController
+        VC.manager = manager
+        
+        VC.modalPresentationStyle = .fullScreen
+        self.present(VC, animated: true, completion: nil)
+        self.show(VC, sender: self)
+        
+    }
+    /*  @IBOutlet weak var summaryLabel: UILabel!{
+     didSet {
+     summaryLabel.text = "Registros en la base: \(0)\r\nÚltimo registro: nil"
      }
-    */
+     }
+     */
     @IBAction func createRecords(_ sender: UIButton) {
     
         usermanager.createUser(container: manager.getContainer(), id: "1", name : "Laura", phone : "32037777", email : "li.forero@hotmail.com",gender : "femenino", dateOfBirth : "2020-12-01") { [weak self] in

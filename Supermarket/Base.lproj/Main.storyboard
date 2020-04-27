@@ -1736,7 +1736,7 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
         <!--Search-->
         <scene sceneID="esf-8I-Tnf">
             <objects>
-                <viewController id="fnu-C8-APV" customClass="LoginViewController" customModule="Supermarket" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewID" id="fnu-C8-APV" customClass="LoginViewController" customModule="Supermarket" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WhE-rY-3ph">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2341,8 +2341,8 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
         <image name="arrow.left" catalog="system" width="64" height="48"/>
         <image name="arrow.right" catalog="system" width="64" height="48"/>
         <image name="camera.fill" catalog="system" width="64" height="48"/>
-        <image name="cart" width="399" height="400"/>
         <image name="cart" catalog="system" width="64" height="50"/>
+        <image name="cart" width="399" height="400"/>
         <image name="cart.badge.plus" catalog="system" width="64" height="48"/>
         <image name="cart.fill" catalog="system" width="64" height="50"/>
         <image name="checkmark.rectangle.fill" catalog="system" width="64" height="46"/>

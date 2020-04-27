@@ -19,7 +19,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var warningLoginLabel: UILabel!
     
     var counter = 0;
-    var manager = CoreDataManager();
+    public var manager: CoreDataManager!
     var usermanager = UserCoreDataManager();
     let networkMonitor = NWPathMonitor()
     
@@ -84,6 +84,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     else if response.statusCode == 200 {
                         //TODO: Save the user_id from dataString
                         DispatchQueue.main.async {
+                            self.saveUser()
                             self.goTabBarView()
                         }
                     }
@@ -107,4 +108,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.present(VC, animated: true, completion: nil)
         self.show(VC, sender: self)
     }
+    
+    func saveUser(){
+        print("Saving user in CoreData")
+        usermanager.createUser(container: manager.getContainer(), id: "5ea4caf9f59deb1c1621a391", name : "Luis", phone : "121-212-1212", email : "luis@email.com",gender : "Male", dateOfBirth : "2020-12-01") { [weak self] in
+            //2
+            // self?.updateUI()
+        }
+    }
 }
+
