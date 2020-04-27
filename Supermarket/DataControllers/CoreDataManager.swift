@@ -13,7 +13,7 @@ class CoreDataManager {
     private let container : NSPersistentContainer!
     //3
     init() {
-        container = NSPersistentContainer(name: "Supermarket");
+        container = NSPersistentContainer(name: "Supermarketv2");
         
         setupDatabase()
     }

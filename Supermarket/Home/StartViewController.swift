@@ -21,6 +21,11 @@ class StartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        usermanager.createUser(container: manager.getContainer(), id: "1", name : "Laura", phone : "32037777", email : "li.forero@hotmail.com",gender : "femenino", dateOfBirth : "2020-12-01") { [weak self] in
+           //2
+          // self?.updateUI()
+        }
+        createre()
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
             self.nextView()
         })
@@ -117,7 +122,19 @@ class StartViewController: UIViewController {
         
         
         }
-    
+    func createre()
+    {
+        let photos = ["prod1", "prod2", "prod3","prod4","prod5","prod1", "prod2", "prod3","prod4","prod5"]
+               let names = ["Papas Lays", "Colombiana", "Arroz diana", "Arequipe", "Crema de leche", "Papas Lays", "Colombiana", "Arroz diana", "Arequipe", "Crema de leche"]
+               let precios = [1204, 2000,450,245,900,8000,1000,2300,2400,1200]
+               let opciones = [0,1,2,3,4,5,6,7,8,9]
+               for  i in opciones {
+                   productmanager.createProduct(container: manager.getContainer(), name : names[i], price : Double(precios[i]), sku : names[i], description : "Producto de alta calidad", photo : photos[i] )  {
+                       
+                   }
+                   
+               }
+    }
     
     
     @IBAction func deleteRecords(_ sender: UIButton) {

@@ -40,6 +40,10 @@ class UserCoreDataManager {
         shoppy.name = "Cart"
         shoppy.tag = "Mercado"
         shoppy.products = []
+        let wish = WishList(context: context)
+        wish.name = "Cart"
+        wish.tag = "Mercado"
+        wish.products = []
         
         let user = User(context: context)
         user.id = id
@@ -49,6 +53,7 @@ class UserCoreDataManager {
         user.email = email
         user.dateOfBirth = date
         user.shopList = shoppy
+        user.wish = wish
         
         do {
             try context.save()
