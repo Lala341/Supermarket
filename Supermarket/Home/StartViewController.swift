@@ -27,12 +27,22 @@ class StartViewController: UIViewController {
                 self.nextLoginView()
             }
         })
-        do {
+       do {
         
         networkMonitor.pathUpdateHandler = { path in
             
                if path.status == .satisfied {
                    print("Estás conectado a la red")
+                if(self.topMostController() != nil && self.topMostController()! is NotConection){
+                    DispatchQueue.main.async {
+                                 self.topMostController()!.dismiss(animated: true, completion: {})
+                        //self.topMostController()!.navigationController!.popToRootViewController( true)
+                               }
+                    
+                    
+                   
+                    
+                }
                
                } else {
                    print("No estás conectado a la red")
@@ -41,9 +51,8 @@ class StartViewController: UIViewController {
                               let VC = self.storyboard!.instantiateViewController(withIdentifier: "NotConnectionId") as! NotConection
                 VC.modalPresentationStyle = .fullScreen
                 
-                self.topMostController()!.navigationController?.pushViewController(VC, animated: true)
-                                        
-                self.topMostController()!.show(VC, sender: self)
+                                      
+                self.topMostController()!.present(VC,animated: true, completion: nil)
                            }
             
             }
@@ -188,3 +197,5 @@ print("coco")
     */
 
 }
+
+
