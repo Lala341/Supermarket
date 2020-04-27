@@ -13,6 +13,7 @@
 		B19850B224558789008831D7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19850B124558789008831D7 /* RegisterViewController.swift */; };
 		B1ABEBEA24540A37000ED439 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ABEBE924540A37000ED439 /* LoginViewController.swift */; };
 		D30C3D15245391FD00BB96E7 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30C3D14245391FD00BB96E7 /* TabBarViewController.swift */; };
+		D33A1D9E245680DB0023EC1A /* NetStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33A1D9D245680DB0023EC1A /* NetStatus.swift */; };
 		D34FED6D24395487005E9BBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D34FED6C24395487005E9BBE /* Assets.xcassets */; };
 		D34FED6F24395F9B005E9BBE /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34FED6E24395F9B005E9BBE /* ProductTableViewCell.swift */; };
 		D34FED712439677C005E9BBE /* ProductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34FED702439677C005E9BBE /* ProductsTableViewController.swift */; };
@@ -85,6 +86,7 @@
 		B19850B124558789008831D7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		B1ABEBE924540A37000ED439 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D30C3D14245391FD00BB96E7 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		D33A1D9D245680DB0023EC1A /* NetStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetStatus.swift; sourceTree = "<group>"; };
 		D34FED6C24395487005E9BBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D34FED6E24395F9B005E9BBE /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		D34FED702439677C005E9BBE /* ProductsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewController.swift; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 			children = (
 				D38C1FDC244C26ED00B7A6C8 /* NotConection.swift */,
 				D38C1FD6244B64DC00B7A6C8 /* Reachability.swift */,
+				D33A1D9D245680DB0023EC1A /* NetStatus.swift */,
 			);
 			path = Conectivity;
 			sourceTree = "<group>";
@@ -608,6 +611,7 @@
 				D35A08182449DBF0005CC7BB /* CartCoreDataManager.swift in Sources */,
 				D38C1FE3244C45F300B7A6C8 /* HomeViewController.swift in Sources */,
 				D38C1FE1244C459A00B7A6C8 /* ProfileViewController.swift in Sources */,
+				D33A1D9E245680DB0023EC1A /* NetStatus.swift in Sources */,
 				D3DBE3FB240B4DA800E5A29E /* ViewController.swift in Sources */,
 				D34FED752439A9D5005E9BBE /* ProductCartTableViewCell.swift in Sources */,
 				D37B89B2240B619C00281998 /* CameraViewController.swift in Sources */,

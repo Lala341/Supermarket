@@ -16,7 +16,6 @@ class ProductsTableView: UIViewController {
     var storeTotal: StoreRequest!
     var delegatetab: TabBarViewController!
 
-    let networkMonitor = NWPathMonitor()
     var element = false;
     @IBOutlet weak var data: UIButton!
     
@@ -29,37 +28,7 @@ class ProductsTableView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        //updateUI()
-        do{
-            if(element==false){ DispatchQueue.main.async {
-                self.networkMonitor.pathUpdateHandler = { path in
-                   
-                      if path.status == .satisfied {
-                          print("Estás conectado a la red")
-                      
-                      } else {
-                          print("No estás conectado a la red")
-                      
-                        
-                                     let VC = self.storyboard!.instantiateViewController(withIdentifier: "NotConnectionId") as! NotConection
-                       VC.modalPresentationStyle = .fullScreen
-                            
-                        VC.manager = self.manager
-                        
-                        self.present(VC, animated: true, completion: nil)
-                                               
-                                               self.show(VC, sender: self)
-                                  }
-                        
-                   }
-                  }
-
-                  let queue = DispatchQueue(label: "Network connectivity")
-                  networkMonitor.start(queue: queue)
-                
-            }
-        } catch  {
-           print("Error — \(error)")
-        }
+       
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.

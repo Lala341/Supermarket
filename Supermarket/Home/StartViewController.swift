@@ -42,9 +42,10 @@ class StartViewController: UIViewController {
                DispatchQueue.main.async {
                               let VC = self.storyboard!.instantiateViewController(withIdentifier: "NotConnectionId") as! NotConection
                 VC.modalPresentationStyle = .fullScreen
-                                            self.present(VC, animated: true, completion: nil)
+                
+                self.topMostController()!.navigationController?.pushViewController(VC, animated: true)
                                         
-                                        self.show(VC, sender: self)
+                self.topMostController()!.show(VC, sender: self)
                            }
             
             }
@@ -58,6 +59,21 @@ class StartViewController: UIViewController {
            print("Error — \(error)")
         }
         
+    }
+    func topMostController() -> UIViewController? {
+        guard let window = UIApplication.shared.keyWindow, let rootViewController = window.rootViewController else {
+            return nil
+        }
+
+        var topController = rootViewController
+
+        while let newTopController = topController.presentedViewController {
+            topController = newTopController
+        }
+print("coco")
+        print(topController)
+
+        return topController
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)

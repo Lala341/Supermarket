@@ -13,7 +13,6 @@ class HomeViewController: UIViewController {
     var counter = 0;
     public var manager: CoreDataManager!
     var usermanager = UserCoreDataManager();
-    let networkMonitor = NWPathMonitor()
 
     
 
@@ -21,28 +20,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        networkMonitor.pathUpdateHandler = { path in
-            
-               if path.status == .satisfied {
-                   print("Estás conectado a la red")
-               
-               } else {
-                   print("No estás conectado a la red")
-               
-               DispatchQueue.main.async {
-                              let VC = self.storyboard!.instantiateViewController(withIdentifier: "NotConnectionId") as! NotConection
-                VC.modalPresentationStyle = .fullScreen
-                VC.manager = self.manager
-                                            self.present(VC, animated: true, completion: nil)
-                                        
-                                        self.show(VC, sender: self)
-                           }
-            
-            }
-           }
-
-           let queue = DispatchQueue(label: "Network connectivity")
-           networkMonitor.start(queue: queue)
+        
         
     }
     

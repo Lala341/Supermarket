@@ -13,7 +13,6 @@ class ProfileViewController: UIViewController {
     var counter = 0;
     public var manager: CoreDataManager!
     var usermanager = UserCoreDataManager();
-    let networkMonitor = NWPathMonitor()
 
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var email: UITextField!
@@ -29,34 +28,7 @@ class ProfileViewController: UIViewController {
            self.logout.layer.cornerRadius = 10
            
         self.darTransaction()
-        do{
-           networkMonitor.pathUpdateHandler = { path in
-                      
-                         if path.status == .satisfied {
-                             print("Estás conectado a la red")
-                         
-                         } else {
-                             print("No estás conectado a la red")
-                         
-                         DispatchQueue.main.async {
-                                        let VC = self.storyboard!.instantiateViewController(withIdentifier: "NotConnectionId") as! NotConection
-                          VC.modalPresentationStyle = .fullScreen
-                               
-                           VC.manager = self.manager
-                           
-                           self.present(VC, animated: true, completion: nil)
-                                                  
-                                                  self.show(VC, sender: self)
-                                     }
-                      
-                      }
-                     }
-
-                     let queue = DispatchQueue(label: "Network connectivity")
-                     networkMonitor.start(queue: queue)
-           } catch  {
-              print("Error — \(error)")
-           }
+        
            // Uncomment the following line to preserve selection between presentations
            // self.clearsSelectionOnViewWillAppear = false
            // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
