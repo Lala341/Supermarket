@@ -88,14 +88,7 @@ completion()
     
         
        
-                  let product = Product(context: context)
-        product.name = productf.name
-        product.price = Double(productf.price!)
-        product.sku = productf.sku
-        product.descrip = productf.descrip
-        product.id = productf.id
-        product.photo = productf.photo
-        product.cantidad = Int16(Int64(0))
+                
         
         do {
             try context.save()
@@ -111,8 +104,37 @@ completion()
                 }
             }
             let final2 = result.last!
-            final.shoppingList = final2
-            final2.addToProducts(final)
+            let elements : [Product] = final2.products!.allObjects as! [Product]
+            var j = 0
+            var exist = false
+            for i in elements{
+                if(i.name == productf.name){
+                    
+                    elements[j].cantidad = elements[j].cantidad + Int16(productf.cantidad!)
+                    exist = true
+                }
+                j = j + 1
+            }
+            
+            if(exist == false){
+                let product = Product(context: context)
+                      product.name = productf.name
+                      product.price = Double(productf.price!)
+                      product.sku = productf.sku
+                      product.descrip = productf.descrip
+                      product.id = productf.id
+                      product.photo = productf.photo
+                      product.cantidad = Int16(productf.cantidad!)
+                      
+                final.shoppingList = final2
+                final2.addToProducts(final)
+            }
+            else{
+                 final.cantidad = final.cantidad + Int16(productf.cantidad!)
+            }
+            
+            
+            
             try context.save()
             
             completion()
@@ -134,15 +156,23 @@ completion()
         let result2 = try context.fetch(fetchRequest2)
             
             var final = result2.last!
-            for i in result2{
+            let final2 = result.last!
+            let elements : [Product] = final2.products!.allObjects as! [Product]
+            for i in elements{
                 if(i.name == productf.name){
                     final = i
                     
                 }
             }
-            let final2 = result.last!
-            final.shoppingList = final2
-            final2.removeFromProducts(final)
+            //final.shoppingList = final2
+            
+           if(final.cantidad == Int16(1)){
+                final2.removeFromProducts(final)
+            }else{
+                
+                final.cantidad = final.cantidad - Int16(1)
+            }
+            
             try context.save()
             
             completion()

@@ -100,7 +100,7 @@ class StartViewController: UIViewController {
     */
     @IBAction func createRecords(_ sender: UIButton) {
     
-        usermanager.createUser(container: manager.getContainer(), name : "Laura", phone : "32037777", email : "li.forero@hotmail.com",gender : "femenino", dateOfBirth : "2020-12-01") { [weak self] in
+        usermanager.createUser(container: manager.getContainer(), id: "1", name : "Laura", phone : "32037777", email : "li.forero@hotmail.com",gender : "femenino", dateOfBirth : "2020-12-01") { [weak self] in
                //2
               // self?.updateUI()
             }

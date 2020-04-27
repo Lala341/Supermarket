@@ -76,10 +76,11 @@ self?.imagee.isHidden = false
        if(havecart == true){
            let cart = cartmanager.fetchUserCart(container: manager.getContainer())
               print(cart)
-           
+        var po : Product
            for i in cart!.products!
            {
-            price = price + (i as! Product).price
+            po = i as! Product
+            price = price + (po.price*Double(po.cantidad))
                
            }
        }
@@ -109,11 +110,13 @@ self?.imagee.isHidden = false
         let cart = cartmanager.fetchUserCart(container: manager.getContainer())
            print(cart)
         
-        for i in cart!.products!
-        {
-         price = price + (i as! Product).price
-            
-        }
+         var po : Product
+                  for i in cart!.products!
+                  {
+                   po = i as! Product
+                   price = price + (po.price*Double(po.cantidad))
+                      
+                  }
     }
     if(price == 0){
         self.table.isHidden = true

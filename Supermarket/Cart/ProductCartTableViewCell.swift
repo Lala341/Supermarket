@@ -22,6 +22,7 @@ class ProductCartTableViewCell: UITableViewCell {
     
     @IBOutlet weak var photo: UIImageView!
     
+    @IBOutlet weak var cant: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

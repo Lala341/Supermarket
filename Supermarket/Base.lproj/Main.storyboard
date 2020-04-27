@@ -1283,9 +1283,17 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                                                 <action selector="removeCart:" destination="Uck-1v-vc9" eventType="touchUpInside" id="7p6-01-Ccb"/>
                                             </connections>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chu-66-BWF">
+                                            <rect key="frame" x="158" y="75" width="206" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="cant" destination="chu-66-BWF" id="ua8-NY-T6Z"/>
                                     <outlet property="photo" destination="daZ-bT-Op1" id="Mb5-mS-tOg"/>
                                     <outlet property="price" destination="yPS-Oy-Dd8" id="KEI-Sp-HKR"/>
                                     <outlet property="product" destination="2mr-Fj-GoX" id="EOa-8z-RG4"/>
@@ -2301,6 +2309,13 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                                                 <action selector="removeCart:" destination="3Ss-Ak-VWS" eventType="touchUpInside" id="HO3-sP-Lgz"/>
                                             </connections>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FtN-iU-xrk">
+                                            <rect key="frame" x="158" y="75" width="206" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>

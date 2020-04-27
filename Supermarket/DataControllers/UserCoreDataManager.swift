@@ -29,7 +29,7 @@ class UserCoreDataManager {
         }
     }
    
-    func createUser(container : NSPersistentContainer, name : String, phone : String, email : String,gender : String, dateOfBirth : String, completion: @escaping() -> Void) {
+    func createUser(container : NSPersistentContainer, id: String, name : String, phone : String, email : String,gender : String, dateOfBirth : String, completion: @escaping() -> Void) {
         // 2
         let context = container.viewContext
       
@@ -42,6 +42,7 @@ class UserCoreDataManager {
         shoppy.products = []
         
         let user = User(context: context)
+        user.id = id
         user.name = name
         user.phone = phone
         user.gender = gender
@@ -72,6 +73,25 @@ class UserCoreDataManager {
      
           //3
          return []
+    }
+    func haveUser(container : NSPersistentContainer) -> Bool {
+        //1
+        let fetchRequest : NSFetchRequest<User> = User.fetchRequest()
+        do {
+      
+            //2
+            let result = try container.viewContext.fetch(fetchRequest)
+            
+            if(result.count == 0){
+                return false
+            }
+            return true
+        } catch {
+            print("El error obteniendo usuario(s) \(error)")
+         }
+     
+          //3
+         return false
     }
     func fetchUser(container : NSPersistentContainer) -> User {
         //1
