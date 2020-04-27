@@ -82,10 +82,29 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         }
                     }
                     else if response.statusCode == 200 {
-                        //TODO: Save the user_id from dataString
-                        DispatchQueue.main.async {
-                            self.saveUser()
-                            self.goTabBarView()
+                        let dataJson = Data(dataString.utf8)
+                        do {
+                            // make sure this JSON is in the format we expect
+                            if let json = try JSONSerialization.jsonObject(with: dataJson, options: []) as? [String: Any] {
+                                // try to read out a string array
+                                print("json")
+                                print(json)
+                                if let id = json["_id"] as? String,
+                                    let name = json["name"] as? String,
+                                    let phone = json["phone"] as? String,
+                                    let email = json["email"] as? String,
+                                    let gender = json["gender"] as? String,
+                                    let dateOfBirth = json["date_of_birth"] as? String{
+                                    DispatchQueue.main.async {
+                                        self.saveUser(id: id, name: name, phone: phone, email: email, gender: gender, dateOfBirth: dateOfBirth)
+                                        self.goTabBarView()
+                                    }
+                                }else{
+                                    print("ERRORRRRRRR!")
+                                }
+                            }
+                        } catch let error as NSError {
+                            print("Failed to load: \(error.localizedDescription)")
                         }
                     }
                 }
@@ -109,9 +128,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.show(VC, sender: self)
     }
     
-    func saveUser(){
+    func saveUser(id: String, name: String, phone: String, email: String, gender: String, dateOfBirth: String){
         print("Saving user in CoreData")
-        usermanager.createUser(container: manager.getContainer(), id: "5ea4caf9f59deb1c1621a391", name : "Luis", phone : "121-212-1212", email : "luis@email.com",gender : "Male", dateOfBirth : "2020-12-01") { [weak self] in
+        usermanager.createUser(container: manager.getContainer(), id: id, name : name, phone : phone, email : email, gender : gender, dateOfBirth : "2020-12-01") { [weak self] in
             //2
             // self?.updateUI()
         }

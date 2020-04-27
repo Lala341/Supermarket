@@ -13,6 +13,12 @@ import CryptoKit
 
 class RegisterViewController: UIViewController, UITextFieldDelegate {
     //MARK: Properties
+    @IBOutlet weak var textName: UITextField!
+    @IBOutlet weak var textPhone: UITextField!
+    @IBOutlet weak var textEmail: UITextField!
+    @IBOutlet weak var textGender: UITextField!
+    @IBOutlet weak var textPassword: UITextField!
+    @IBOutlet weak var datePicker: UIDatePicker!
     
     //MARK: viewDidLoad
     override func viewDidLoad() {
@@ -30,6 +36,8 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     }
     
     //MARK: Actions
+    @IBAction func createUser(_ sender: UIButton) {
+    }
     
     //MARK: Internal functions
     func sha256(_ data: String) -> String{

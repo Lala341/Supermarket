@@ -1332,6 +1332,9 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                                 <state key="normal" title="Create Account">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="createUser:" destination="um5-4P-GcI" eventType="touchUpInside" id="bx9-Pr-UiR"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LVw-V3-VNW">
                                 <rect key="frame" x="51" y="251" width="273" height="34"/>
@@ -1373,6 +1376,14 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                         <viewLayoutGuide key="safeArea" id="RJ8-6j-d7f"/>
                     </view>
                     <navigationItem key="navigationItem" id="GV0-MB-jhs"/>
+                    <connections>
+                        <outlet property="datePicker" destination="30s-h0-qcW" id="zfk-qv-fQb"/>
+                        <outlet property="textEmail" destination="tb0-Ju-an8" id="yp2-9R-tCF"/>
+                        <outlet property="textGender" destination="1Cv-ae-MAa" id="4xK-mu-7jZ"/>
+                        <outlet property="textName" destination="MHC-Yk-nlc" id="cNC-no-ZoL"/>
+                        <outlet property="textPassword" destination="fXM-hF-FIW" id="2jU-Jv-vNV"/>
+                        <outlet property="textPhone" destination="LVw-V3-VNW" id="rP7-57-FNY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="puf-AV-0P0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
