@@ -92,8 +92,7 @@ class TransactionsTableViewController: UITableViewController {
                             for i in jsonArray{
                                 
                                 let products: [ProductRequest] = []
-                                temp = TransactionRequest(id : i["_id"] as! String, date: i["date"] as! String, payment_type: i["payment_type"] as! String, product_count: i["product_count"] as! Int,
-                                                          products: products, store_id:i["store_id"] as! Int, total: i["total"] as! Int, user_age: i["user_age"] as! Int, user_id : i["user_id"] as! String)
+                                temp = TransactionRequest(id : i["_id"] as! String, date: i["date"] as! String, payment_type: i["payment_type"] as! String, product_count: i["product_count"] as! Int, products: products, store_id: Int(i["store_id"] as! String)!, total: Int(i["total"] as! Double), user_age: i["user_age"] as! Int, user_id : i["user_id"] as! String)
                                 
                                 produ.append(temp)
                                 
