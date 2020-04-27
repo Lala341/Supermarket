@@ -129,6 +129,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     func goTabBarView(){
         let VC = self.storyboard!.instantiateViewController(withIdentifier: "TabBarView") as! TabBarViewController
+        VC.manager = manager
         VC.modalPresentationStyle = .fullScreen
         self.present(VC, animated: true, completion: nil)
         self.show(VC, sender: self)
