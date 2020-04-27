@@ -45,6 +45,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             let vc = segue.destination as? NotConection
             vc?.manager = manager
         }
+            
+        else if segue.destination is RegisterViewController
+        {
+            let vc = segue.destination as? RegisterViewController
+            vc?.manager = manager
+        }
     }
     
     //MARK: UITextFieldDelegate
