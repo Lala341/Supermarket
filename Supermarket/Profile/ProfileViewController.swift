@@ -13,6 +13,7 @@ class ProfileViewController: UIViewController {
     var counter = 0;
     public var manager: CoreDataManager!
     var usermanager = UserCoreDataManager();
+    var productsmanager = ProductCoreDataManager();
 
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var email: UITextField!
@@ -64,6 +65,19 @@ class ProfileViewController: UIViewController {
             vc?.manager = manager
         }
         
+    }
+    @IBAction func addCart(_ sender: UIButton) {
+        usermanager.deleteUsers(container: manager.getContainer())
+        
+        productsmanager.deleteProducts(container: manager.getContainer())
+       let VC = self.storyboard!.instantiateViewController(withIdentifier: "LoginViewID") as! LoginViewController
+       VC.manager = manager
+       
+       VC.modalPresentationStyle = .fullScreen
+       self.present(VC, animated: true, completion: nil)
+       self.show(VC, sender: self)
+    
+    
     }
     
   /*  @IBOutlet weak var summaryLabel: UILabel!{
