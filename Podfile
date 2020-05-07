@@ -6,7 +6,6 @@ target 'Supermarket' do
   use_frameworks!
   # Pods for Supermarket 
 
-
   target 'SupermarketTests' do
     inherit! :search_paths
     # Pods for testing

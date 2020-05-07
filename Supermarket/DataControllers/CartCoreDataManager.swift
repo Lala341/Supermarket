@@ -95,7 +95,7 @@ completion()
            let result = try context.fetch(fetchRequest )
         let result2 = try context.fetch(fetchRequest2)
             
-            var final = result2.last!
+            var final = Product()
             
             
             for i in result2{

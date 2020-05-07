@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		6A170FAC6F7C689E85C3CFCF /* Pods_Supermarket_SupermarketUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7FE6B1CB9B306D6377AD0F /* Pods_Supermarket_SupermarketUITests.framework */; };
 		A6440550E5E0F00FF5A32205 /* Pods_SupermarketTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC6908F25632BF70FA0F7E8 /* Pods_SupermarketTests.framework */; };
-		B146660090DD89D6C94502CC /* Pods_Supermarket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F1C70BFE3BE31769EB2F363 /* Pods_Supermarket.framework */; };
 		B19850B224558789008831D7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19850B124558789008831D7 /* RegisterViewController.swift */; };
 		B1ABEBEA24540A37000ED439 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ABEBE924540A37000ED439 /* LoginViewController.swift */; };
 		D30C3D15245391FD00BB96E7 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30C3D14245391FD00BB96E7 /* TabBarViewController.swift */; };
@@ -47,6 +46,11 @@
 		D38EA9442438FDB3003E0EF3 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38EA9432438FDB3003E0EF3 /* CoreDataManager.swift */; };
 		D38EA947243918B2003E0EF3 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38EA946243918B2003E0EF3 /* StartViewController.swift */; };
 		D39FA1992453B23300FCFE66 /* ProductRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39FA1982453B23300FCFE66 /* ProductRequest.swift */; };
+		D3B3CEF82463E90E00A77AF2 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B3CEF72463E90E00A77AF2 /* CoreTelephony.framework */; };
+		D3B3CEFE2463F01D00A77AF2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B3CEFD2463F01D00A77AF2 /* SystemConfiguration.framework */; };
+		D3B3CF002463F03500A77AF2 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B3CEFF2463F03500A77AF2 /* libc++.tbd */; };
+		D3B3CF022463F04300A77AF2 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B3CF012463F04300A77AF2 /* libz.tbd */; };
+		D3B3CF092463F93C00A77AF2 /* NewRelicAgent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B3CF082463F93C00A77AF2 /* NewRelicAgent.framework */; };
 		D3C5C87F24566FBC006A0DFF /* Supermarketv2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D3C5C87D24566FBC006A0DFF /* Supermarketv2.xcdatamodeld */; };
 		D3C754782456286B001B0D9D /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C754772456286A001B0D9D /* UIImage.swift */; };
 		D3DBE3F7240B4DA800E5A29E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3DBE3F6240B4DA800E5A29E /* AppDelegate.swift */; };
@@ -81,7 +85,6 @@
 		6F553F45F100986E9A69D580 /* Pods-Supermarket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Supermarket.debug.xcconfig"; path = "Target Support Files/Pods-Supermarket/Pods-Supermarket.debug.xcconfig"; sourceTree = "<group>"; };
 		8384B162E529C7E211D8987C /* Pods-Supermarket-SupermarketUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Supermarket-SupermarketUITests.debug.xcconfig"; path = "Target Support Files/Pods-Supermarket-SupermarketUITests/Pods-Supermarket-SupermarketUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8691A0DEA2BDB3122E30D4C7 /* Pods-Supermarket-SupermarketUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Supermarket-SupermarketUITests.release.xcconfig"; path = "Target Support Files/Pods-Supermarket-SupermarketUITests/Pods-Supermarket-SupermarketUITests.release.xcconfig"; sourceTree = "<group>"; };
-		8F1C70BFE3BE31769EB2F363 /* Pods_Supermarket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Supermarket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92317418731EFAAEB94CBFEA /* Pods-SupermarketTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SupermarketTests.release.xcconfig"; path = "Target Support Files/Pods-SupermarketTests/Pods-SupermarketTests.release.xcconfig"; sourceTree = "<group>"; };
 		B19850B124558789008831D7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		B1ABEBE924540A37000ED439 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +123,12 @@
 		D38EA9432438FDB3003E0EF3 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		D38EA946243918B2003E0EF3 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		D39FA1982453B23300FCFE66 /* ProductRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRequest.swift; sourceTree = "<group>"; };
+		D3B3CEF72463E90E00A77AF2 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		D3B3CEF92463E99000A77AF2 /* Supermarket-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Supermarket-Bridging-Header.h"; sourceTree = "<group>"; };
+		D3B3CEFD2463F01D00A77AF2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D3B3CEFF2463F03500A77AF2 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		D3B3CF012463F04300A77AF2 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		D3B3CF082463F93C00A77AF2 /* NewRelicAgent.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NewRelicAgent.framework; sourceTree = "<group>"; };
 		D3C5C87E24566FBC006A0DFF /* Supermarketv2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Supermarketv2.xcdatamodel; sourceTree = "<group>"; };
 		D3C754772456286A001B0D9D /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		D3DBE3F3240B4DA800E5A29E /* Supermarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Supermarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,8 +153,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3B3CF022463F04300A77AF2 /* libz.tbd in Frameworks */,
+				D3B3CF092463F93C00A77AF2 /* NewRelicAgent.framework in Frameworks */,
+				D3B3CF002463F03500A77AF2 /* libc++.tbd in Frameworks */,
+				D3B3CEFE2463F01D00A77AF2 /* SystemConfiguration.framework in Frameworks */,
+				D3B3CEF82463E90E00A77AF2 /* CoreTelephony.framework in Frameworks */,
 				D37B89B7240B683B00281998 /* MapKit.framework in Frameworks */,
-				B146660090DD89D6C94502CC /* Pods_Supermarket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,8 +308,12 @@
 		D37B89B5240B683B00281998 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D3B3CF012463F04300A77AF2 /* libz.tbd */,
+				D3B3CEFF2463F03500A77AF2 /* libc++.tbd */,
+				D3B3CF082463F93C00A77AF2 /* NewRelicAgent.framework */,
+				D3B3CEFD2463F01D00A77AF2 /* SystemConfiguration.framework */,
+				D3B3CEF72463E90E00A77AF2 /* CoreTelephony.framework */,
 				D37B89B6240B683B00281998 /* MapKit.framework */,
-				8F1C70BFE3BE31769EB2F363 /* Pods_Supermarket.framework */,
 				EA7FE6B1CB9B306D6377AD0F /* Pods_Supermarket_SupermarketUITests.framework */,
 				2FC6908F25632BF70FA0F7E8 /* Pods_SupermarketTests.framework */,
 			);
@@ -336,6 +353,7 @@
 				D3DBE3F4240B4DA800E5A29E /* Products */,
 				D37B89B5240B683B00281998 /* Frameworks */,
 				7A459A20BD2D26FD120A81F6 /* Pods */,
+				D3B3CEF92463E99000A77AF2 /* Supermarket-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -406,6 +424,7 @@
 				D3DBE3EF240B4DA800E5A29E /* Sources */,
 				D3DBE3F0240B4DA800E5A29E /* Frameworks */,
 				D3DBE3F1240B4DA800E5A29E /* Resources */,
+				D3B3CF032463F25500A77AF2 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -466,6 +485,7 @@
 				TargetAttributes = {
 					D3DBE3F2240B4DA800E5A29E = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 					D3DBE408240B4DAE00E5A29E = {
 						CreatedOnToolsVersion = 11.3.1;
@@ -568,6 +588,23 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		D3B3CF032463F25500A77AF2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nSCRIPT=`/usr/bin/find \"${SRCROOT}\" -name newrelic_postbuild.sh | head -n 1`\n\n/bin/sh \"${SCRIPT}\" \"AA6d66964274e74c9544c2ac1fa874ba6b1c83735c-NRMA\"\n";
 		};
 		D7BCBD7B44DF8C24BB4CB849 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -811,8 +848,10 @@
 			baseConfigurationReference = 6F553F45F100986E9A69D580 /* Pods-Supermarket.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2XH8Q9ZFM9;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				INFOPLIST_FILE = Supermarket/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -821,6 +860,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Ninguna.Supermarket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Supermarket-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -831,8 +872,10 @@
 			baseConfigurationReference = FC9006CE5A02F6C577B12093 /* Pods-Supermarket.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2XH8Q9ZFM9;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				INFOPLIST_FILE = Supermarket/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -841,6 +884,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Ninguna.Supermarket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Supermarket-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
