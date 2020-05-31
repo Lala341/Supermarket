@@ -142,8 +142,8 @@ self?.imagee.isHidden = false
     print("voy");
         let VC = ScannerViewController();
         VC.modalPresentationStyle = .fullScreen
-        self.present(VC, animated: true, completion: nil)
-              
+        self.present(VC,animated: true, completion: nil)
+
     
     }
     
