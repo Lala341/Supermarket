@@ -8,12 +8,13 @@
 
 import UIKit
 
-class ProductsCartTableView: UIViewController {
+class ProductsCartTableView: UIViewController{
     
     public var manager: CoreDataManager!
     var cartmanager = CartCoreDataManager()
     var delegatetab: TabBarViewController!
 
+    
     
 @IBOutlet weak var resumeCart: UIBarButtonItem!
     
@@ -27,7 +28,7 @@ class ProductsCartTableView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     updateUIIni()
-        
+    
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
@@ -137,6 +138,15 @@ self?.imagee.isHidden = false
     present(ac, animated: true)
   }
 
+    @IBAction func scan() {
+    print("voy");
+        let VC = ScannerViewController();
+        VC.modalPresentationStyle = .fullScreen
+        self.present(VC, animated: true, completion: nil)
+              
+    
+    }
+    
     
 
 }

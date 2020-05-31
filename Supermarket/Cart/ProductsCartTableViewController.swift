@@ -8,13 +8,17 @@
 
 import UIKit
 
+
 class ProductsCartTableViewController: UITableViewController {
     
     public var manager : CoreDataManager!;
     var productmanager = ProductCoreDataManager();
     var cartmanager = CartCoreDataManager();
     var delegate: ProductsCartTableView!
-         
+    
+    
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         actualizarTabla()
@@ -24,6 +28,7 @@ class ProductsCartTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         loadProducts()
@@ -99,12 +104,13 @@ class ProductsCartTableViewController: UITableViewController {
  
     }
     func actualizarTabla(){
-           loadProducts()
-           DispatchQueue.main.async {
-               self.tableView.reloadData()
-           }
-           
-       }
+        loadProducts()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+        
+    }
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

@@ -23,6 +23,7 @@
 		D35A08162449DBC6005CC7BB /* UserCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35A08152449DBC6005CC7BB /* UserCoreDataManager.swift */; };
 		D35A08182449DBF0005CC7BB /* CartCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35A08172449DBF0005CC7BB /* CartCoreDataManager.swift */; };
 		D35A081A2449DDE8005CC7BB /* TransactionCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35A08192449DDE8005CC7BB /* TransactionCoreDataManager.swift */; };
+		D3666F4A24837494009C13F1 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3666F4924837494009C13F1 /* ScannerViewController.swift */; };
 		D371E3122454A0A500CA2A67 /* StoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371E3112454A0A400CA2A67 /* StoresTableViewController.swift */; };
 		D371E3142454A0BC00CA2A67 /* StoresTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371E3132454A0BC00CA2A67 /* StoresTableView.swift */; };
 		D371E3162454A0D100CA2A67 /* StoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371E3152454A0D100CA2A67 /* StoreTableViewCell.swift */; };
@@ -45,6 +46,7 @@
 		D38C1FE3244C45F300B7A6C8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C1FE2244C45F300B7A6C8 /* HomeViewController.swift */; };
 		D38EA9442438FDB3003E0EF3 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38EA9432438FDB3003E0EF3 /* CoreDataManager.swift */; };
 		D38EA947243918B2003E0EF3 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38EA946243918B2003E0EF3 /* StartViewController.swift */; };
+		D392D54A2481D246001732CB /* Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D392D5492481D246001732CB /* Scanner.swift */; };
 		D39FA1992453B23300FCFE66 /* ProductRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39FA1982453B23300FCFE66 /* ProductRequest.swift */; };
 		D3B3CEF82463E90E00A77AF2 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B3CEF72463E90E00A77AF2 /* CoreTelephony.framework */; };
 		D3B3CEFE2463F01D00A77AF2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B3CEFD2463F01D00A77AF2 /* SystemConfiguration.framework */; };
@@ -100,6 +102,7 @@
 		D35A08152449DBC6005CC7BB /* UserCoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCoreDataManager.swift; sourceTree = "<group>"; };
 		D35A08172449DBF0005CC7BB /* CartCoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartCoreDataManager.swift; sourceTree = "<group>"; };
 		D35A08192449DDE8005CC7BB /* TransactionCoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionCoreDataManager.swift; sourceTree = "<group>"; };
+		D3666F4924837494009C13F1 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		D371E3112454A0A400CA2A67 /* StoresTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoresTableViewController.swift; path = Supermarket/Product/StoresTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		D371E3132454A0BC00CA2A67 /* StoresTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoresTableView.swift; path = Supermarket/Product/StoresTableView.swift; sourceTree = SOURCE_ROOT; };
 		D371E3152454A0D100CA2A67 /* StoreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreTableViewCell.swift; sourceTree = "<group>"; };
@@ -122,6 +125,7 @@
 		D38C1FE2244C45F300B7A6C8 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D38EA9432438FDB3003E0EF3 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		D38EA946243918B2003E0EF3 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		D392D5492481D246001732CB /* Scanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scanner.swift; sourceTree = "<group>"; };
 		D39FA1982453B23300FCFE66 /* ProductRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRequest.swift; sourceTree = "<group>"; };
 		D3B3CEF72463E90E00A77AF2 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		D3B3CEF92463E99000A77AF2 /* Supermarket-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Supermarket-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -344,6 +348,15 @@
 			path = DataControllers;
 			sourceTree = "<group>";
 		};
+		D392D54824819BEB001732CB /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				D392D5492481D246001732CB /* Scanner.swift */,
+				D3666F4924837494009C13F1 /* ScannerViewController.swift */,
+			);
+			path = Scanner;
+			sourceTree = "<group>";
+		};
 		D3DBE3EA240B4DA800E5A29E = {
 			isa = PBXGroup;
 			children = (
@@ -370,6 +383,7 @@
 		D3DBE3F5240B4DA800E5A29E /* Supermarket */ = {
 			isa = PBXGroup;
 			children = (
+				D392D54824819BEB001732CB /* Scanner */,
 				D37486F424560D9C00132778 /* TabBar */,
 				D37486F324560D8300132778 /* Profile */,
 				D37486F224560D6A00132778 /* Request */,
@@ -642,6 +656,7 @@
 				D3C5C87F24566FBC006A0DFF /* Supermarketv2.xcdatamodeld in Sources */,
 				D371E3162454A0D100CA2A67 /* StoreTableViewCell.swift in Sources */,
 				D35A08162449DBC6005CC7BB /* UserCoreDataManager.swift in Sources */,
+				D3666F4A24837494009C13F1 /* ScannerViewController.swift in Sources */,
 				D371E3122454A0A500CA2A67 /* StoresTableViewController.swift in Sources */,
 				D37486F124560D3900132778 /* ProductWishTableViewCell.swift in Sources */,
 				D39FA1992453B23300FCFE66 /* ProductRequest.swift in Sources */,
@@ -667,6 +682,7 @@
 				D37486E92455F5C500132778 /* TransactionRequest.swift in Sources */,
 				D38EA947243918B2003E0EF3 /* StartViewController.swift in Sources */,
 				D37B89B0240B52EB00281998 /* MapViewController.swift in Sources */,
+				D392D54A2481D246001732CB /* Scanner.swift in Sources */,
 				D35A08142449DBB4005CC7BB /* ProductCoreDataManager.swift in Sources */,
 				D38C1FD7244B64DC00B7A6C8 /* Reachability.swift in Sources */,
 				D371E3182454A15800CA2A67 /* StoreRequest.swift in Sources */,
