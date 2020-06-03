@@ -23,7 +23,15 @@ override func viewDidLoad() {
     
     scanner.requestCaptureSessionStartRunning()
 }
+    override open var shouldAutorotate: Bool {
+       return false
+    }
 
+    // Specify the orientation.
+    override open var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+       return .portrait
+    }
+     
 override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.

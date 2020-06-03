@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		6A170FAC6F7C689E85C3CFCF /* Pods_Supermarket_SupermarketUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7FE6B1CB9B306D6377AD0F /* Pods_Supermarket_SupermarketUITests.framework */; };
+		9921CD3C688479A80780AFE8 /* Pods_Supermarket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C006D402469A6B014C9842 /* Pods_Supermarket.framework */; };
 		A6440550E5E0F00FF5A32205 /* Pods_SupermarketTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC6908F25632BF70FA0F7E8 /* Pods_SupermarketTests.framework */; };
 		B19850B224558789008831D7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19850B124558789008831D7 /* RegisterViewController.swift */; };
 		B1ABEBEA24540A37000ED439 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ABEBE924540A37000ED439 /* LoginViewController.swift */; };
@@ -46,8 +47,10 @@
 		D38C1FE3244C45F300B7A6C8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C1FE2244C45F300B7A6C8 /* HomeViewController.swift */; };
 		D38EA9442438FDB3003E0EF3 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38EA9432438FDB3003E0EF3 /* CoreDataManager.swift */; };
 		D38EA947243918B2003E0EF3 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38EA946243918B2003E0EF3 /* StartViewController.swift */; };
+		D391C6E324876B6000B879D9 /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D391C6E224876B6000B879D9 /* Stripe.framework */; };
 		D392D54A2481D246001732CB /* Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D392D5492481D246001732CB /* Scanner.swift */; };
 		D39FA1992453B23300FCFE66 /* ProductRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39FA1982453B23300FCFE66 /* ProductRequest.swift */; };
+		D3A19F442487508500C1CBBD /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A19F432487508500C1CBBD /* CheckoutViewController.swift */; };
 		D3B3CEF82463E90E00A77AF2 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B3CEF72463E90E00A77AF2 /* CoreTelephony.framework */; };
 		D3B3CEFE2463F01D00A77AF2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B3CEFD2463F01D00A77AF2 /* SystemConfiguration.framework */; };
 		D3B3CF002463F03500A77AF2 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B3CEFF2463F03500A77AF2 /* libc++.tbd */; };
@@ -82,6 +85,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04C006D402469A6B014C9842 /* Pods_Supermarket.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Supermarket.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D2C36CEA2C3D7C55CD8A55F /* Pods-SupermarketTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SupermarketTests.debug.xcconfig"; path = "Target Support Files/Pods-SupermarketTests/Pods-SupermarketTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2FC6908F25632BF70FA0F7E8 /* Pods_SupermarketTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SupermarketTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F553F45F100986E9A69D580 /* Pods-Supermarket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Supermarket.debug.xcconfig"; path = "Target Support Files/Pods-Supermarket/Pods-Supermarket.debug.xcconfig"; sourceTree = "<group>"; };
@@ -125,8 +129,10 @@
 		D38C1FE2244C45F300B7A6C8 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D38EA9432438FDB3003E0EF3 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		D38EA946243918B2003E0EF3 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		D391C6E224876B6000B879D9 /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Stripe.framework; sourceTree = "<group>"; };
 		D392D5492481D246001732CB /* Scanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scanner.swift; sourceTree = "<group>"; };
 		D39FA1982453B23300FCFE66 /* ProductRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRequest.swift; sourceTree = "<group>"; };
+		D3A19F432487508500C1CBBD /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
 		D3B3CEF72463E90E00A77AF2 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		D3B3CEF92463E99000A77AF2 /* Supermarket-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Supermarket-Bridging-Header.h"; sourceTree = "<group>"; };
 		D3B3CEFD2463F01D00A77AF2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -160,9 +166,11 @@
 				D3B3CF022463F04300A77AF2 /* libz.tbd in Frameworks */,
 				D3B3CF092463F93C00A77AF2 /* NewRelicAgent.framework in Frameworks */,
 				D3B3CF002463F03500A77AF2 /* libc++.tbd in Frameworks */,
+				D391C6E324876B6000B879D9 /* Stripe.framework in Frameworks */,
 				D3B3CEFE2463F01D00A77AF2 /* SystemConfiguration.framework in Frameworks */,
 				D3B3CEF82463E90E00A77AF2 /* CoreTelephony.framework in Frameworks */,
 				D37B89B7240B683B00281998 /* MapKit.framework in Frameworks */,
+				9921CD3C688479A80780AFE8 /* Pods_Supermarket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +261,14 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		D3666F4B24874D14009C13F1 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				D3A19F432487508500C1CBBD /* CheckoutViewController.swift */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
 		D371E3102454A08000CA2A67 /* Store */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,12 +330,14 @@
 			children = (
 				D3B3CF012463F04300A77AF2 /* libz.tbd */,
 				D3B3CEFF2463F03500A77AF2 /* libc++.tbd */,
+				D391C6E224876B6000B879D9 /* Stripe.framework */,
 				D3B3CF082463F93C00A77AF2 /* NewRelicAgent.framework */,
 				D3B3CEFD2463F01D00A77AF2 /* SystemConfiguration.framework */,
 				D3B3CEF72463E90E00A77AF2 /* CoreTelephony.framework */,
 				D37B89B6240B683B00281998 /* MapKit.framework */,
 				EA7FE6B1CB9B306D6377AD0F /* Pods_Supermarket_SupermarketUITests.framework */,
 				2FC6908F25632BF70FA0F7E8 /* Pods_SupermarketTests.framework */,
+				04C006D402469A6B014C9842 /* Pods_Supermarket.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -366,7 +384,6 @@
 				D3DBE3F4240B4DA800E5A29E /* Products */,
 				D37B89B5240B683B00281998 /* Frameworks */,
 				7A459A20BD2D26FD120A81F6 /* Pods */,
-				D3B3CEF92463E99000A77AF2 /* Supermarket-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -383,6 +400,8 @@
 		D3DBE3F5240B4DA800E5A29E /* Supermarket */ = {
 			isa = PBXGroup;
 			children = (
+				D3B3CEF92463E99000A77AF2 /* Supermarket-Bridging-Header.h */,
+				D3666F4B24874D14009C13F1 /* Payment */,
 				D392D54824819BEB001732CB /* Scanner */,
 				D37486F424560D9C00132778 /* TabBar */,
 				D37486F324560D8300132778 /* Profile */,
@@ -439,6 +458,8 @@
 				D3DBE3F0240B4DA800E5A29E /* Frameworks */,
 				D3DBE3F1240B4DA800E5A29E /* Resources */,
 				D3B3CF032463F25500A77AF2 /* ShellScript */,
+				B2F6E6D28C0A4B1FE57AD31C /* [CP] Embed Pods Frameworks */,
+				D391C6E12487682500B879D9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -476,6 +497,7 @@
 				D3DBE410240B4DAE00E5A29E /* Sources */,
 				D3DBE411240B4DAE00E5A29E /* Frameworks */,
 				D3DBE412240B4DAE00E5A29E /* Resources */,
+				7BE18301D98083FABB4DE91C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -603,6 +625,57 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7BE18301D98083FABB4DE91C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Supermarket-SupermarketUITests/Pods-Supermarket-SupermarketUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Supermarket-SupermarketUITests/Pods-Supermarket-SupermarketUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Supermarket-SupermarketUITests/Pods-Supermarket-SupermarketUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B2F6E6D28C0A4B1FE57AD31C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Supermarket/Pods-Supermarket-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Supermarket/Pods-Supermarket-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Supermarket/Pods-Supermarket-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D391C6E12487682500B879D9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
 		D3B3CF032463F25500A77AF2 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -651,6 +724,7 @@
 			files = (
 				D38C1FDF244C389400B7A6C8 /* ProductsCartTableView.swift in Sources */,
 				D37486E22455DDE200132778 /* ProductDetailView.swift in Sources */,
+				D3A19F442487508500C1CBBD /* CheckoutViewController.swift in Sources */,
 				D35A081A2449DDE8005CC7BB /* TransactionCoreDataManager.swift in Sources */,
 				D38C1FDB244B87DE00B7A6C8 /* ProductsTableView.swift in Sources */,
 				D3C5C87F24566FBC006A0DFF /* Supermarketv2.xcdatamodeld in Sources */,
@@ -876,7 +950,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Ninguna.Supermarket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Supermarket-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Supermarket/Supermarket-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -900,7 +974,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Ninguna.Supermarket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Supermarket-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Supermarket/Supermarket-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

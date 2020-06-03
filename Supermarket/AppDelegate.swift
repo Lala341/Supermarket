@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Stripe
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        NewRelic.start(withApplicationToken:"AA6d66964274e74c9544c2ac1fa874ba6b1c83735c-NRMA")
+       Stripe.setDefaultPublishableKey("pk_test_1Io5gDHECnsWKVIKECzytxSe00Kqj9z92J")
+         NewRelic.start(withApplicationToken:"AA6d66964274e74c9544c2ac1fa874ba6b1c83735c-NRMA")
 
         return true
     }
