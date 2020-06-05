@@ -10,8 +10,15 @@ import UIKit
 import AVFoundation
 
 class ScannerViewController: UIViewController , AVCaptureMetadataOutputObjectsDelegate, ScannerDelegate {
-private var scanner: Scanner?
 
+    
+    public var manager: CoreDataManager!
+    var cartmanager = CartCoreDataManager()
+    private var scanner: Scanner?
+    var products = [ProductRequest]()
+    var delegate: ProductsCartTableView!
+    
+    
 override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -22,6 +29,7 @@ override func viewDidLoad() {
     }
     
     scanner.requestCaptureSessionStartRunning()
+    loadProducts()
 }
     override open var shouldAutorotate: Bool {
        return false
@@ -62,10 +70,67 @@ func delegateViewController() -> UIViewController
 
 func scanCompleted(withCode code: String)
 {
+    var encontrado = false
     print(code)
+    for i in products{
+        if(i.id==code){
+            encontrado = true
+            cartmanager.addProductCart(container: manager.getContainer(), name: i.name!, productf: i, completion: {[weak self] in
+                 //2
+                 print("add2")
+                self!.delegate.updateAdd(e: encontrado)
+                
+            })
+            
+        }
+    }
+        
     self.dismiss(animated: true, completion: {})
 }
-    
+    private func loadProducts() {
+        
+        var produ: [ProductRequest] = []
+        
+        
+        let url = URL(string: "http://ec2-18-212-16-222.compute-1.amazonaws.com:8081/products")!
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                print("error: \(error)")
+            } else {
+               
+                
+                if let data = data, let dataString = String(data: data, encoding: .utf8) {
+                    print("data: \(dataString)")
+                   let dataf = dataString.data(using: .utf8)!
+                    do {
+                        if let jsonArray = try JSONSerialization.jsonObject(with: dataf, options : .allowFragments) as? [Dictionary<String,Any>]
+                        {
+                           print(jsonArray) // use the json here
+
+                            var temp : ProductRequest!
+                            
+                            for i in jsonArray{
+                                print(i["name"]!)
+                                temp = ProductRequest(name: i["name"]! as! String, price: Int(i["price"]! as! Double), sku: i["sku"]! as! String, descrip: i["description"]! as! String, photo:i["img_url"]! as! String, id: i["_id"]! as! String, store: i["store_id"]! as! Int, cantidad: 1 )
+                                
+                                produ.append(temp)
+                                
+                            }
+                            self.products = produ
+                            
+                            
+                            
+                        } else {
+                            print("bad json")
+                        }
+                    } catch let error as NSError {
+                        print(error)
+                    }
+                }
+            }
+        }
+        task.resume()
+    }
 
     /*
     // MARK: - Navigation

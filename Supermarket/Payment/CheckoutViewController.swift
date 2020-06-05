@@ -74,12 +74,12 @@ class CheckoutViewController: UIViewController {
             "total":total!,
             
         ]
+        print(json)
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = try? JSONSerialization.data(withJSONObject: json)
         let task = URLSession.shared.dataTask(with: request, completionHandler: { [weak self] (data, response, error) in
-            print(data!)
             
             guard let response = response as? HTTPURLResponse,
                 response.statusCode == 200,
@@ -90,6 +90,7 @@ class CheckoutViewController: UIViewController {
                 let clientSecret = json["clientSecret"] as? String,
                 let publishableKey = "pk_test_1Io5gDHECnsWKVIKECzytxSe00Kqj9z92J" as? String else {
                     let message = error?.localizedDescription ?? "Failed to decode response from server."
+                    
                     self?.displayAlert(title: "Error loading page", message: message)
                     return
             }

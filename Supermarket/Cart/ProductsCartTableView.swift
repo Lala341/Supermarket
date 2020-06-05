@@ -15,7 +15,8 @@ class ProductsCartTableView: UIViewController{
     var usermanager = UserCoreDataManager()
     var delegatetab: TabBarViewController!
     var priceFinal = 0.0
-    
+    var adddone = false
+    var adderror = false
     
 @IBOutlet weak var resumeCart: UIBarButtonItem!
     
@@ -28,7 +29,7 @@ class ProductsCartTableView: UIViewController{
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-    updateUIIni()
+        updateUIIni()
     
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -72,12 +73,11 @@ self?.imagee.isHidden = false
          let havecart = cartmanager.haveCart(container: manager.getContainer())
          
           
-          print(havecart)
-       
+          
          var price : Double = 0
        if(havecart == true){
            let cart = cartmanager.fetchUserCart(container: manager.getContainer())
-              print(cart)
+             
         var po : Product
            for i in cart!.products!
            {
@@ -99,20 +99,25 @@ self?.imagee.isHidden = false
            resumeCart.title = "$ \(price)"
        }
            
-        
+        if(adddone){
+            adddone=false
+           updateUIAdd()
+        }
+        if(adderror){
+            adderror=false
+            updateUIAddError()
+        }
      }
   func updateUI() {
           //3
       let havecart = cartmanager.haveCart(container: manager.getContainer())
       
        
-       print(havecart)
-    
+       
       var price : Double = 0
     if(havecart == true){
         let cart = cartmanager.fetchUserCart(container: manager.getContainer())
-           print(cart)
-        
+           
          var po : Product
                   for i in cart!.products!
                   {
@@ -144,6 +149,8 @@ self?.imagee.isHidden = false
     print("voy");
         let VC = ScannerViewController();
         VC.modalPresentationStyle = .fullScreen
+        VC.delegate = self
+        VC.manager = manager
         self.present(VC,animated: true, completion: nil)
 
     
@@ -164,6 +171,25 @@ self?.imagee.isHidden = false
     
     }
     
-    
+    func updateUIAdd(){
+    let ac = UIAlertController( title: "Done",  message: "Product added", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+       present(ac, animated: true)
+        
+    }
+    func updateUIAddError(){
+    let ac = UIAlertController( title: "Not found",  message: "Product could not be found.", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+       present(ac, animated: true)
+        
+    }
+    func updateAdd(e: Bool){
+        if(e){
+           adddone=e
+        }else{
+            adderror=true
+        }
+        
+    }
 
 }

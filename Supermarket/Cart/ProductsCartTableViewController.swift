@@ -59,8 +59,6 @@ class ProductsCartTableViewController: UITableViewController {
         cell.delegate = delegate
         let product = products[indexPath.row]
         // Configure the cell...
-        print(product.price)
-        print(String(describing: product.name) )
         var name: String!
         name = product.name
         cell.product.text = name  ?? "Colombina"
@@ -78,11 +76,9 @@ class ProductsCartTableViewController: UITableViewController {
        
     private func loadProducts() {
       
-         print(manager)
          let havecart = cartmanager.haveCart(container: manager.getContainer())
        
         
-        print(havecart)
         var produ  : [Product] = []
         
         
@@ -99,7 +95,6 @@ class ProductsCartTableViewController: UITableViewController {
         }
         
      
-        print(produ)
         products = produ
  
     }

@@ -33,7 +33,7 @@ class ProductCartTableViewCell: UITableViewCell {
     @IBAction func removeCart(_ sender: UIButton) {
         cartmanager.deleteProductCart(container: manager.getContainer(), name: productTotal.name!, productf: productTotal, completion: {[weak self] in
          //2
-         print("add2")
+        print("add2")
         self?.delegate.updateUI()
             
             self?.delegatefinal.actualizarTabla()
