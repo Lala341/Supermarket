@@ -14,10 +14,10 @@ class ScannerViewController: UIViewController , AVCaptureMetadataOutputObjectsDe
     
     public var manager: CoreDataManager!
     var cartmanager = CartCoreDataManager()
+    var productsmaneger = ProductCoreDataManager()
     private var scanner: Scanner?
     var products = [ProductRequest]()
     var delegate: ProductsCartTableView!
-    
     
 override func viewDidLoad() {
     super.viewDidLoad()
@@ -94,8 +94,9 @@ func scanCompleted(withCode code: String)
     private func loadProducts() {
         
         var produ: [ProductRequest] = []
-        
-        
+        print("vowww")
+        print(delegate.connection)
+        if(delegate.connection){
         let url = URL(string: "http://ec2-18-212-16-222.compute-1.amazonaws.com:8081/products")!
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
@@ -134,6 +135,28 @@ func scanCompleted(withCode code: String)
             }
         }
         task.resume()
+        }
+        else{
+        
+            let productos:[Product] = productsmaneger.fetchProduts(container: manager.getContainer())
+            
+             
+            for temp2 in productos{
+                print(temp2)
+                print(temp2.name!)
+                print(Int(temp2.price))
+                print(temp2.sku!)
+                print(temp2.descrip!)
+                print(temp2.photo!)
+                let id = temp2.id ?? "prod1239"
+                
+                let temp = ProductRequest(name: temp2.name!, price: Int(temp2.price), sku: temp2.sku!, descrip: temp2.descrip!, photo: temp2.photo!, id: id , store: 1, cantidad: 1);
+                produ.append(temp)
+                
+            }
+        }
+        self.products = produ
+        
     }
 
     /*

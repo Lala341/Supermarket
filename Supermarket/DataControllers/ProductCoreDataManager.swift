@@ -108,6 +108,37 @@ class ProductCoreDataManager {
           //3
          return ShoppingList()
     }
+    func addProduct(container : NSPersistentContainer,produ: ProductRequest , completion: @escaping() -> Void) {
+        // 2
+        print("Producto \(produ.name) entroˇ")
+        
+        let context = container.viewContext
+      
+        let shoppy = ShoppingList(context: context)
+        shoppy.name = "Cart"
+        shoppy.tag = "Mercado"
+        shoppy.products = []
+        
+        let product = Product(context: context)
+        product.name = produ.name
+       product.sku = produ.sku
+        product.descrip = produ.descrip
+     product.photo = produ.photo
+     product.shoppingList = shoppy
+        product.price = Double(produ.price!)
+        product.cantidad = Int16(0)
+        product.id = produ.id
+        
+        do {
+         
+            try context.save()
+            print("Producto \(produ.name) guardado")
+            completion()
+        } catch {
+         
+          print("Error guardando producto — \(error)")
+        }
+    }
     func createProduct(container : NSPersistentContainer, name : String, price : Double, sku : String, description : String, photo : String , completion: @escaping() -> Void) {
            // 2
            let context = container.viewContext

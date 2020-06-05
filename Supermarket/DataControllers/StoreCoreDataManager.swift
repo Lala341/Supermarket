@@ -18,6 +18,10 @@ class StoreCoreDataManager {
         setupDatabase()
     }
     
+    
+    
+    
+    
     private func setupDatabase() {
         //4
         container.loadPersistentStores { (desc, error) in
@@ -28,6 +32,45 @@ class StoreCoreDataManager {
         print("Database ready!")
     }
 }
+    
+    func addProducts(name : String, productf : Product,  completion: @escaping() -> Void) {
+        // 2
+        let context = container.viewContext
+        
+        let fetchRequest : NSFetchRequest<ShoppingList> = ShoppingList.fetchRequest()
+        let fetchRequest2 : NSFetchRequest<Product> = Product.fetchRequest()
+              
+        let product = Product(context: container.viewContext)
+        product.name = productf.name
+        product.price = productf.price
+               product.sku = productf.sku
+               product.descrip = productf.description
+               product.photo = productf.photo
+        product.id = productf.id
+        do {
+           let result = try context.fetch(fetchRequest )
+        let result2 = try context.fetch(fetchRequest2)
+            
+            var final = result2.last!
+            for i in result2{
+                if(i.name == productf.name){
+                    final = i
+                    
+                }
+            }
+            let final2 = result.last!
+            context.insert(final)
+            context.insert(final2)
+            final2.addToProducts(final)
+            try context.save()
+            
+            completion()
+        } catch {
+         
+          print("Error guardando producto — \(error)")
+        }
+    }
+    
     func deleteUsers() {
      
      //1

@@ -12,7 +12,7 @@ import Network
 class ProductsTableView: UIViewController {
     
     public var manager: CoreDataManager!
-    var cartmanager = CartCoreDataManager()
+    var cartmanager = WishCoreDataManager()
     var storeTotal: StoreRequest!
     var delegatetab: TabBarViewController!
 

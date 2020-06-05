@@ -10,7 +10,7 @@ import UIKit
 class ProductsTableViewController: UITableViewController {
     
     public var manager: CoreDataManager!
-    var cartmanager = CartCoreDataManager()
+    var cartmanager = WishCoreDataManager()
     var productmanager = ProductCoreDataManager()
     var products = [ProductRequest]()
     var delegate: ProductsTableView!

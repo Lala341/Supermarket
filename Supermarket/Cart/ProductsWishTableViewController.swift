@@ -12,7 +12,7 @@ class ProductsWishTableViewController: UITableViewController {
     
     public var manager : CoreDataManager!;
     var productmanager = ProductCoreDataManager();
-    var cartmanager = CartCoreDataManager();
+    var cartmanager = WishCoreDataManager();
     var delegate: ProductsWishTableView!
          
     override func viewDidAppear(_ animated: Bool) {

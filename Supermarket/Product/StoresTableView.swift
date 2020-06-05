@@ -63,7 +63,17 @@ class StoresTableView: UIViewController {
           
       resumeCart.title = "$ \(price)"
   }
-
-    
+    func updateUIAdd(){
+    let ac = UIAlertController( title: "Done",  message: "Registered", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+       present(ac, animated: true)
+        
+    }
+    func updateUIAddya(){
+    let ac = UIAlertController( title: "Done",  message: "The store has already been registered.", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+       present(ac, animated: true)
+        
+    }
 
 }

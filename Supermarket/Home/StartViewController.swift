@@ -63,6 +63,11 @@ class StartViewController: UIViewController {
                         Vf.connection = true
                         Vf.cone()
                     }
+                        else if(m==3){
+                            let Vf = tab.selectedViewController  as! ProductsWishTableView
+                            Vf.connection = true
+                            Vf.cone()
+                        }
                     }
                     
                     
@@ -94,7 +99,8 @@ class StartViewController: UIViewController {
                         (items![4] ).isEnabled = false
                         
                         let V = tab.selectedViewController  as! ProductsWishTableView
-                        
+                        V.connection = false
+                        V.cone()
                         
                     }else{
                         let VC = self.storyboard!.instantiateViewController(withIdentifier: "NotConnectionId") as! NotConection

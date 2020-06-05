@@ -13,7 +13,7 @@ class ProductDetailView:  UIViewController {
     public var manager : CoreDataManager!
     public var productTotal: ProductRequest!
     var delegate: ProductsTableView!
-    var cartmanager = CartCoreDataManager()
+    var cartmanager = WishCoreDataManager()
     var delegatetab: TabBarViewController!
 
 

@@ -11,9 +11,11 @@ import UIKit
 class ProductsWishTableView: UIViewController {
     
     public var manager: CoreDataManager!
-    var cartmanager = CartCoreDataManager()
+    var cartmanager = WishCoreDataManager()
     var delegatetab: TabBarViewController!
-
+    var adddone = false
+    var adderror = false
+    
     
     
 @IBOutlet weak var resumeCart: UIBarButtonItem!
@@ -31,15 +33,28 @@ class ProductsWishTableView: UIViewController {
             })
         }
     
+    @IBOutlet weak var connect: UILabel!
+    var connection: Bool = true
+    
+    public func cone(){
+        if(connection){
+            self.connect.isHidden = true
+        }else{
+            self.connect.isHidden = false
+        }
+            
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         updateUIIni()
-        
+        cone()
         
     }
     override func viewDidLoad() {
         super.viewDidLoad()
       updateUIIni()
+        cone()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
@@ -90,7 +105,14 @@ class ProductsWishTableView: UIViewController {
              self.buttone.isHidden = true
              resumeCart.title = "$ \(price)"
          }
-             
+             if(adddone){
+                 adddone=false
+                updateUIAdd()
+             }
+             if(adderror){
+                 adderror=false
+                 updateUIAddError()
+             }
           
        }
     func updateUI() {
@@ -132,4 +154,26 @@ class ProductsWishTableView: UIViewController {
       present(ac, animated: true)
     }
 
+    
+    
+    func updateUIAdd(){
+    let ac = UIAlertController( title: "Done",  message: "Product added", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+       present(ac, animated: true)
+        
+    }
+    func updateUIAddError(){
+    let ac = UIAlertController( title: "Not found",  message: "Product could not be found.", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+       present(ac, animated: true)
+        
+    }
+    func updateAdd(e: Bool){
+        if(e){
+           adddone=e
+        }else{
+            adderror=true
+        }
+        
+    }
 }
