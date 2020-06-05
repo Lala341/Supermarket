@@ -68,7 +68,13 @@ class StoresTableViewController: UITableViewController {
         
         cell.storeTotal = store
         
-        
+        let us = store.users ?? 0
+        if(us >= 40){
+            cell.conges.isHidden = false
+            
+        }else{
+             cell.conges.isHidden = true
+        }
         return cell
     }
     var indicator = UIActivityIndicatorView()

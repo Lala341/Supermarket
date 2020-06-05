@@ -29,12 +29,8 @@ class StoreTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        if(storeTotal.users!>=40){
-            conges.isHidden = false
-            
-        }else{
-             conges.isHidden = true
-        }
+        
+        
     }
  
     
