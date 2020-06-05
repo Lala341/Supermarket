@@ -3,17 +3,17 @@
 
 target 'Supermarket' do
   # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
-  # Pods for Supermarket 
+#  use_frameworks!
+
+  # Pods for Supermarket
+
   target 'SupermarketTests' do
     inherit! :search_paths
     # Pods for testing
-
   end
 
   target 'SupermarketUITests' do
     # Pods for testing
-
   end
 
 end

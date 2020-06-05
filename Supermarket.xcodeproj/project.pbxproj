@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6A170FAC6F7C689E85C3CFCF /* Pods_Supermarket_SupermarketUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7FE6B1CB9B306D6377AD0F /* Pods_Supermarket_SupermarketUITests.framework */; };
-		A6440550E5E0F00FF5A32205 /* Pods_SupermarketTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FC6908F25632BF70FA0F7E8 /* Pods_SupermarketTests.framework */; };
 		B19850B224558789008831D7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19850B124558789008831D7 /* RegisterViewController.swift */; };
 		B1ABEBEA24540A37000ED439 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ABEBE924540A37000ED439 /* LoginViewController.swift */; };
 		D30C3D15245391FD00BB96E7 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30C3D14245391FD00BB96E7 /* TabBarViewController.swift */; };
@@ -24,6 +22,8 @@
 		D35A08182449DBF0005CC7BB /* CartCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35A08172449DBF0005CC7BB /* CartCoreDataManager.swift */; };
 		D35A081A2449DDE8005CC7BB /* TransactionCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35A08192449DDE8005CC7BB /* TransactionCoreDataManager.swift */; };
 		D3666F4A24837494009C13F1 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3666F4924837494009C13F1 /* ScannerViewController.swift */; };
+		D36CDE572489D5D500B9883A /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D391C6E224876B6000B879D9 /* Stripe.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		D36CDE582489D5D500B9883A /* Stripe.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D391C6E224876B6000B879D9 /* Stripe.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D371E3122454A0A500CA2A67 /* StoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371E3112454A0A400CA2A67 /* StoresTableViewController.swift */; };
 		D371E3142454A0BC00CA2A67 /* StoresTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371E3132454A0BC00CA2A67 /* StoresTableView.swift */; };
 		D371E3162454A0D100CA2A67 /* StoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371E3152454A0D100CA2A67 /* StoreTableViewCell.swift */; };
@@ -46,7 +46,6 @@
 		D38C1FE3244C45F300B7A6C8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C1FE2244C45F300B7A6C8 /* HomeViewController.swift */; };
 		D38EA9442438FDB3003E0EF3 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38EA9432438FDB3003E0EF3 /* CoreDataManager.swift */; };
 		D38EA947243918B2003E0EF3 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38EA946243918B2003E0EF3 /* StartViewController.swift */; };
-		D391C6E324876B6000B879D9 /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D391C6E224876B6000B879D9 /* Stripe.framework */; };
 		D392D54A2481D246001732CB /* Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = D392D5492481D246001732CB /* Scanner.swift */; };
 		D39FA1992453B23300FCFE66 /* ProductRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39FA1982453B23300FCFE66 /* ProductRequest.swift */; };
 		D3A19F442487508500C1CBBD /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A19F432487508500C1CBBD /* CheckoutViewController.swift */; };
@@ -83,14 +82,27 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D36CDE592489D5D500B9883A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D36CDE582489D5D500B9883A /* Stripe.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		084629DAA06806E27F500683 /* Pods-SupermarketTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SupermarketTests.release.xcconfig"; path = "Target Support Files/Pods-SupermarketTests/Pods-SupermarketTests.release.xcconfig"; sourceTree = "<group>"; };
-		22D7682CA2974AD78265006D /* Pods-Supermarket-SupermarketUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Supermarket-SupermarketUITests.debug.xcconfig"; path = "Target Support Files/Pods-Supermarket-SupermarketUITests/Pods-Supermarket-SupermarketUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		2FC6908F25632BF70FA0F7E8 /* Pods_SupermarketTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SupermarketTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7F222AC65CE8945715CA96F2 /* Pods-Supermarket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Supermarket.debug.xcconfig"; path = "Target Support Files/Pods-Supermarket/Pods-Supermarket.debug.xcconfig"; sourceTree = "<group>"; };
+		7CD6968A25107147288904A8 /* Pods-SupermarketTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SupermarketTests.debug.xcconfig"; path = "Target Support Files/Pods-SupermarketTests/Pods-SupermarketTests.debug.xcconfig"; sourceTree = "<group>"; };
+		84C3F54CD4B5BFF2029DD744 /* Pods-Supermarket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Supermarket.release.xcconfig"; path = "Target Support Files/Pods-Supermarket/Pods-Supermarket.release.xcconfig"; sourceTree = "<group>"; };
 		B19850B124558789008831D7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		B1ABEBE924540A37000ED439 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		CAC3497AC299CE863E16ED4F /* Pods-SupermarketTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SupermarketTests.debug.xcconfig"; path = "Target Support Files/Pods-SupermarketTests/Pods-SupermarketTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C9E563285526A52E970A5404 /* Pods-SupermarketTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SupermarketTests.release.xcconfig"; path = "Target Support Files/Pods-SupermarketTests/Pods-SupermarketTests.release.xcconfig"; sourceTree = "<group>"; };
+		CCD9C848511A5D65B8E1E9CB /* Pods-Supermarket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Supermarket.debug.xcconfig"; path = "Target Support Files/Pods-Supermarket/Pods-Supermarket.debug.xcconfig"; sourceTree = "<group>"; };
 		D30C3D14245391FD00BB96E7 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		D33A1D9D245680DB0023EC1A /* NetStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetStatus.swift; sourceTree = "<group>"; };
 		D34FED6C24395487005E9BBE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -151,9 +163,8 @@
 		D3DBE414240B4DAE00E5A29E /* SupermarketUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SupermarketUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3DBE418240B4DAE00E5A29E /* SupermarketUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupermarketUITests.swift; sourceTree = "<group>"; };
 		D3DBE41A240B4DAE00E5A29E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DCF626BB04802E64F8DD4F33 /* Pods-Supermarket.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Supermarket.release.xcconfig"; path = "Target Support Files/Pods-Supermarket/Pods-Supermarket.release.xcconfig"; sourceTree = "<group>"; };
-		E9F5171B224FD7D58F51F2E7 /* Pods-Supermarket-SupermarketUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Supermarket-SupermarketUITests.release.xcconfig"; path = "Target Support Files/Pods-Supermarket-SupermarketUITests/Pods-Supermarket-SupermarketUITests.release.xcconfig"; sourceTree = "<group>"; };
-		EA7FE6B1CB9B306D6377AD0F /* Pods_Supermarket_SupermarketUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Supermarket_SupermarketUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE2211A9843EA94060830294 /* Pods-Supermarket-SupermarketUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Supermarket-SupermarketUITests.release.xcconfig"; path = "Target Support Files/Pods-Supermarket-SupermarketUITests/Pods-Supermarket-SupermarketUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FC6B1574E37771794C45693F /* Pods-Supermarket-SupermarketUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Supermarket-SupermarketUITests.debug.xcconfig"; path = "Target Support Files/Pods-Supermarket-SupermarketUITests/Pods-Supermarket-SupermarketUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,7 +175,7 @@
 				D3B3CF022463F04300A77AF2 /* libz.tbd in Frameworks */,
 				D3B3CF092463F93C00A77AF2 /* NewRelicAgent.framework in Frameworks */,
 				D3B3CF002463F03500A77AF2 /* libc++.tbd in Frameworks */,
-				D391C6E324876B6000B879D9 /* Stripe.framework in Frameworks */,
+				D36CDE572489D5D500B9883A /* Stripe.framework in Frameworks */,
 				D3B3CEFE2463F01D00A77AF2 /* SystemConfiguration.framework in Frameworks */,
 				D3B3CEF82463E90E00A77AF2 /* CoreTelephony.framework in Frameworks */,
 				D37B89B7240B683B00281998 /* MapKit.framework in Frameworks */,
@@ -175,7 +186,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6440550E5E0F00FF5A32205 /* Pods_SupermarketTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,22 +193,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A170FAC6F7C689E85C3CFCF /* Pods_Supermarket_SupermarketUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5D7621DF1B0F29015B6D237F /* Pods */ = {
+		9C6234D9AF356527F6C18C88 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				7F222AC65CE8945715CA96F2 /* Pods-Supermarket.debug.xcconfig */,
-				DCF626BB04802E64F8DD4F33 /* Pods-Supermarket.release.xcconfig */,
-				22D7682CA2974AD78265006D /* Pods-Supermarket-SupermarketUITests.debug.xcconfig */,
-				E9F5171B224FD7D58F51F2E7 /* Pods-Supermarket-SupermarketUITests.release.xcconfig */,
-				CAC3497AC299CE863E16ED4F /* Pods-SupermarketTests.debug.xcconfig */,
-				084629DAA06806E27F500683 /* Pods-SupermarketTests.release.xcconfig */,
+				CCD9C848511A5D65B8E1E9CB /* Pods-Supermarket.debug.xcconfig */,
+				84C3F54CD4B5BFF2029DD744 /* Pods-Supermarket.release.xcconfig */,
+				FC6B1574E37771794C45693F /* Pods-Supermarket-SupermarketUITests.debug.xcconfig */,
+				DE2211A9843EA94060830294 /* Pods-Supermarket-SupermarketUITests.release.xcconfig */,
+				7CD6968A25107147288904A8 /* Pods-SupermarketTests.debug.xcconfig */,
+				C9E563285526A52E970A5404 /* Pods-SupermarketTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -332,8 +341,6 @@
 				D3B3CEFD2463F01D00A77AF2 /* SystemConfiguration.framework */,
 				D3B3CEF72463E90E00A77AF2 /* CoreTelephony.framework */,
 				D37B89B6240B683B00281998 /* MapKit.framework */,
-				EA7FE6B1CB9B306D6377AD0F /* Pods_Supermarket_SupermarketUITests.framework */,
-				2FC6908F25632BF70FA0F7E8 /* Pods_SupermarketTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -379,7 +386,7 @@
 				D3DBE417240B4DAE00E5A29E /* SupermarketUITests */,
 				D3DBE3F4240B4DA800E5A29E /* Products */,
 				D37B89B5240B683B00281998 /* Frameworks */,
-				5D7621DF1B0F29015B6D237F /* Pods */,
+				9C6234D9AF356527F6C18C88 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -452,9 +459,10 @@
 				60B85ADECC89CBB993A4F508 /* [CP] Check Pods Manifest.lock */,
 				D3DBE3EF240B4DA800E5A29E /* Sources */,
 				D3DBE3F0240B4DA800E5A29E /* Frameworks */,
+				D36CDE592489D5D500B9883A /* Embed Frameworks */,
 				D3DBE3F1240B4DA800E5A29E /* Resources */,
 				D3B3CF032463F25500A77AF2 /* ShellScript */,
-				D391C6E12487682500B879D9 /* ShellScript */,
+				D36CDE512489D32400B9883A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -619,7 +627,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D391C6E12487682500B879D9 /* ShellScript */ = {
+		D36CDE512489D32400B9883A /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -634,7 +642,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nbash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework/integrate-dynamic-framework.sh\"\n";
 		};
 		D3B3CF032463F25500A77AF2 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -895,21 +903,24 @@
 		};
 		D3DBE41E240B4DAE00E5A29E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7F222AC65CE8945715CA96F2 /* Pods-Supermarket.debug.xcconfig */;
+			baseConfigurationReference = CCD9C848511A5D65B8E1E9CB /* Pods-Supermarket.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2XH8Q9ZFM9;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
-				INFOPLIST_FILE = Supermarket/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
 					"@executable_path/Frameworks",
 				);
+				INFOPLIST_FILE = Supermarket/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Ninguna.Supermarket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/**";
 				SWIFT_OBJC_BRIDGING_HEADER = "Supermarket/Supermarket-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -919,21 +930,24 @@
 		};
 		D3DBE41F240B4DAE00E5A29E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DCF626BB04802E64F8DD4F33 /* Pods-Supermarket.release.xcconfig */;
+			baseConfigurationReference = 84C3F54CD4B5BFF2029DD744 /* Pods-Supermarket.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2XH8Q9ZFM9;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
-				INFOPLIST_FILE = Supermarket/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
 					"@executable_path/Frameworks",
 				);
+				INFOPLIST_FILE = Supermarket/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Ninguna.Supermarket;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/**";
 				SWIFT_OBJC_BRIDGING_HEADER = "Supermarket/Supermarket-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -942,7 +956,7 @@
 		};
 		D3DBE421240B4DAE00E5A29E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CAC3497AC299CE863E16ED4F /* Pods-SupermarketTests.debug.xcconfig */;
+			baseConfigurationReference = 7CD6968A25107147288904A8 /* Pods-SupermarketTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -964,7 +978,7 @@
 		};
 		D3DBE422240B4DAE00E5A29E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 084629DAA06806E27F500683 /* Pods-SupermarketTests.release.xcconfig */;
+			baseConfigurationReference = C9E563285526A52E970A5404 /* Pods-SupermarketTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -986,7 +1000,7 @@
 		};
 		D3DBE424240B4DAE00E5A29E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 22D7682CA2974AD78265006D /* Pods-Supermarket-SupermarketUITests.debug.xcconfig */;
+			baseConfigurationReference = FC6B1574E37771794C45693F /* Pods-Supermarket-SupermarketUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1006,7 +1020,7 @@
 		};
 		D3DBE425240B4DAE00E5A29E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E9F5171B224FD7D58F51F2E7 /* Pods-Supermarket-SupermarketUITests.release.xcconfig */;
+			baseConfigurationReference = DE2211A9843EA94060830294 /* Pods-Supermarket-SupermarketUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
