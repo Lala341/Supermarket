@@ -44,30 +44,30 @@ class StartViewController: UIViewController {
                     
                 }
                 else if(self.topMostController() != nil && self.topMostController()! is UITabBarController){
-                    
+                    DispatchQueue.main.async {
                     let tab : UITabBarController = self.topMostController()! as! UITabBarController
+                     
                     let m = tab.selectedIndex
-                       let items = tab.tabBar.items
+                    let items = tab.tabBar.items
                         
                         (items![0] ).isEnabled = true
-                    (items![0] ).badgeColor = .gray
                         (items![1] ).isEnabled = true
-                    
                         (items![4] ).isEnabled = true
-                        (items![2] ).isEnabled = true
-                        (items![3] ).isEnabled = true
+                        (items![0] ).badgeColor = .gray
+                    
                         (items![1] ).badgeColor = .gray
-                        (items![2] ).badgeColor = .gray
-                        (items![3] ).badgeColor = .gray
                         (items![4] ).badgeColor = .gray
                         
-                        
-                        
+                    if(m==2){
+                        let Vf = tab.selectedViewController  as! ProductsCartTableView
+                        Vf.connection = true
+                        Vf.cone()
+                    }
+                    }
                     
                     
                 }} else {
                    print("No estás conectado a la red")
-               
                DispatchQueue.main.async {
                 
                 
@@ -75,13 +75,25 @@ class StartViewController: UIViewController {
                     
                     let tab : UITabBarController = self.topMostController()! as! UITabBarController
                     let m = tab.selectedIndex
-                    if(m == 2 || m == 3){
+                    if(m == 2 ){
+                        let items = tab.tabBar.items
+                        
+                        (items![0] ).isEnabled = false
+                        (items![1] ).isEnabled = false
+                        (items![4] ).isEnabled = false
+                        let V = tab.selectedViewController  as! ProductsCartTableView
+                        V.connection = false
+                        
+                        V.cone()
+                        
+                    }else if( m == 3){
                         let items = tab.tabBar.items
                         
                         (items![0] ).isEnabled = false
                         (items![1] ).isEnabled = false
                         (items![4] ).isEnabled = false
                         
+                        let V = tab.selectedViewController  as! ProductsWishTableView
                         
                         
                     }else{

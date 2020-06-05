@@ -24,13 +24,13 @@ class ProductsCartTableView: UIViewController{
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         updateUIIni()
-        
+        cone()
         
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUIIni()
-    
+    cone()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
@@ -57,6 +57,20 @@ class ProductsCartTableView: UIViewController{
     @IBOutlet weak var table: UIView!
     @IBOutlet weak var imagee: UIImageView!
     @IBOutlet weak var buttone: UILabel!
+    
+    @IBOutlet weak var connect: UILabel!
+    var connection: Bool = true
+    
+    public func cone(){
+        if(connection){
+            self.connect.isHidden = true
+        }else{
+            self.connect.isHidden = false
+        }
+            
+    }
+    
+    
     @IBAction func delete(){
         cartmanager.cleanCart(container: manager.getContainer(),  completion: {[weak self] in
          //2
