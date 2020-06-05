@@ -14,6 +14,9 @@ let BackendUrl = "http://ec2-18-212-16-222.compute-1.amazonaws.com:8085/"
 
 class CheckoutViewController: UIViewController {
     var paymentIntentClientSecret: String?
+    var id_user: String?
+    var email_user: String?
+    var total: Double?
 
     lazy var cardTextField: STPPaymentCardTextField = {
         let cardTextField = STPPaymentCardTextField()
@@ -65,10 +68,10 @@ class CheckoutViewController: UIViewController {
         // Create a PaymentIntent by calling the sample server's /create-payment-intent endpoint.
         let url = URL(string: BackendUrl + "transactions/make_payment")!
         let json: [String: Any] = [
-            "email":"",
-            "pmt_id":"",
-            "id": "",
-            "total":"",
+            "email":email_user!,
+            "pmt_id":id_user!,
+            "id": id_user!,
+            "total":total!,
             
         ]
         var request = URLRequest(url: url)
@@ -76,7 +79,7 @@ class CheckoutViewController: UIViewController {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = try? JSONSerialization.data(withJSONObject: json)
         let task = URLSession.shared.dataTask(with: request, completionHandler: { [weak self] (data, response, error) in
-            print(data)
+            print(data!)
             
             guard let response = response as? HTTPURLResponse,
                 response.statusCode == 200,
