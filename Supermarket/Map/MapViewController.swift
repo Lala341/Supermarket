@@ -185,7 +185,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     var ima = "marker"
     let annot: StoreAnnotation = annotation as! StoreAnnotation
-    if(annot.getThirdAttribut.users!>5){
+    if(annot.getThirdAttribut.users!>=40){
         ima = "marker-red"
     }
     print(ima)

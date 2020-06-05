@@ -16,8 +16,10 @@ class StoresTableViewController: UITableViewController {
     var delegate: StoresTableView!
     var delegatetab: TabBarViewController!
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         activityIndicator()

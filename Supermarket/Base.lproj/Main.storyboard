@@ -2161,9 +2161,17 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                                                 <action selector="store" destination="nl7-uy-DrB" eventType="touchUpInside" id="0we-o1-AdU"/>
                                             </connections>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Congested" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lD-M9-yFA">
+                                            <rect key="frame" x="158" y="93" width="84" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="conges" destination="4lD-M9-yFA" id="EUJ-Jm-kBN"/>
                                     <outlet property="photo" destination="RbB-Pu-wS8" id="4PR-Q7-qwW"/>
                                     <outlet property="price" destination="hWW-6F-FVu" id="6Ks-9K-3LC"/>
                                     <outlet property="product" destination="2Kd-jw-AS8" id="Y68-VI-s8Z"/>
