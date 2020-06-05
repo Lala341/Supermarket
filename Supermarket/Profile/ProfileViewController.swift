@@ -14,7 +14,7 @@ class ProfileViewController: UIViewController {
     public var manager: CoreDataManager!
     var usermanager = UserCoreDataManager();
     var productsmanager = ProductCoreDataManager();
-
+    var user : User!
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
@@ -47,7 +47,7 @@ class ProfileViewController: UIViewController {
         self.phone.text = "Phone: \(user.phone!)"
             self.dateb.text = "Date of Birth: \(user.dateOfBirth!)"
         
-        
+            self.user = user
         
         }
         
@@ -63,6 +63,16 @@ class ProfileViewController: UIViewController {
         {
             let vc = segue.destination as? ProductsTableView
             vc?.manager = manager
+        }
+        else if segue.destination is TransactionsTableViewController
+        {
+            let vc = segue.destination as? TransactionsTableViewController
+            let users: [User] = usermanager.fetchUsers(container: manager.getContainer())
+            if(users.count>0){
+                let user = users[0]
+                vc?.user_id = user.id
+            }
+            
         }
         
     }
