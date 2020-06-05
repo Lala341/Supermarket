@@ -22,9 +22,9 @@
 		D35A08182449DBF0005CC7BB /* CartCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35A08172449DBF0005CC7BB /* CartCoreDataManager.swift */; };
 		D35A081A2449DDE8005CC7BB /* TransactionCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35A08192449DDE8005CC7BB /* TransactionCoreDataManager.swift */; };
 		D35ECA1E248A4A3300C6324B /* RepeatingTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35ECA1D248A4A3300C6324B /* RepeatingTimer.swift */; };
+		D35ECA1F248AB4C000C6324B /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D391C6E224876B6000B879D9 /* Stripe.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		D35ECA20248AB4C000C6324B /* Stripe.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D391C6E224876B6000B879D9 /* Stripe.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D3666F4A24837494009C13F1 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3666F4924837494009C13F1 /* ScannerViewController.swift */; };
-		D36CDE572489D5D500B9883A /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D391C6E224876B6000B879D9 /* Stripe.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		D36CDE582489D5D500B9883A /* Stripe.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D391C6E224876B6000B879D9 /* Stripe.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D371E3122454A0A500CA2A67 /* StoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371E3112454A0A400CA2A67 /* StoresTableViewController.swift */; };
 		D371E3142454A0BC00CA2A67 /* StoresTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371E3132454A0BC00CA2A67 /* StoresTableView.swift */; };
 		D371E3162454A0D100CA2A67 /* StoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D371E3152454A0D100CA2A67 /* StoreTableViewCell.swift */; };
@@ -84,13 +84,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		D36CDE592489D5D500B9883A /* Embed Frameworks */ = {
+		D35ECA21248AB4C100C6324B /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D36CDE582489D5D500B9883A /* Stripe.framework in Embed Frameworks */,
+				D35ECA20248AB4C000C6324B /* Stripe.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,7 +177,7 @@
 				D3B3CF022463F04300A77AF2 /* libz.tbd in Frameworks */,
 				D3B3CF092463F93C00A77AF2 /* NewRelicAgent.framework in Frameworks */,
 				D3B3CF002463F03500A77AF2 /* libc++.tbd in Frameworks */,
-				D36CDE572489D5D500B9883A /* Stripe.framework in Frameworks */,
+				D35ECA1F248AB4C000C6324B /* Stripe.framework in Frameworks */,
 				D3B3CEFE2463F01D00A77AF2 /* SystemConfiguration.framework in Frameworks */,
 				D3B3CEF82463E90E00A77AF2 /* CoreTelephony.framework in Frameworks */,
 				D37B89B7240B683B00281998 /* MapKit.framework in Frameworks */,
@@ -478,7 +478,7 @@
 				60B85ADECC89CBB993A4F508 /* [CP] Check Pods Manifest.lock */,
 				D3DBE3EF240B4DA800E5A29E /* Sources */,
 				D3DBE3F0240B4DA800E5A29E /* Frameworks */,
-				D36CDE592489D5D500B9883A /* Embed Frameworks */,
+				D35ECA21248AB4C100C6324B /* Embed Frameworks */,
 				D3DBE3F1240B4DA800E5A29E /* Resources */,
 				D3B3CF032463F25500A77AF2 /* ShellScript */,
 				D36CDE512489D32400B9883A /* ShellScript */,
@@ -661,7 +661,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nbash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework/integrate-dynamic-framework.sh\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
 		};
 		D3B3CF032463F25500A77AF2 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -925,16 +925,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CCD9C848511A5D65B8E1E9CB /* Pods-Supermarket.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2XH8Q9ZFM9;
-				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)",
-					"@executable_path/Frameworks",
-				);
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
+				ENABLE_ON_DEMAND_RESOURCES = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/**";
 				INFOPLIST_FILE = Supermarket/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
@@ -952,16 +949,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 84C3F54CD4B5BFF2029DD744 /* Pods-Supermarket.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2XH8Q9ZFM9;
-				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)",
-					"@executable_path/Frameworks",
-				);
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
+				ENABLE_ON_DEMAND_RESOURCES = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/**";
 				INFOPLIST_FILE = Supermarket/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";

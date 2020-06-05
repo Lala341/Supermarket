@@ -171,8 +171,7 @@ self?.imagee.isHidden = false
     }
     @IBAction func pay() {
     print("voypay");
-        let VC = CheckoutViewController();
-        VC.modalPresentationStyle = .fullScreen
+        let VC = self.storyboard!.instantiateViewController(withIdentifier: "CheckoutViewControllerId") as! CheckoutViewController;
         let user : User = usermanager.fetchUser(container: manager.getContainer())
         VC.email_user = user.email
         VC.id_user = user.id

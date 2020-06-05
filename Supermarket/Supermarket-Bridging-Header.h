@@ -3,4 +3,4 @@
 //
 
 #import "NewRelicAgent/NewRelic.h"
-#import "Stripe/Stripe.h"
+#import <Stripe/Stripe.h>

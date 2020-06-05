@@ -13,17 +13,13 @@
 #import "STPPaymentOption.h"
 
 @class STPPaymentMethodAUBECSDebit,
-STPPaymentMethodBacsDebit,
-STPPaymentMethodBancontact,
 STPPaymentMethodBillingDetails,
 STPPaymentMethodCard,
 STPPaymentMethodCardPresent,
-STPPaymentMethodEPS,
 STPPaymentMethodFPX,
-STPPaymentMethodGiropay,
 STPPaymentMethodiDEAL,
-STPPaymentMethodPrzelewy24,
-STPPaymentMethodSEPADebit;
+STPPaymentMethodSEPADebit,
+STPPaymentMethodBacsDebit;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -94,26 +90,6 @@ NS_ASSUME_NONNULL_BEGIN
  If this is an AU BECS Debit PaymentMethod (i.e. `self.type == STPPaymentMethodTypeAUBECSDebit`), this contains additional details.
 */
 @property (nonatomic, nullable, readonly) STPPaymentMethodAUBECSDebit *auBECSDebit;
-
-/**
- If this is a giropay PaymentMethod (i.e. `self.type == STPPaymentMethodTypeGiropay`), this contains additional details.
- */
-@property (nonatomic, nullable, readonly) STPPaymentMethodGiropay *giropay;
-
-/**
- If this is an EPS PaymentMethod (i.e. `self.type == STPPaymentMethodTypeEPS`), this contains additional details.
- */
-@property (nonatomic, nullable, readonly) STPPaymentMethodEPS *eps;
-
-/**
- If this is a Przelewy24 PaymentMethod (i.e. `self.type == STPPaymentMethodTypePrzelewy24`), this contains additional details.
-*/
-@property (nonatomic, nullable, readonly) STPPaymentMethodPrzelewy24 *przelewy24;
-
-/**
- If this is a Bancontact PaymentMethod (i.e. `self.type == STPPaymentMethodTypeBancontact`), this contains additional details.
-*/
-@property (nonatomic, nullable, readonly) STPPaymentMethodBancontact *bancontact;
 
 /**
  The ID of the Customer to which this PaymentMethod is saved. Nil when the PaymentMethod has not been saved to a Customer.

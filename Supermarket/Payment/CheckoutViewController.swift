@@ -12,17 +12,15 @@ import Stripe
 
 let BackendUrl = "http://ec2-18-212-16-222.compute-1.amazonaws.com:8085/"
 
-class CheckoutViewController: UIViewController {
+class CheckoutViewController: UIViewController, STPPaymentCardTextFieldDelegate {
     var paymentIntentClientSecret: String?
     var id_user: String?
     var email_user: String?
     var total: Double?
 
-    lazy var cardTextField: STPPaymentCardTextField = {
-        let cardTextField = STPPaymentCardTextField()
-        return cardTextField
-    }()
-    lazy var payButton: UIButton = {
+   var cardTextField: STPPaymentCardTextField = STPPaymentCardTextField()
+    
+    var payButton: UIButton = {
         let button = UIButton(type: .custom)
         button.layer.cornerRadius = 5
         button.backgroundColor = .systemBlue
@@ -34,17 +32,6 @@ class CheckoutViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
-        let stackView = UIStackView(arrangedSubviews: [cardTextField, payButton])
-        stackView.axis = .vertical
-        stackView.spacing = 20
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(stackView)
-        NSLayoutConstraint.activate([
-            stackView.leftAnchor.constraint(equalToSystemSpacingAfter: view.leftAnchor, multiplier: 2),
-            view.rightAnchor.constraint(equalToSystemSpacingAfter: stackView.rightAnchor, multiplier: 2),
-            stackView.topAnchor.constraint(equalToSystemSpacingBelow: view.topAnchor, multiplier: 2),
-        ])
         startCheckout()
     }
 
@@ -66,10 +53,8 @@ class CheckoutViewController: UIViewController {
 
     func startCheckout() {
         // Create a PaymentIntent by calling the sample server's /create-payment-intent endpoint.
-        let url = URL(string: BackendUrl + "transactions/make_payment")!
+        let url = URL(string:  "http://ec2-18-212-16-222.compute-1.amazonaws.com:8085//transactions/make_payment_ios")!
         let json: [String: Any] = [
-            "email":email_user!,
-            "pmt_id":id_user!,
             "id": id_user!,
             "total":total!,
             
@@ -81,13 +66,12 @@ class CheckoutViewController: UIViewController {
         request.httpBody = try? JSONSerialization.data(withJSONObject: json)
         let task = URLSession.shared.dataTask(with: request, completionHandler: { [weak self] (data, response, error) in
             
+            
             guard let response = response as? HTTPURLResponse,
                 response.statusCode == 200,
-                let data = data,
-                let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String : Any],
                 
                 
-                let clientSecret = json["clientSecret"] as? String,
+                let clientSecret : String = String(bytes: data!, encoding: String.Encoding.utf8)!,
                 let publishableKey = "pk_test_1Io5gDHECnsWKVIKECzytxSe00Kqj9z92J" as? String else {
                     let message = error?.localizedDescription ?? "Failed to decode response from server."
                     
@@ -95,6 +79,7 @@ class CheckoutViewController: UIViewController {
                     return
             }
             print("Created PaymentIntent")
+            print(clientSecret)
             self?.paymentIntentClientSecret = clientSecret
             // Configure the SDK with your Stripe publishable key so that it can make requests to the Stripe API
             // For added security, our sample app gets the publishable key from the server
@@ -102,14 +87,29 @@ class CheckoutViewController: UIViewController {
         })
         task.resume()
     }
+    
+    @IBOutlet weak var totall: UILabel!
 
-    @objc
-    func pay() {
+    
+    @IBOutlet weak var creditl: UITextField!
+    @IBOutlet weak var fechal: UITextField!
+    @IBOutlet weak var cvc: UITextField!
+    
+    @IBAction func pay() {
         guard let paymentIntentClientSecret = paymentIntentClientSecret else {
             return;
         }
+        
         // Collect card details
-        let cardParams = cardTextField.cardParams
+        let cardParams : STPPaymentMethodCardParams = STPPaymentMethodCardParams()
+        cardParams.number = creditl.text
+        print(cardParams.number)
+        cardParams.cvc = cvc.text
+        var f1 = (fechal.text as! String).split(separator: "/")
+        
+        cardParams.expYear = Int(f1[0]) as NSNumber?
+        cardParams.expMonth = Int(f1[1]) as NSNumber?
+        
         let paymentMethodParams = STPPaymentMethodParams(card: cardParams, billingDetails: nil, metadata: nil)
         let paymentIntentParams = STPPaymentIntentParams(clientSecret: paymentIntentClientSecret)
         paymentIntentParams.paymentMethodParams = paymentMethodParams
