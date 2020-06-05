@@ -84,6 +84,10 @@ func scanCompleted(withCode code: String)
             
         }
     }
+    if(encontrado == false){
+        self.delegate.updateAdd(e: encontrado)
+        
+    }
         
     self.dismiss(animated: true, completion: {})
 }
