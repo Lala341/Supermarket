@@ -183,8 +183,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             annotationView?.canShowCallout = true
         
     }
-    
-    let pinImage = UIImage(named: "marker")
+    var ima = "marker"
+    let annot: StoreAnnotation = annotation as! StoreAnnotation
+    if(annot.getThirdAttribut.users!>5){
+        ima = "marker-red"
+    }
+    print(ima)
+    let pinImage = UIImage(named: ima)
            let size = CGSize(width: 65, height: 65)
            UIGraphicsBeginImageContext(size)
            pinImage!.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
