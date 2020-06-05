@@ -12,8 +12,9 @@ class ProductsCartTableView: UIViewController{
     
     public var manager: CoreDataManager!
     var cartmanager = CartCoreDataManager()
+    var usermanager = UserCoreDataManager()
     var delegatetab: TabBarViewController!
-
+    var priceFinal = 0.0
     
     
 @IBOutlet weak var resumeCart: UIBarButtonItem!
@@ -85,6 +86,7 @@ self?.imagee.isHidden = false
                
            }
        }
+    priceFinal = price
       if(price == 0){
            self.table.isHidden = true
            self.imagee.isHidden = false
@@ -142,6 +144,21 @@ self?.imagee.isHidden = false
     print("voy");
         let VC = ScannerViewController();
         VC.modalPresentationStyle = .fullScreen
+        self.present(VC,animated: true, completion: nil)
+
+    
+    }
+    @IBAction func pay() {
+    print("voypay");
+        let VC = CheckoutViewController();
+        VC.modalPresentationStyle = .fullScreen
+        let user : User = usermanager.fetchUser(container: manager.getContainer())
+        VC.email_user = user.email
+        VC.id_user = user.id
+        VC.total = priceFinal
+        
+        
+        
         self.present(VC,animated: true, completion: nil)
 
     
