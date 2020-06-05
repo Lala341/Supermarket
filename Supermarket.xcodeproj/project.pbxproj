@@ -21,6 +21,7 @@
 		D35A08162449DBC6005CC7BB /* UserCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35A08152449DBC6005CC7BB /* UserCoreDataManager.swift */; };
 		D35A08182449DBF0005CC7BB /* CartCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35A08172449DBF0005CC7BB /* CartCoreDataManager.swift */; };
 		D35A081A2449DDE8005CC7BB /* TransactionCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35A08192449DDE8005CC7BB /* TransactionCoreDataManager.swift */; };
+		D35ECA1E248A4A3300C6324B /* RepeatingTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D35ECA1D248A4A3300C6324B /* RepeatingTimer.swift */; };
 		D3666F4A24837494009C13F1 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3666F4924837494009C13F1 /* ScannerViewController.swift */; };
 		D36CDE572489D5D500B9883A /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D391C6E224876B6000B879D9 /* Stripe.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		D36CDE582489D5D500B9883A /* Stripe.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D391C6E224876B6000B879D9 /* Stripe.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -115,6 +116,7 @@
 		D35A08152449DBC6005CC7BB /* UserCoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCoreDataManager.swift; sourceTree = "<group>"; };
 		D35A08172449DBF0005CC7BB /* CartCoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartCoreDataManager.swift; sourceTree = "<group>"; };
 		D35A08192449DDE8005CC7BB /* TransactionCoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionCoreDataManager.swift; sourceTree = "<group>"; };
+		D35ECA1D248A4A3300C6324B /* RepeatingTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatingTimer.swift; sourceTree = "<group>"; };
 		D3666F4924837494009C13F1 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		D371E3112454A0A400CA2A67 /* StoresTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoresTableViewController.swift; path = Supermarket/Product/StoresTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		D371E3132454A0BC00CA2A67 /* StoresTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoresTableView.swift; path = Supermarket/Product/StoresTableView.swift; sourceTree = SOURCE_ROOT; };
@@ -267,6 +269,21 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		D35ECA1B248A47D400C6324B /* Receipt */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Receipt;
+			sourceTree = "<group>";
+		};
+		D35ECA1C248A47F700C6324B /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				D35ECA1D248A4A3300C6324B /* RepeatingTimer.swift */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 		D3666F4B24874D14009C13F1 /* Payment */ = {
 			isa = PBXGroup;
 			children = (
@@ -403,6 +420,8 @@
 		D3DBE3F5240B4DA800E5A29E /* Supermarket */ = {
 			isa = PBXGroup;
 			children = (
+				D35ECA1C248A47F700C6324B /* Localization */,
+				D35ECA1B248A47D400C6324B /* Receipt */,
 				D3B3CEF92463E99000A77AF2 /* Supermarket-Bridging-Header.h */,
 				D3666F4B24874D14009C13F1 /* Payment */,
 				D392D54824819BEB001732CB /* Scanner */,
@@ -721,6 +740,7 @@
 				D30C3D15245391FD00BB96E7 /* TabBarViewController.swift in Sources */,
 				D371E3142454A0BC00CA2A67 /* StoresTableView.swift in Sources */,
 				B19850B224558789008831D7 /* RegisterViewController.swift in Sources */,
+				D35ECA1E248A4A3300C6324B /* RepeatingTimer.swift in Sources */,
 				D37486E92455F5C500132778 /* TransactionRequest.swift in Sources */,
 				D38EA947243918B2003E0EF3 /* StartViewController.swift in Sources */,
 				D37B89B0240B52EB00281998 /* MapViewController.swift in Sources */,

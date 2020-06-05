@@ -57,7 +57,6 @@ class StoresTableViewController: UITableViewController {
         var namep: String!
         
         namep = store.photo
-        print(namep)
         cell.photo.image = UIImage(named: "store")
             
             
@@ -121,7 +120,7 @@ class StoresTableViewController: UITableViewController {
                                 print(jsonArray["\(i)"]!["name"]!)
                                 
                                 
-                                temp = StoreRequest(name: jsonArray["\(i)"]!["name"]! as? String, address: jsonArray["\(i)"]!["address"]! as! String, photo: jsonArray["\(i)"]!["logo_img"]! as! String, id: jsonArray["\(i)"]!["id"]! as! Int )
+                                temp = StoreRequest(name: jsonArray["\(i)"]!["name"]! as? String, address: jsonArray["\(i)"]!["address"]! as! String, photo: jsonArray["\(i)"]!["logo_img"]! as! String, id: jsonArray["\(i)"]!["id"]! as! Int, users: jsonArray["\(i)"]!["current_users"]! as! Int )
                                 
                                 stor.append(temp)
                                 i = i + 1

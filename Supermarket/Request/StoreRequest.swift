@@ -14,13 +14,14 @@ class StoreRequest {
     var address: String?
     var photo: String?
     var id: Int?
+    var users: Int?
     
-    
-    init(name: String?, address: String?, photo:  String?, id: Int?) { // Constructor
+    init(name: String?, address: String?, photo:  String?, id: Int?, users: Int?) { // Constructor
         self.name = name
         self.address = address
         self.photo = photo
         self.id = id
+        self.users = users
     }
     private enum CodingKeys: String, CodingKey {
         case store = "store_id"
@@ -30,6 +31,7 @@ class StoreRequest {
         case sku = "sku"
         case descrip = "description"
         case photo = "img_url"
+        case users = "current_users"
     }
 
 }

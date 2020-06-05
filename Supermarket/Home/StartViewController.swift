@@ -47,7 +47,6 @@ class StartViewController: UIViewController {
                     
                     let tab : UITabBarController = self.topMostController()! as! UITabBarController
                     let m = tab.selectedIndex
-                    print(m)
                        let items = tab.tabBar.items
                         
                         (items![0] ).isEnabled = true
@@ -76,7 +75,6 @@ class StartViewController: UIViewController {
                     
                     let tab : UITabBarController = self.topMostController()! as! UITabBarController
                     let m = tab.selectedIndex
-                    print(m)
                     if(m == 2 || m == 3){
                         let items = tab.tabBar.items
                         
@@ -126,8 +124,6 @@ class StartViewController: UIViewController {
         while let newTopController = topController.presentedViewController {
             topController = newTopController
         }
-print("coco")
-        print(topController)
 
         return topController
     }

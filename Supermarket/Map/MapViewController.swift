@@ -12,9 +12,40 @@ import MapKit
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     public var manager: CoreDataManager!
+    var usermanager = UserCoreDataManager();
     fileprivate let locationManager: CLLocationManager =  CLLocationManager()
     @IBOutlet weak var mapView: MKMapView!
     var primer: Bool = false
+    var iniciadoTimer = false
+    var user_id : String! = ""
+    var timer: DispatchSourceTimer?
+
+    
+    
+    private func startTimer() {
+        let queue = DispatchQueue(label: "com.firm.app.timer", attributes: .concurrent)
+
+        timer?.cancel()        // cancel previous timer if any
+
+        timer = DispatchSource.makeTimerSource(queue: queue)
+
+        timer?.schedule(deadline: .now(), repeating: .seconds(5), leeway: .milliseconds(20))
+
+        // or, in Swift 3:
+        //
+        // timer?.scheduleRepeating(deadline: .now(), interval: .seconds(5), leeway: .seconds(1))
+
+        timer?.setEventHandler { [weak self] in // `[weak self]` only needed if you reference `self` in this closure and you want to prevent strong reference cycle
+            self!.sendLocalization()
+        }
+
+        timer?.resume()
+    }
+
+    private func stopTimer() {
+        timer?.cancel()
+        timer = nil
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
@@ -28,10 +59,51 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         locationManager.startUpdatingLocation()
         mapView.showsUserLocation = true
         self.loadData()
+        if(iniciadoTimer==false){
+            let users: [User] = usermanager.fetchUsers(container: manager.getContainer())
+            if(users.count>0){
+                user_id = users[0].id
+            }
+            print("iniciadoTimer")
+            iniciadoTimer = true
+            startTimer()
+        }
         // Do any additional setup after loading the view.
     }
+    func sendLocalization(){
+        
+    print("json")
+        let loc_current = locationManager.location
+        let url = URL(string: "http://ec2-18-212-16-222.compute-1.amazonaws.com:8086/location")!
+        let json: [String: Any] = [
+            "lon":loc_current!.coordinate.longitude,
+            "lat":loc_current!.coordinate.latitude,
+            "user_id": user_id!
+            
+        ]
+        print(json)
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = try? JSONSerialization.data(withJSONObject: json)
+        let task = URLSession.shared.dataTask(with: request, completionHandler: { [weak self] (data, response, error) in
+            
+            guard let response = response as? HTTPURLResponse,
+                response.statusCode == 200,
+                let data = data,
+                let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String : Any] else {
+                
+                
+                return
+            }
+            print("Send u")
+        
+    })
+        task.resume()
+    }
+    
+    
     func loadData(){
-      print("1")
         var stor: [StoreRequest] = []
         let url = URL(string: "http://ec2-18-212-16-222.compute-1.amazonaws.com:8084/analytics/question3")!
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -41,37 +113,33 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                
                 
                 if let data = data, let dataString = String(data: data, encoding: .utf8) {
-                    print("data: \(dataString)")
                    let dataf = dataString.data(using: .utf8)!
                     do {
                         if let jsonArray = try JSONSerialization.jsonObject(with: data, options: []) as? [String:[String: Any]]
                         {
-                           print(jsonArray) // use the json here
                             var i = 1;
                             var annnotations: [StoreAnnotation] = []
                             
                            var annotation = StoreAnnotation(
                                 title : "Te",
                                 subtitle : "gato",
-                                thirdAttribut: StoreRequest(name: "Te", address: "Te", photo: "Te", id: Int(1)), coordinate : CLLocationCoordinate2D(latitude: 4.5972017, longitude: -74.0887572))
+                                thirdAttribut: StoreRequest(name: "Te", address: "Te", photo: "Te", id: Int(1), users: Int(0)), coordinate : CLLocationCoordinate2D(latitude: 4.5972017, longitude: -74.0887572))
                             annotation.title = "Te"
                             annotation.subtitle = "gato"
                             annotation.coordinate = CLLocationCoordinate2D(latitude: 4.5972017, longitude: -74.0887572)
                             while( i < 7){
-                                print(jsonArray["\(i)"]!["name"]!)
                                 
                                 annotation = StoreAnnotation(
                                     title : (jsonArray["\(i)"]!["name"]! as? String)!,
                                     subtitle : (jsonArray["\(i)"]!["address"]! as? String)!,
                                     thirdAttribut:
-                                    StoreRequest(name: (jsonArray["\(i)"]!["name"]! as? String)!, address: (jsonArray["\(i)"]!["address"]! as? String)!, photo: (jsonArray["\(i)"]!["logo_img"]! as? String)!, id: ((jsonArray["\(i)"]!["id"]! as! Int))), coordinate : CLLocationCoordinate2D(latitude: (jsonArray["\(i)"]!["loc_lat"]! as? Double)!, longitude: (jsonArray["\(i)"]!["loc_lon"]! as? Double)!))
+                                    StoreRequest(name: (jsonArray["\(i)"]!["name"]! as? String)!, address: (jsonArray["\(i)"]!["address"]! as? String)!, photo: (jsonArray["\(i)"]!["logo_img"]! as? String)!, id: ((jsonArray["\(i)"]!["id"]! as! Int)), users:  ((jsonArray["\(i)"]!["current_users"]! as! Int))), coordinate : CLLocationCoordinate2D(latitude: (jsonArray["\(i)"]!["loc_lat"]! as? Double)!, longitude: (jsonArray["\(i)"]!["loc_lon"]! as? Double)!))
                                 annotation.title = jsonArray["\(i)"]!["name"]! as? String
                                 annotation.subtitle = jsonArray["\(i)"]!["address"]! as? String
                                 annotation.coordinate = CLLocationCoordinate2D(latitude: jsonArray["\(i)"]!["loc_lat"]! as! Double, longitude: jsonArray["\(i)"]!["loc_lon"]! as! Double)
                                
                                 
                                 i = i + 1;
-                                print(i);
                                 annnotations.append(annotation)
                                 
                                 
@@ -123,8 +191,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
            let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
 
     annotationView?.image = resizedImage
-    print( resizedImage!.scale)
-
+    
 
         let leftIconView = UIImageView(frame: CGRect.init(x: 0, y: 0, width: 53, height: 53))
         leftIconView.image = UIImage(named: "store")
@@ -139,8 +206,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         if let storeAnnotation = view.annotation as? StoreAnnotation{
            
-            print("pp"); print(storeAnnotation.getThirdAttribut);
-            
+          
             
             let VC = self.storyboard!.instantiateViewController(withIdentifier: "ProductsStoreId") as! ProductsTableView
             
@@ -161,8 +227,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last{
             if(primer == false){
-                print("location.coordinate.latitude")
-                print(location.coordinate.latitude)
                 let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
                 let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
                 self.mapView.setRegion(region, animated: true)
