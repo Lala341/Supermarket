@@ -1,40 +1,43 @@
 //
-//  ProductsTableViewController.swift
+//  ProductsReTableViewController.swift
 //  Supermarket
 //
-//  Created by Laura Isabella Forero Camacho on 4/04/20.
+//  Created by Laura Isabella Forero Camacho on 5/06/20.
 //  Copyright © 2020 Laura Isabella Forero Camacho. All rights reserved.
 //
 
 import UIKit
 
-class ProductsWishTableViewController: UITableViewController {
+class ProductsReTableViewController: UITableViewController {
     
     public var manager : CoreDataManager!;
     var productmanager = ProductCoreDataManager();
-    var cartmanager = WishCoreDataManager();
-    var delegate: ProductsWishTableView!
-         
+    var cartmanager = CartCoreDataManager();
+    var delegate: ProductsCartTableView!;
+    var total: Double!;
+    
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         actualizarTabla()
         
         
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-        print(manager)
-        loadProducts()
-       // updateUI()
+        // updateUI()
               
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
-    var products = [Product]()
+    var products : [Product]!
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -47,15 +50,13 @@ class ProductsWishTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-       let cellIdentifier = "ProductWishTableViewCell"
-            let cell: ProductWishTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! ProductWishTableViewCell
+       let cellIdentifier = "ProductReTableViewCell"
+            let cell: ProductsReTableViewCell = self.tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! ProductsReTableViewCell
 
         cell.manager = manager
         cell.delegate = delegate
         let product = products[indexPath.row]
         // Configure the cell...
-        print(product.price)
-        print(String(describing: product.name) )
         var name: String!
         name = product.name
         cell.product.text = name  ?? "Colombina"
@@ -63,50 +64,22 @@ class ProductsWishTableViewController: UITableViewController {
         namep = product.photo
         cell.photo.load(url: URL(string: "http://ec2-18-212-16-222.compute-1.amazonaws.com:8082/images/\(namep!)")!, placeholder: cell.photo.image)
             
-        cell.price.text =  "$ \(product.price)" 
+        cell.price.text =  "$ \(product.price)"
         cell.productTotal = product
-        cell.delegatefinal = self
         cell.cant.text = "\(product.cantidad)"
         return cell
     }
-    @IBOutlet weak var cell: ProductWishTableViewCell!
+    @IBOutlet weak var cell: ProductTableViewCell!
+    @IBOutlet weak var resumeCart:UIBarItem!
        
-    
+  
     func actualizarTabla(){
-        loadProducts()
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
         
     }
-    private func loadProducts() {
-      
-print("manager")
-        let havecart = cartmanager.haveCart(container: manager.getContainer())
-       
-        
-        print(havecart)
-        var produ  : [Product] = []
-        
-        
-        if(havecart == true){
-            
-             let cart = cartmanager.fetchUserCart(container: manager.getContainer())
-            
-            
-            for i in cart!.products!
-            {
-                produ.append(i as! Product)
-                
-            }
-        }
-        
-     
-        print(produ)
-        products = produ
- 
-    }
-  
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
@@ -133,7 +106,7 @@ print("manager")
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 

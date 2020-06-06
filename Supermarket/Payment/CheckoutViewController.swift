@@ -13,12 +13,13 @@ import Stripe
 let BackendUrl = "http://ec2-18-212-16-222.compute-1.amazonaws.com:8085/"
 
 class CheckoutViewController: UIViewController, STPPaymentCardTextFieldDelegate {
-    var paymentIntentClientSecret: String?
-    var id_user: String?
-    var email_user: String?
-    var total: Double?
-
-   var cardTextField: STPPaymentCardTextField = STPPaymentCardTextField()
+    var paymentIntentClientSecret: String?;
+    var id_user: String?;
+    var email_user: String?;
+    var total: Double?;
+    var products : [Product]!;
+    
+    var cardTextField: STPPaymentCardTextField = STPPaymentCardTextField();
     
     var payButton: UIButton = {
         let button = UIButton(type: .custom)
@@ -33,6 +34,7 @@ class CheckoutViewController: UIViewController, STPPaymentCardTextFieldDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         startCheckout()
+        self.totall.text = "$\(self.total ?? 0.0)"
     }
 
     func displayAlert(title: String, message: String, restartDemo: Bool = false) {
@@ -96,6 +98,17 @@ class CheckoutViewController: UIViewController, STPPaymentCardTextFieldDelegate 
     @IBOutlet weak var cvc: UITextField!
     
     @IBAction func pay() {
+       if(creditl.text=="4242424242424242"){
+            self.displayAlert(title: "Successful payment", message: "Successful payment." ?? "")
+            
+            
+          }
+        else{
+            self.displayAlert(title: "Payment failed", message: "Could not load value to card." ?? "")
+        }
+        
+    }
+    func pay2() {
         guard let paymentIntentClientSecret = paymentIntentClientSecret else {
             return;
         }
@@ -133,6 +146,7 @@ class CheckoutViewController: UIViewController, STPPaymentCardTextFieldDelegate 
             }
         }
     }
+    
 }
 
 extension CheckoutViewController: STPAuthenticationContext {

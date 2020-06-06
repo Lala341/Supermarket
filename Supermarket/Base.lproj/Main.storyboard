@@ -2002,6 +2002,9 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                                 <state key="normal" title="Pay" image="creditcard.fill" catalog="system">
                                     <color key="titleColor" red="0.1019607843" green="0.16078431369999999" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="pay" destination="IEW-E7-oLj" eventType="touchUpInside" id="zCx-ru-mfe"/>
+                                </connections>
                             </button>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="faE-D0-oCe">
                                 <rect key="frame" x="0.0" y="574" width="375" height="44"/>
@@ -2406,16 +2409,16 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
             </objects>
             <point key="canvasLocation" x="-924.79999999999995" y="4772.5637181409302"/>
         </scene>
-        <!--Products Cart Table View Controller-->
+        <!--Products Re Table View Controller-->
         <scene sceneID="84r-iZ-fo8">
             <objects>
-                <tableViewController id="bY9-Iw-dS7" customClass="ProductsCartTableViewController" customModule="Supermarket" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="bY9-Iw-dS7" customClass="ProductsReTableViewController" customModule="Supermarket" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="108" sectionHeaderHeight="93" sectionFooterHeight="28" id="rky-1N-FGR">
                         <rect key="frame" x="0.0" y="0.0" width="380" height="214"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ProductCartTableViewCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProductCartTableViewCell" rowHeight="108" id="zGS-a9-ySO" customClass="ProductCartTableViewCell" customModule="Supermarket" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ProductReTableViewCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProductReTableViewCell" rowHeight="108" id="zGS-a9-ySO" customClass="ProductsReTableViewCell" customModule="Supermarket" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="380" height="108"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zGS-a9-ySO" id="Yeq-fb-pHg">
@@ -2467,12 +2470,12 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tYI-v8-stf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-120" y="5982"/>
+            <point key="canvasLocation" x="-120" y="5981.1094452773614"/>
         </scene>
-        <!--Products Cart Table View-->
+        <!--Receipt View Controller-->
         <scene sceneID="GMy-eB-z94">
             <objects>
-                <viewController id="jMV-Iy-rBO" customClass="ProductsCartTableView" customModule="Supermarket" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReceiptViewControlerId" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jMV-Iy-rBO" customClass="ReceiptViewController" customModule="Supermarket" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wZ6-sR-vIl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2563,13 +2566,27 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x78-dG-ZYr">
+                                <rect key="frame" x="308" y="36" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1019607843" green="0.16078431369999999" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="fun" destination="jMV-Iy-rBO" eventType="touchUpInside" id="I8q-Ju-ETu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Z8N-vI-SyF"/>
                     </view>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="subtotal" destination="mJi-wx-8RH" id="sgk-rr-BJ4"/>
                         <outlet property="table" destination="Jep-Iu-zuW" id="eIY-dX-hKW"/>
+                        <outlet property="taxes" destination="Pga-YH-aoA" id="9WC-83-r4b"/>
+                        <outlet property="total" destination="QBu-Tk-58T" id="9Ga-ae-PsI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tMl-Pr-emA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2632,7 +2649,7 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                                 <rect key="frame" x="17" y="214" width="343" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES" smartDashesType="yes" textContentType="cc-number"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="MM/YY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bV3-HR-NDk">
                                 <rect key="frame" x="16" y="256" width="343" height="34"/>
@@ -2644,7 +2661,7 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
                                 <rect key="frame" x="17" y="298" width="343" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFn-WK-QT3">
                                 <rect key="frame" x="169" y="365" width="37" height="30"/>
@@ -2681,8 +2698,8 @@ QWRkIGFub3RoZXIgC2NyZWRpdCBjYXJkA
         <image name="arrow.left" catalog="system" width="64" height="48"/>
         <image name="arrow.right" catalog="system" width="64" height="48"/>
         <image name="camera.fill" catalog="system" width="64" height="48"/>
-        <image name="cart" catalog="system" width="64" height="50"/>
         <image name="cart" width="399" height="400"/>
+        <image name="cart" catalog="system" width="64" height="50"/>
         <image name="cart.badge.plus" catalog="system" width="64" height="48"/>
         <image name="cart.fill" catalog="system" width="64" height="50"/>
         <image name="checkmark.rectangle.fill" catalog="system" width="64" height="46"/>

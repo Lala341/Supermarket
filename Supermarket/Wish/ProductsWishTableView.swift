@@ -12,7 +12,9 @@ class ProductsWishTableView: UIViewController {
     
     public var manager: CoreDataManager!
     var cartmanager = WishCoreDataManager()
+    var usermanager = UserCoreDataManager()
     var delegatetab: TabBarViewController!
+    var priceFinal = 0.0
     var adddone = false
     var adderror = false
     
@@ -44,7 +46,45 @@ class ProductsWishTableView: UIViewController {
         }
             
     }
+   
+    @IBAction func pay() {
+    print("voypay");
+        let VC = self.storyboard!.instantiateViewController(withIdentifier: "CheckoutViewControllerId") as! CheckoutViewController;
+        let user : User = usermanager.fetchUser(container: manager.getContainer())
+        VC.email_user = user.email
+        VC.id_user = user.id
+        VC.total = priceFinal
+        let pri : Double = priceFinal ?? 0.0
+        print(priceFinal)
+        
+        let havecart = cartmanager.haveCart(container: manager.getContainer())
+              
+               
+               var produ  : [Product] = []
+               
+               
+               if(havecart == true){
+                   
+                    let cart = cartmanager.fetchUserCart(container: manager.getContainer())
+                   
+                   
+                   for i in cart!.products!
+                   {
+                       produ.append(i as! Product)
+                       
+                   }
+               }
+        VC.products = produ
+        
+        
+        self.present(VC, animated: true, completion: {})
+        
     
+        
+       
+
+    
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         updateUIIni()
@@ -105,6 +145,7 @@ class ProductsWishTableView: UIViewController {
              self.buttone.isHidden = true
              resumeCart.title = "$ \(price)"
          }
+        priceFinal = price
              if(adddone){
                  adddone=false
                 updateUIAdd()
@@ -135,6 +176,7 @@ class ProductsWishTableView: UIViewController {
                         
                     }
       }
+        priceFinal = price
       if(price == 0){
           self.table.isHidden = true
           self.imagee.isHidden = false

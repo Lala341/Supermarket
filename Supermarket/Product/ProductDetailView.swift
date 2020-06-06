@@ -31,7 +31,11 @@ class ProductDetailView:  UIViewController {
            self.sku.text = productTotal.sku
     self.price.text = "$ \(productTotal.price!)"
            self.descrip.text = productTotal.descrip
-           self.image.image = UIImage(url: URL(string: "http://ec2-18-212-16-222.compute-1.amazonaws.com:8082/images/\(productTotal.photo!)"))
+           
+    
+    self.image.load(url: URL(string: "http://ec2-18-212-16-222.compute-1.amazonaws.com:8082/images/\(productTotal.photo!)")!, placeholder: self.image.image)
+        
+    
         }
     @IBAction func addCart(_ sender: UIButton) {
       /*  let photos = ["prod1", "prod2", "prod3","prod4","prod5","prod1", "prod2", "prod3","prod4","prod5"]

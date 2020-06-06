@@ -93,26 +93,28 @@ completion()
         do {
             
            let result = try context.fetch(fetchRequest )
-        let result2 = try context.fetch(fetchRequest2)
+            let result2 = try context.fetch(fetchRequest2)
             
             var final = Product()
-            
-            
-            for i in result2{
-                if(i.name == productf.name){
-                    final = i
-                    
+            var ind=0
+            while(ind<result2.count){
+                if(result2[ind].name == productf.name){
+                    final = result2[ind]
+                    break
                 }
+                ind=ind+1
             }
+            
             let final2 = result.last!
             let elements : [Product] = final2.products!.allObjects as! [Product]
             var j = 0
             var exist = false
-            for i in elements{
-                if(i.name == productf.name){
+            while(j<elements.count){
+               if(elements[j].name == productf.name){
                     
                     elements[j].cantidad = elements[j].cantidad + Int16(productf.cantidad!)
                     exist = true
+                    break
                 }
                 j = j + 1
             }
@@ -159,11 +161,13 @@ completion()
             var final = result2.last!
             let final2 = result.last!
             let elements : [Product] = final2.products!.allObjects as! [Product]
-            for i in elements{
-                if(i.name == productf.name){
-                    final = i
-                    
+            var ind=0
+            while(ind<result2.count){
+                if(elements[ind].name == productf.name){
+                    final = elements[ind]
+                    break
                 }
+                ind=ind+1
             }
             //final.shoppingList = final2
             

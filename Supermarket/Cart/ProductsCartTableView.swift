@@ -176,10 +176,34 @@ self?.imagee.isHidden = false
         VC.email_user = user.email
         VC.id_user = user.id
         VC.total = priceFinal
+        let pri : Double = priceFinal ?? 0.0
+        print(priceFinal)
+        
+        let havecart = cartmanager.haveCart(container: manager.getContainer())
+              
+               
+               var produ  : [Product] = []
+               
+               
+               if(havecart == true){
+                   
+                    let cart = cartmanager.fetchUserCart(container: manager.getContainer())
+                   
+                   
+                   for i in cart!.products!
+                   {
+                       produ.append(i as! Product)
+                       
+                   }
+               }
+        VC.products = produ
         
         
+        self.present(VC, animated: true, completion: {})
         
-        self.present(VC,animated: true, completion: nil)
+    
+        
+       
 
     
     }
