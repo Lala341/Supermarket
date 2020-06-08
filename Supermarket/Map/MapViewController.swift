@@ -20,7 +20,17 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     var user_id : String! = ""
     var timer: DispatchSourceTimer?
 
+    @IBOutlet weak var connect: UILabel!
+    var connection: Bool = true
     
+    public func cone(){
+        if(connection){
+            self.connect.isHidden = true
+        }else{
+            self.connect.isHidden = false
+        }
+            
+    }
     
     private func startTimer() {
         let queue = DispatchQueue(label: "com.firm.app.timer", attributes: .concurrent)
@@ -59,6 +69,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         locationManager.startUpdatingLocation()
         mapView.showsUserLocation = true
         self.loadData()
+        cone()
         if(iniciadoTimer==false){
             let users: [User] = usermanager.fetchUsers(container: manager.getContainer())
             if(users.count>0){

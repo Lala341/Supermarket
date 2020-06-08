@@ -59,14 +59,41 @@ class StartViewController: UIViewController {
                         (items![4] ).badgeColor = .gray
                         
                     if(m==2){
+                        
+                        let Vf3 = tab.viewControllers![3]  as! ProductsWishTableView
+                        Vf3.connection = true
+                        //Vf.cone()
+                        
+                        let Vf2 = tab.viewControllers![0]  as! MapViewController
+                        Vf2.connection = true
                         let Vf = tab.selectedViewController  as! ProductsCartTableView
                         Vf.connection = true
                         Vf.cone()
                     }
                         else if(m==3){
-                            let Vf = tab.selectedViewController  as! ProductsWishTableView
-                            Vf.connection = true
-                            Vf.cone()
+                           
+                        
+                        let Vf3 = tab.viewControllers![2]  as! ProductsCartTableView
+                        Vf3.connection = true
+                        
+                        let Vf2 = tab.viewControllers![0]  as! MapViewController
+                        Vf2.connection = true
+                        let Vf = tab.selectedViewController  as! ProductsWishTableView
+                                                   Vf.connection = true
+                                                   Vf.cone()
+                        
+                        }
+                        else if(m==0){
+                            
+                        let Vf3 = tab.viewControllers![2]  as! ProductsCartTableView
+                                               Vf3.connection = true
+                                               
+                                               let Vf2 = tab.viewControllers![3]  as! ProductsWishTableView
+                                               Vf2.connection = true
+                        
+                        let Vf = tab.selectedViewController  as! MapViewController
+                        Vf.connection = true
+                        Vf.cone()
                         }
                     }
                     
@@ -83,24 +110,52 @@ class StartViewController: UIViewController {
                     if(m == 2 ){
                         let items = tab.tabBar.items
                         
-                        (items![0] ).isEnabled = false
+                        //(items![0] ).isEnabled = false
                         (items![1] ).isEnabled = false
                         (items![4] ).isEnabled = false
                         let V = tab.selectedViewController  as! ProductsCartTableView
                         V.connection = false
                         
                         V.cone()
+                        let Vf = tab.viewControllers![3]  as! ProductsWishTableView
+                        Vf.connection = false
+                        //Vf.cone()
+                        
+                        let Vf2 = tab.viewControllers![0]  as! MapViewController
+                        Vf2.connection = false
                         
                     }else if( m == 3){
                         let items = tab.tabBar.items
                         
-                        (items![0] ).isEnabled = false
+                        //(items![0] ).isEnabled = false
                         (items![1] ).isEnabled = false
                         (items![4] ).isEnabled = false
                         
                         let V = tab.selectedViewController  as! ProductsWishTableView
                         V.connection = false
                         V.cone()
+                        let Vf = tab.viewControllers![2]  as! ProductsCartTableView
+                        Vf.connection = false
+                        
+                        let Vf2 = tab.viewControllers![0]  as! MapViewController
+                        Vf2.connection = false
+                        
+                    }
+                    else if( m == 0){
+                        let items = tab.tabBar.items
+                        
+                        //(items![0] ).isEnabled = false
+                        (items![1] ).isEnabled = false
+                        (items![4] ).isEnabled = false
+                        
+                        let V = tab.selectedViewController  as!  MapViewController
+                        V.connection = false
+                        V.cone()
+                        let Vf = tab.viewControllers![2]  as! ProductsCartTableView
+                        Vf.connection = false
+                        
+                        let Vf2 = tab.viewControllers![3]  as! ProductsWishTableView
+                        Vf2.connection = false
                         
                     }else{
                         let VC = self.storyboard!.instantiateViewController(withIdentifier: "NotConnectionId") as! NotConection
